@@ -1,267 +1,267 @@
 # vuejs-interview-questions
-List of 300 VueJS Interview Questions
+Список из 300 вопросов по VueJS на собеседовании
 
-> Click :star:if you like the project. Pull Requests are highly appreciated. Follow me [@SudheerJonna](https://twitter.com/SudheerJonna) for technical updates.
+> Нажмите :star: если вам понравился проект. Пулл реквесты (Pull Requests) высоко ценятся. Следуйте за мной [@SudheerJonna](https://twitter.com/SudheerJonna) за техническими обновлениями.
 
 ### Table of Contents
 -------------------------------------------------------------------
-| No. | Questions |
-|---- | ---------
-|1  | [What is VueJS](#what-is-vuejs) |
-|2  | [What are the major features of VueJS](#what-are-the-major-features-of-vuejs) |
-|3  | [What are the lifecycle methods of VueJS](#what-are-the-lifecycle-methods-of-vuejs)|
-|4  | [What are the conditional directives](#what-are-the-conditional-directives)|
-|5  | [What is the difference between v-show and v-if directives](#what-is-the-difference-between-v-show-and-v-if-directives)|
-|6  | [What is the purpose of v-for directive?](#what-is-the-purpose-of-v-for-directive)|
-|7  | [What is vue instance?](#what-is-vue-instance)|
-|8  | [How do you achieve conditional group of elements?](#how-do-you-achieve-conditional-group-of-elements)|
-|9  | [How do you reuse elements with key attribute?](#how-do-you-reuse-elements-with-key-attribute)|
-|10 | [Why should not use if and for directives together on the same element?](#why-should-not-use-if-and-for-directives-together-on-the-same-element)|
-|11 | [Why do you need to use key attribute on for directive?](#why-do-you-need-to-use-key-attribute-on-for-directive)|
-|12 | [What are the array detection mutation methods?](#what-are-the-array-detection-mutation-methods)|
-|13 | [What are the array detection non mutation methods?](#what-are-the-array-detection-non-mutation-methods)|
-|14 | [What are the caveats of array changes detection?](#what-are-the-caveats-of-array-changes-detection)|
-|15 | [What are the caveats of object changes detection?](#what-are-the-caveats-of-object-changes-detection)|
-|16 | [How do you use for directive with a range?](#how-do-you-use-for-directive-with-a-range)|
-|17 | [How do you use for directive on template?](#how-do-you-use-for-directive-on-template)|
-|18 | [How do you use event handlers?](#how-do-you-use-event-handlers)|
-|19 | [What are the event modifiers provided by vue?](#what-are-the-event-modifiers-provided-by-vue)|
-|20 | [What are key modifiers?](#what-are-key-modifiers)|
-|21 | [How do you define custom key modifier aliases?](#how-do-you-define-custom-key-modifier-aliases)|
-|22 | [What are the supported System Modifier Keys?](#what-are-the-supported-system-modifier-keys)|
-|23 | [What are the supported Mouse Button Modifiers?](#what-are-the-supported-mouse-button-modifiers)|
-|24 | [How do you implement two way binding?](#how-do-you-implement-two-way-binding)|
-|25 | [What are the supported modifiers on model?](#what-are-the-supported-modifiers-on-model)|
-|26 | [What are components and give an example?](#what-are-components-and-give-an-example)|
-|27 | [What are props?](#what-are-props)|
-|28 | [When component needs a single root element?](#when-component-needs-a-single-root-element)|
-|29 | [How do you communicate from child to parent using events?](#how-do-you-communicate-from-child-to-parent-using-events)|
-|30 | [How do you implement model on custom input components?](#how-do-you-implement-model-on-custom-input-components)|
-|31 | [What are slots?](#what-are-slots)|
-|32 | [What is global registration in components?](#what-is-global-registration-in-components)|
-|33 | [Why do you need local registration?](#why-do-you-need-local-registration)|
-|34 | [What is the difference between local and global registration in module system?](#what-is-the-difference-between-local-and-global-registration-in-module-system)|
-|35 | [What are possible prop types?](#what-are-possible-prop-types)|
-|36 | [What is the data flow followed by props?](#what-is-the-data-flow-followed-by-props)|
-|37 | [What are non prop attributes?](#what-are-non-prop-attributes)|
-|38 | [Describe about validations available for props?](#describe-about-validations-available-for-props)|
-|39 | [How do you customize model directive for a component?](#how-do-you-customize-model-directive-for-a-component)|
-|40 | [What are the possible ways to provide transitions?](#What-are-the-possible-ways-to-provide-transitions)|
-|41 | [What is vue router and their features?](#what-is-vue-router-and-their-features)|
-|42 | [What are the steps to use vue router and give an example?](#what-are-the-steps-to-use-vue-router-and-give-an-example)|
-|43 | [What is dynamic route matching?](#what-is-dynamic-route-matching)|
-|44 | [How to make router param changes as reactive?](#how-to-make-router-param-changes-as-reactive)|
-|45 | [What is route matching priority?](#what-is-route-matching-priority)|
-|46 | [What are nested routes?](#what-are-nested-routes)|
-|47 | [What are single file components?](#what-are-single-file-components)|
-|48 | [Is Single File Components violating separation of concerns?](#is-single-file-components-violating-separation-of-concerns)|
-|49 | [What are the problems solved by Single File Components?](#what-are-the-problems-solved-by-single-file-components)|
-|50 | [What are filters?](#what-are-filters)|
-|51 | [What are the different ways to create filters?](#what-are-the-different-ways-to-create-filters)|
-|52 | [How do you chain filters](#how-do-you-chain-filters)|
-|53 | [Is it possible to pass parameters for filters?](#is-it-possible-to-pass-parameters-for-filters)|
-|54 | [What are plugins and their various services?](#what-are-plugins-and-their-various-services)|
-|55 | [ How to create a plugin?](#how-to-create-a-plugin)|
-|56 | [How to use a plugin?](#how-to-use-a-plugin)|
-|57 | [What are mixins?](#what-are-mixins)|
-|58 | [What are global mixins?](#what-are-global-mixins)|
-|59 | [How do you use mixins in CLI?](#how-do-you-use-mixins-in-cli)|
-|60 | [What are the merging strategies in mixins?](#what-are-the-merging-strategies-in-mixins)|
-|61 | [What are custom options merging strategies?](#what-are-custom-options-merging-strategies)|
-|62 | [What are custom directives?](#what-are-custom-directives)|
-|63 | [How do you register directives locally?](#how-do-you-register-directives-locally)|
-|64 | [What are the hook functions provided by directives?](#what-are-the-hook-functions-provided-by-directives)|
-|65 | [What are the directive Hook Arguments?](#what-are-the-directive-hook-arguments)|
-|66 | [How do you pass multiple values to a directive?](#how-do-you-pass-multiple-values-to-a-directive)|
-|67 | [What is function shorthand in directive hooks?](#what-is-function-shorthand-in-directive-hooks)|
-|68 | [What is the benefit of render functions over templates?](#what-is-the-benefit-of-render-functions-over-templates)|
-|69 | [What is a render function?](#What-is-a-render-function)|
-|70 | [Explain the structure of createElement with arguments](#explain-the-structure-of-createelement-with-arguments)|
-|71 | [How can you write duplicate virtual nodes in a component?](#how-can-you-write-duplicate-virtual-nodes-in-a-component)|
-|72 | [List down the template equivalents in render functions?](#list-down-the-template-equivalents-in-render-functions)|
-|73 | [What are functional components?](#what-are-functional-components)|
-|74 | [What are the similarities between VueJS and ReactJS?](#what-are-the-similarities-between-vuejs-and-reactjs)|
-|75 | [What is the difference between VueJS and ReactJS?](#what-is-the-difference-between-vuejs-and-reactjs)|
-|76 | [What are the advantages of VueJS over ReactJS?](#what-are-the-advantages-of-vuejs-over-reactjs)|
-|77 | [What are the advantages of ReactJS over VueJS?](#what-are-the-advantages-of-reactjs-over-vuejs)|
-|78 | [What are the differences between VueJS and AngularJS?](#What-are-the-differences-between-vuejs-and-angularjs)|
-|79 | [What are dynamic components?](#what-are-dynamic-components)|
-|80 | [What is the purpose of keep alive tag?](#what-is-the-purpose-of-keep-alive-tag)|
-|81 | [What are async components?](#what-are-async-components)|
-|82 | [What is the structure of async component factory?](#what-is-the-structure-of-async-component-factory)|
-|83 | [What are inline templates?](#what-are-inline-templates)|
-|84 | [What are X Templates?](#what-are-x-templates)|
-|85 | [What are recursive components?](#what-are-recursive-components)|
-|86 | [How do you resolve circular dependencies between components?](#how-do-you-resolve-circular-dependencies-between-components)|
-|87 | [How do you make sure vue application is CSP complaint?](#how-do-you-make-sure-vue-application-is-csp-complaint)|
-|88 | [What is the difference between full and runtime only builds?](#what-is-the-difference-between-full-and-runtime-only-builds)|
-|89 | [List down different builds of vuejs?](#list-down-different-builds-of-vuejs)|
-|90 | [How do you configure vuejs in webpack?](#how-do-you-configure-vuejs-in-webpack)|
-|91 | [What is the purpose of vuejs compiler?](#what-is-the-purpose-of-vuejs-compiler)|
-|92 | [What is Dev Tools and its purpose?](#what-is-dev-tools-and-its-purpose)|
-|93 | [What is the browser support of VueJS?](#what-is-the-browser-support-of-vuejs)|
-|94 | [How do you use various CDNs?](#how-do-you-use-various-cdns?)|
-|95 | [How do you force update?](#how-do-you-force-update)|
-|96 | [What is the purpose of vuejs once directive?](#what-is-the-purpose-of-vuejs-once-directive)|
-|97 | [How do you access the root instance?](#how-do-you-access-the-root-instance)|
-|98 | [List out top 10 organizations using Vuejs?](#list-out-top-10-organizations-using-vuejs)|
-|99 | [What is the purpose of renderError?](#what-is-the-purpose-of-rendererror)|
-|100| [How do you access parent instance?](#how-do-you-access-parent-instance)|
-|101| [What is vuex?](#what-is-vuex)|
-|102| [What are the major components of State Management Pattern?](#what-are-the-major-components-of-state-management-pattern)|
-|103| [How do you represent one way data flow in vuex?](#how-do-you-represent-one-way-data-flow-in-vuex)|
-|104| [What is a vuejs loader?](#what-is-a-vuejs-loader)|
-|105| [How do you configure vue loader in webpack?](#how-do-you-configure-vue-loader-in-webpack)|
-|106| [What are asset url transform rules?](#what-are-asset-url-transform-rules)|
-|107| [How do you work with preprocessors using vue loader?](#how-do-you-work-with-preprocessors-using-vue-loader)|
-|108| [What is scoped CSS?](#What-is-scoped-CSS)|
-|109| [Is it possible to mix both local and global styles?](#is-it-possible-to-mix-both-local-and-global-styles)|
-|110| [How do you use deep selectors?](#how-do-you-use-deepselectors)|
-|111| [Is parent styles leaked into child components in scoped css?](#is-parent-styles-leaked-into-child-components-in-scoped-css)|
-|112| [How do you style dynamic generated content using scoped css?](#how-do-you-style-dynamic-generated-content-using-scoped-css)|
-|113| [Is CSS modules supported in Vuejs?](#is-css-modules-supported-in-vuejs)|
-|114| [Can I use runtime builds for all templates?](#can-i-use-runtime-builds-for-all-templates)|
-|115| [How to use CSS modules in vuejs?](#how-to-use-css-modules-in-vuejs)|
-|116| [Can I use CSS modules for preprocessors?](#can-i-use-css-modules-for-preprocessors)|
-|117| [Is it possible to use custom inject name for CSS modules?](#is-it-possible-to-use-custom-inject-name-for-css-modules)|
-|118| [What is hot reloading in vue loader?](#what-is-hot-reloading-in-vue-loader)|
-|119| [What is the default behavior of hot reloading?](#what-is-the-default-behavior-of-hot-reloading)|
-|120| [How do you disable hot reloading explicitly?](#how-do-you-disable-hot-reloading-explicitly)|
-|121| [How do you use hot reloading?](#how-do-you-use-hot-reloading)|
-|122| [What are state preservation rules in hot reloading?](#what-are-state-preservation-rules-in-hot-reloading)|
-|123| [How to create functional components using vue loader?](#how-to-create-functional-components-using-vue-loader)|
-|124| [How do you access global properties of functional components?](#how-do-you-access-global-properties-of-functional-components)|
-|125| [How do you perform testing in vuejs?](#how-do-you-perform-testing-in-vuejs)|
-|126| [How do you apply linting for css?](#how-do-you-apply-linting-for-css)|
-|127| [How do you use eslint plugin?](#how-do-you-use-eslint-plugin)|
-|128| [What is the purpose of eslint loader?](#what-is-the-purpose-of-eslint-loader)|
-|129| [What is CSS extraction?](#what-is-css-extraction)|
-|130| [What are custom blocks?](#what-are-custom-blocks)|
-|131| [What are the features of stylelint?](#what-are-the-features-of-stylelint?)|
-|132| [What are the principles for vuex application structure?](#what-are-the-principles-for-vuex-application-structure)|
-|133| [Is Vuex supports hot reloading?](#is-vuex-supports-hot-reloading)|
-|134| [What is the purpose of hotUpdate API of vuex store?](#what-is-the-purpose-of-hotupdate-api-of-vuex-store)|
-|135| [How do you test mutations?](#how-do-you-test-mutations)|
-|136| [How do you test your getters?](#how-do-you-test-your-getters)|
-|137| [What is the procedure to run tests in node?](#what-is-the-procedure-to-run-tests-in-node)|
-|138| [What is the procedure to run tests in browser?](#what-is-the-procedure-to-run-tests-in-browser)|
-|139| [What is the purpose of strict mode in vuex?](#what-is-the-purpose-of-strict-mode-in-vuex)|
-|140| [Can I use strict mode in production environment?](#can-i-use-strict-mode-in-production-environment)|
-|141| [What is vuex plugin?](#what-is-vuex-plugin)|
-|142| [How do you mutate state in plugins?](#how-do-you-mutate-state-in-plugins)|
-|143| [What is vuex store?](#what-is-vuex-store)|
-|144| [What are the differences of vuex store and plain global object?](#what-are-the-differences-of-vuex-store-and-plain-global-object)|
-|145| [What is the reason not to update the state directly?](#what-is-the-reason-not-to-update-the-state-directly)|
-|146| [What is Single state tree?](#what-is-single-state-tree)|
-|147| [How do you install vuex?](#how-do-you-install-vuex)|
-|148| [Do I need promise for vuex?](#do-i-need-promise-for-vuex)|
-|149| [How do you display store state in vue components?](#how-do-you-display-store-state-in-vue-components)|
-|150| [How do you inject store into child components?](#how-do-you-inject-store-into-child-components)|
-|151| [What is mapState helper?](#what-is-mapstate-helper)|
-|152| [How do you combine local computed properties with mapState helper?](#how-do-you-combine-local-computed-properties-with-mapstate-helper)|
-|153| [Do you need to replace entire local state with vuex?](#do-you-need-to-replace-entire-local-state-with-vuex)|
-|154| [What are vuex getters?](#what-are-vuex-getters?)|
-|155| [What is a property style access?](#what-is-a-property-style-access)|
-|156| [What is a method style access?](#what-is-a-method-style-access)|
-|157| [What is mapGetter helper?](#what-is-mapgetter-helper)|
-|158| [What are mutations?](#what-are-mutations)|
-|159| [How do you commit with payload?](#how-do-you-commit-with-payload)|
-|160| [What is object style commit?](#what-is-object-style-commit)|
-|161| [What are the caveats with vuex mutations?](#what-are-the-caveats-with-vuex-mutations)|
-|162| [Why mutations should be synchronous?](#why-mutations-should-be-synchronous)|
-|163| [How do you perform mutations in components?](#how-do-you-perform-mutations-in-components)|
-|164| [Is it mandatory to use constants for mutation types?](#is-it-mandatory-to-use-constants-for-mutation-types)|
-|165| [How do you perform asynchronous operations?](#how-do-you-perform-asynchronous-operations)|
-|166| [What are differences between mutations and actions?](#what-are-differences-between-mutations-and-actions)|
-|167| [Give an example usage of actions?](#give-an-example-usage-of-actions?)|
-|168| [How do you dispatch actions?](#how-do-you-dispatch-actions)|
-|169| [Can you dispatch an action using payload or object?](#can-you-dispatch-an-action-using-payload-or-object)|
-|170| [Can I use styled components in vuejs?](#can-i-use-styled-components-in-vuejs)|
-|171| [How do you dispatch actions in components?](#how-do-you-dispatch-actions-in-components)|
-|172| [How do you compose actions?](#how-do-you-compose-actions)|
-|173| [What are modules in vuex?](#what-are-modules-in-vuex)|
-|174| [What is module local state?](#what-is-module-local-state)|
-|175| [What is namespacing in vuex](#what-is-namespacing-in-vuex)|
-|176| [What is the default namespace behavior in vuex?](#what-is-the-default-namespace-behavior-in-vuex)|
-|177| [When do you reuse modules?](#when-do-you-reuse-modules)|
-|178| [What are the principles enforced by vuex?](#what-are-the-principles-enforced-by-vuex)|
-|179| [Can I perform mutations directly in strict mode?](#can-i-perform-mutations-directly-in-strict-mode)|
-|180| [How to use model directive with two way computed property?](#how-to-use-model-directive-with-two-way-computed-property)|
-|181| [What is Vue CLI?](#what-is-vue-cli)|
-|182| [What are the features provided by Vue CLI?](#what-are-the-features-provided-by-vue-cli)|
-|183| [What is instant prototyping?](#what-is-instant-prototyping)|
-|184| [How do you create project using Vue CLI?](#how-do-you-create-project-using-vue-cli)|
-|185| [How do you create project using GUI?](#how-do-you-create-project-using-gui)|
-|186| [What are plugins in vue CLI?](#what-are-plugins-in-vue-cli)|
-|187| [How do you install plugins in an existing Vue CLI project?](#how-do-you-install-plugins-in-an-existing-vue-cli-project)|
-|188| [How to access local plugins in a project?](#how-to-access-local-plugins-in-a-project)|
-|189| [How do you create UI plugins kind of behavior?](#how-do-you-create-ui-plugins-kind-of-behavior)|
-|190| [What are presets?](#what-are-presets)|
-|191| [What is the versioning behavior in preset plugins?](#what-is-the-versioning-behavior-in-preset-plugins)|
-|192| [How do you allow plugin prompts?](#how-do-you-allow-plugin-prompts)|
-|193| [What are remote presets?](#what-are-remote-presets)|
-|194| [Can I use local presets?](#can-i-use-local-presets)|
-|195| [What is the purpose of browserslist option?](#what-is-the-purpose-of-browserslist-option)|
-|196| [How do you find VueJS version using API?](#how-do-you-find-vuejs-version-using-api)|
-|197| [How do you create reactive objects](#how-do-you-create-reactive-objects)|
-|198| [What is the purpose new slot directive?](#what-is-the-purpose-new-slot-directive)|
-|199| [What is the use of compile method?](#what-is-the-use-of-compile-method)|
-|200| [What does nextTick do in VueJS?](#what-does-nexttick-do-in-vuejs)|
-|201| [What is async error handling?](#what-is-async-error-handling)|
-|202| [What are Dynamic Directive Arguments?](#what-are-dynamic-directive-arguments)|
-|203| [What are the drawbacks of dynamic directive arguments?](#what-are-the-drawbacks-of-dynamic-directive-arguments)|
-|204| [What is the special handling for null values in dynamic directive arguments?](#what-is-the-special-handling-for-null-values-in-dynamic-directive-arguments)|
-|205| [Can I use dynamic directive null value for slots?](#can-i-use-dynamic-directive-null-value-for-slots)|
-|206| [What is Vue I18n plugin?](#what-is-vue-i-8n--plugin)|
-|207| [#What are the types of formatting?](#what-are-the-types-of-formatting)|
-|208| [What is custom formatting?](#what-is-custom-formatting)|
-|209| [How do you handle Pluralization?](#how-do-you-handle-pluralization)|
-|210| [How to implement DateTime localization?](#how-to-implement-date-time-localization)|
-|211| [How do you implement Number localization?](#how-do-you-implement-number-localization)|
-|212| [How do you perform locale changing](#how-do-you-perform-locale-changin)|
-|213| [What is Lazy loading translations?](#what-is-lazy-loading-translations)|
-|214| [What is the main difference between method and computed property?](#what-is-the-main-difference-between-method-and-computed-property)|
-|215| [What is vuetify?](#what-is-vuetify)|
-|216| [How do you watch for nested data changes?](#how-do-you-watch-for-nested-data-changes)|
-|217| [How to trigger watchers on initialization?](#how-to-trigger-watchers-on-initialization)|
-|218| [What is the purpose of comments option?](#what-is-the-purpose-of-comments-option)|
-|219| [How to identify whether code is running on client or server?](#how-to-identify-whether-code-is-running-on-client-or-server)|
-|220| [How do you watch route object changes?](#how-do-you-watch-route-object-changes)|
-|221| [How do you sync current route in vuex store?](#how-do-you-sync-current-route-in-vuex-store)|
-|222| [What are navigation guards in vue router?](#what-are-navigation-guards-in-vue-router)|
-|223| [Can I use computed property in another computed property?](#can-i-use-computed-property-in-another-computed-property)|
-|224| [How can I use imported constant in template section?](#How-can-i-use-imported-constant-in-template-section)|
-|225| [Is recommended to use async for computed properties?](#is-recommended-to-use-async-for-computed-properties)|
-|226| [What happens if you use duplicate field names?](#what-happens-if-you-use-duplicate-field-names)|
-|227| [Why the component data must be a function?](#why-the-component-data-must-be-a-function)|
-|228| [What is the reason for recommendation for multi-word component names?](#what-is-the-reason-for-recommendation-for-multi-word-component-names)|
-|229| [How to use composition API in Vue2.0?](#how-to-use-composition-api-in-vue2.0)|
-|230| [What is composition API?](#what-is-composition-api)|
+| No. | Вопросы                                                                                                                                                              |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Что такое VueJS?](#Что-такое-VueJS)                                                                                                                                 |
+| 2   | [Каковы основные особенности VueJS?](#Каковы-основные-особенности-VueJS)                                                                                             |
+| 3   | [Какие есть методы жизненного цикла VueJS?](#Какие-есть-методы-жизненного-цикла-VueJS)                                                                               |
+| 4   | [Что такое условные директивы?](#Что-такое-условные-директивы)                                                                                                       |
+| 5   | [В чем разница между директивами v-show и v-if?](#В-чем-разница-между-директивами-v-show-и-v-if)                                                                     |
+| 6   | [Какова цель директивы v-for?](#Какова-цель-директивы-v-for)                                                                                                         |
+| 7   | [Что такое экземпляр vue?](#Что-такое-экземпляр-vue)                                                                                                                 |
+| 8   | [Как добиться условной отрисовки группы элементов?](#Как-добиться-условной-отрисовки-группы-элементов)                                                               |
+| 9   | [Как повторно использовать элементы с атрибутом key?](#Как-повторно-использовать-элементы-с-атрибутом-key)                                                           |
+| 10  | [Почему не следует использовать директивы if и for вместе в одном элементе?](#Почему-не-следует-использовать-директивы-if-и-for-вместе-в-одном-элементе)             |
+| 11  | [Почему нужно использовать атрибут key в директиве v-for?](#Почему-нужно-использовать-атрибут-key-в-директиве-v-for)                                                 |
+| 12  | [Каковы методы обнаружения мутации массива?](#Каковы-методы-обнаружения-мутации-массива)                                                                             |
+| 13  | [Какие существуют методы массива без мутаций?](#Какие-существуют-методы-массива-без-мутаций)                                                                         |
+| 14  | [В каких случаях Vue не может обнаружить изменения в массиве?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-массиве)                                         |
+| 15  | [В каких случаях Vue не может обнаружить изменения в объекте?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-объекте)                                         |
+| 16  | [Как использовать директиву v-for с диапазоном?](#Как-использовать-директиву-v-for-с-диапазоном)                                                                     |
+| 17  | [Как использовать директиву v-for в шаблоне?](#Как-использовать-директиву-v-for-в-шаблоне)                                                                           |
+| 18  | [Как вы используете обработчики событий?](#Как-вы-используете-обработчики-событий)                                                                                   |
+| 19  | [Какие модификаторы событий предоставляет vue?](#Какие-модификаторы-событий-предоставляет-vue)                                                                       |
+| 20  | [Что такое модификаторы для обработки событий клавиатуры?](#Что-такое-модификаторы-для-обработки-событий-клавиатуры)                                                 |
+| 21  | [Как вы определяете псевдонимы пользовательских (кастомных) модификаторов клавиш?](#Как-вы-определяете-псевдонимы-пользовательских-(кастомных)-модификаторов-клавиш) |
+| 22  | [Какие поддерживаются Системные Модификаторы Клавиш?](#Какие-поддерживаются-Системные-Модификаторы-Клавиш)                                                           |
+| 23  | [Какие поддерживаются модификаторы кнопок мыши?](#Какие-поддерживаются-модификаторы-кнопок-мыши)                                                                     |
+| 24  | [Как реализовать двустороннюю привязку?](#Как-реализовать-двустороннюю-привязку)                                                                                     |
+| 25  | [Какие модификаторы поддерживаются в модели (v-model)?](#Какие-модификаторы-поддерживаются-в-модели-(v-model))                                                       |
+| 26  | [Какие бывают компоненты и приведите пример?](#Какие-бывают-компоненты-и-приведите-пример)                                                                           |
+| 27  | [Что такое props (входные параметры)?](#Что-такое-props-(входные-параметры))                                                                                         |
+| 28  | [Когда компоненту нужен единственный корневой элемент?](#Когда-компоненту-нужен-единственный-корневой-элемент)                                                       |
+| 29  | [Как можно передавать события от ребенка к родителю?](#Как-можно-передавать-события-от-ребенка-к-родителю)                                                           |
+| 30  | [Как можно реализовать модель на пользовательских компонентах ввода?](#Как-можно-реализовать-модель-на-пользовательских-компонентах-ввода)                           |
+| 31  | [Что такое слоты (slots)?](#Что-такое-слоты-(slots))                                                                                                                 |
+| 32  | [Что такое глобальная регистрация в компонентах?](#Что-такое-глобальная-регистрация-в-компонентах)                                                                   |
+| 33  | [Зачем нужна локальная регистрация?](#Зачем-нужна-локальная-регистрация)                                                                                             |
+| 34  | [В чем разница между локальной и глобальной регистрацией в модульной системе?](#В-чем-разница-между-локальной-и-глобальной-регистрацией-в-модульной-системе)         |
+| 35  | [Какие бывают типы входных параметров (props)?](#Какие-бывают-типы-входных-параметров-(props))                                                                       |
+| 36  | [Как передается поток данных в props'ах (входные данные)?](#Как-передается-поток-данных-в-props'ах-(входные-данные))                                                 |
+| 37  | [Что такое non-prop атрибуты?](#Что-такое-non-prop-атрибуты)                                                                                                         |
+| 38  | [Расскажите о доступных валидациях для props'ов?](#Расскажите-о-доступных-валидациях-для-props'ов)                                                                   |
+| 39  | [Как можно кастомизировать директиву v-model для компонента?](#Как-можно-кастомизировать-директиву-v-model-для-компонента)                                           |
+| 40  | [Каковы возможные способы предоставления переходов (transitions)?](#Каковы-возможные-способы-предоставления-переходов-(transitions))                                 |
+| 41  | [Что такое vue router и его особенности?](#Что-такое-vue-router-и-его-особенности)                                                                                   |
+| 42  | [Что нужно сделать, чтобы использовать vue router и приведите пример?](#Что-нужно-сделать,-чтобы-использовать-vue-router-и-приведите-пример)                         |
+| 43  | [Что такое динамическое сопоставление маршрутов?](#Что-такое-динамическое-сопоставление-маршрутов)                                                                   |
+| 44  | [Как сделать изменения параметров маршрутизатора реактивными?](#Как-сделать-изменения-параметров-маршрутизатора-реактивными)                                         |
+| 45  | [Что такое приоритет сопоставления маршрута?](#Что-такое-приоритет-сопоставления-маршрута)                                                                           |
+| 46  | [Что такое вложенные маршруты?](#Что-такое-вложенные-маршруты)                                                                                                       |
+| 47  | [Что такое однофайловые компоненты?](#Что-такое-однофайловые-компоненты)                                                                                             |
+| 48  | [Нарушают ли однофайлайловые компоненты разделение ответственности?](#Нарушают-ли-однофайлайловые-компоненты-разделение-ответственности)                             |
+| 49  | [Какие проблемы решают однофайловые компоненты?](#Какие-проблемы-решают-однофайловые-компоненты)                                                                     |
+| 50  | [Что такое фильтры?](#Что-такое-фильтры)                                                                                                                             |
+| 51  | [Какие существуют способы создания фильтров?](#Какие-существуют-способы-создания-фильтров)                                                                           |
+| 52  | [Как можно связать фильтры один за другим](#Как-можно-связать-фильтры-один-за-другим)                                                                                |
+| 53  | [Можно ли передавать параметры для фильтров?](#Можно-ли-передавать-параметры-для-фильтров)                                                                           |
+| 54  | [Что такое плагины и их различные сервисы?](#Что-такое-плагины-и-их-различные-сервисы)                                                                               |
+| 55  | [Как создать плагин?](#Как-создать-плагин)                                                                                                                           |
+| 56  | [Как пользоваться плагином?](#Как-пользоваться-плагином)                                                                                                             |
+| 57  | [Что такое миксины?](#Что-такое-миксины)                                                                                                                             |
+| 58  | [Что такое глобальные миксины?](#Что-такое-глобальные-миксины)                                                                                                       |
+| 59  | [Как можно использовать миксины в CLI?](#Как-можно-использовать-миксины-в-CLI)                                                                                       |
+| 60  | [Каковы стратегии слияния в миксинах?](#Каковы-стратегии-слияния-в-миксинах)                                                                                         |
+| 61  | [Какие существуют стратегии слияния пользовательских опций?](#Какие-существуют-стратегии-слияния-пользовательских-опций)                                             |
+| 62  | [Что такое пользовательские директивы?](#Что-такое-пользовательские-директивы)                                                                                       |
+| 63  | [Как можно регистрировать директивы локально?](#Как-можно-регистрировать-директивы-локально)                                                                         |
+| 64  | [Какие хук функции предоставляются директивами?](#Какие-хук-функции-предоставляются-директивами)                                                                     |
+| 65  | [Что такое аргументы хука директивы?](#Что-такое-аргументы-хука-директивы)                                                                                           |
+| 66  | [How do you pass multiple values to a directive?](#how-do-you-pass-multiple-values-to-a-directive)                                                                   |
+| 67  | [What is function shorthand in directive hooks?](#what-is-function-shorthand-in-directive-hooks)                                                                     |
+| 68  | [What is the benefit of render functions over templates?](#what-is-the-benefit-of-render-functions-over-templates)                                                   |
+| 69  | [What is a render function?](#What-is-a-render-function)                                                                                                             |
+| 70  | [Explain the structure of createElement with arguments](#explain-the-structure-of-createelement-with-arguments)                                                      |
+| 71  | [How can you write duplicate virtual nodes in a component?](#how-can-you-write-duplicate-virtual-nodes-in-a-component)                                               |
+| 72  | [List down the template equivalents in render functions?](#list-down-the-template-equivalents-in-render-functions)                                                   |
+| 73  | [What are functional components?](#what-are-functional-components)                                                                                                   |
+| 74  | [What are the similarities between VueJS and ReactJS?](#what-are-the-similarities-between-vuejs-and-reactjs)                                                         |
+| 75  | [What is the difference between VueJS and ReactJS?](#what-is-the-difference-between-vuejs-and-reactjs)                                                               |
+| 76  | [What are the advantages of VueJS over ReactJS?](#what-are-the-advantages-of-vuejs-over-reactjs)                                                                     |
+| 77  | [What are the advantages of ReactJS over VueJS?](#what-are-the-advantages-of-reactjs-over-vuejs)                                                                     |
+| 78  | [What are the differences between VueJS and AngularJS?](#What-are-the-differences-between-vuejs-and-angularjs)                                                       |
+| 79  | [What are dynamic components?](#what-are-dynamic-components)                                                                                                         |
+| 80  | [What is the purpose of keep alive tag?](#what-is-the-purpose-of-keep-alive-tag)                                                                                     |
+| 81  | [What are async components?](#what-are-async-components)                                                                                                             |
+| 82  | [What is the structure of async component factory?](#what-is-the-structure-of-async-component-factory)                                                               |
+| 83  | [What are inline templates?](#what-are-inline-templates)                                                                                                             |
+| 84  | [What are X Templates?](#what-are-x-templates)                                                                                                                       |
+| 85  | [What are recursive components?](#what-are-recursive-components)                                                                                                     |
+| 86  | [How do you resolve circular dependencies between components?](#how-do-you-resolve-circular-dependencies-between-components)                                         |
+| 87  | [How do you make sure vue application is CSP complaint?](#how-do-you-make-sure-vue-application-is-csp-complaint)                                                     |
+| 88  | [What is the difference between full and runtime only builds?](#what-is-the-difference-between-full-and-runtime-only-builds)                                         |
+| 89  | [List down different builds of vuejs?](#list-down-different-builds-of-vuejs)                                                                                         |
+| 90  | [How do you configure vuejs in webpack?](#how-do-you-configure-vuejs-in-webpack)                                                                                     |
+| 91  | [What is the purpose of vuejs compiler?](#what-is-the-purpose-of-vuejs-compiler)                                                                                     |
+| 92  | [What is Dev Tools and its purpose?](#what-is-dev-tools-and-its-purpose)                                                                                             |
+| 93  | [What is the browser support of VueJS?](#what-is-the-browser-support-of-vuejs)                                                                                       |
+| 94  | [How do you use various CDNs?](#how-do-you-use-various-cdns?)                                                                                                        |
+| 95  | [How do you force update?](#how-do-you-force-update)                                                                                                                 |
+| 96  | [What is the purpose of vuejs once directive?](#what-is-the-purpose-of-vuejs-once-directive)                                                                         |
+| 97  | [How do you access the root instance?](#how-do-you-access-the-root-instance)                                                                                         |
+| 98  | [List out top 10 organizations using Vuejs?](#list-out-top-10-organizations-using-vuejs)                                                                             |
+| 99  | [What is the purpose of renderError?](#what-is-the-purpose-of-rendererror)                                                                                           |
+| 100 | [How do you access parent instance?](#how-do-you-access-parent-instance)                                                                                             |
+| 101 | [What is vuex?](#what-is-vuex)                                                                                                                                       |
+| 102 | [What are the major components of State Management Pattern?](#what-are-the-major-components-of-state-management-pattern)                                             |
+| 103 | [How do you represent one way data flow in vuex?](#how-do-you-represent-one-way-data-flow-in-vuex)                                                                   |
+| 104 | [What is a vuejs loader?](#what-is-a-vuejs-loader)                                                                                                                   |
+| 105 | [How do you configure vue loader in webpack?](#how-do-you-configure-vue-loader-in-webpack)                                                                           |
+| 106 | [What are asset url transform rules?](#what-are-asset-url-transform-rules)                                                                                           |
+| 107 | [How do you work with preprocessors using vue loader?](#how-do-you-work-with-preprocessors-using-vue-loader)                                                         |
+| 108 | [What is scoped CSS?](#What-is-scoped-CSS)                                                                                                                           |
+| 109 | [Is it possible to mix both local and global styles?](#is-it-possible-to-mix-both-local-and-global-styles)                                                           |
+| 110 | [How do you use deep selectors?](#how-do-you-use-deepselectors)                                                                                                      |
+| 111 | [Is parent styles leaked into child components in scoped css?](#is-parent-styles-leaked-into-child-components-in-scoped-css)                                         |
+| 112 | [How do you style dynamic generated content using scoped css?](#how-do-you-style-dynamic-generated-content-using-scoped-css)                                         |
+| 113 | [Is CSS modules supported in Vuejs?](#is-css-modules-supported-in-vuejs)                                                                                             |
+| 114 | [Can I use runtime builds for all templates?](#can-i-use-runtime-builds-for-all-templates)                                                                           |
+| 115 | [How to use CSS modules in vuejs?](#how-to-use-css-modules-in-vuejs)                                                                                                 |
+| 116 | [Can I use CSS modules for preprocessors?](#can-i-use-css-modules-for-preprocessors)                                                                                 |
+| 117 | [Is it possible to use custom inject name for CSS modules?](#is-it-possible-to-use-custom-inject-name-for-css-modules)                                               |
+| 118 | [What is hot reloading in vue loader?](#what-is-hot-reloading-in-vue-loader)                                                                                         |
+| 119 | [What is the default behavior of hot reloading?](#what-is-the-default-behavior-of-hot-reloading)                                                                     |
+| 120 | [How do you disable hot reloading explicitly?](#how-do-you-disable-hot-reloading-explicitly)                                                                         |
+| 121 | [How do you use hot reloading?](#how-do-you-use-hot-reloading)                                                                                                       |
+| 122 | [What are state preservation rules in hot reloading?](#what-are-state-preservation-rules-in-hot-reloading)                                                           |
+| 123 | [How to create functional components using vue loader?](#how-to-create-functional-components-using-vue-loader)                                                       |
+| 124 | [How do you access global properties of functional components?](#how-do-you-access-global-properties-of-functional-components)                                       |
+| 125 | [How do you perform testing in vuejs?](#how-do-you-perform-testing-in-vuejs)                                                                                         |
+| 126 | [How do you apply linting for css?](#how-do-you-apply-linting-for-css)                                                                                               |
+| 127 | [How do you use eslint plugin?](#how-do-you-use-eslint-plugin)                                                                                                       |
+| 128 | [What is the purpose of eslint loader?](#what-is-the-purpose-of-eslint-loader)                                                                                       |
+| 129 | [What is CSS extraction?](#what-is-css-extraction)                                                                                                                   |
+| 130 | [What are custom blocks?](#what-are-custom-blocks)                                                                                                                   |
+| 131 | [What are the features of stylelint?](#what-are-the-features-of-stylelint?)                                                                                          |
+| 132 | [What are the principles for vuex application structure?](#what-are-the-principles-for-vuex-application-structure)                                                   |
+| 133 | [Is Vuex supports hot reloading?](#is-vuex-supports-hot-reloading)                                                                                                   |
+| 134 | [What is the purpose of hotUpdate API of vuex store?](#what-is-the-purpose-of-hotupdate-api-of-vuex-store)                                                           |
+| 135 | [How do you test mutations?](#how-do-you-test-mutations)                                                                                                             |
+| 136 | [How do you test your getters?](#how-do-you-test-your-getters)                                                                                                       |
+| 137 | [What is the procedure to run tests in node?](#what-is-the-procedure-to-run-tests-in-node)                                                                           |
+| 138 | [What is the procedure to run tests in browser?](#what-is-the-procedure-to-run-tests-in-browser)                                                                     |
+| 139 | [What is the purpose of strict mode in vuex?](#what-is-the-purpose-of-strict-mode-in-vuex)                                                                           |
+| 140 | [Can I use strict mode in production environment?](#can-i-use-strict-mode-in-production-environment)                                                                 |
+| 141 | [What is vuex plugin?](#what-is-vuex-plugin)                                                                                                                         |
+| 142 | [How do you mutate state in plugins?](#how-do-you-mutate-state-in-plugins)                                                                                           |
+| 143 | [What is vuex store?](#what-is-vuex-store)                                                                                                                           |
+| 144 | [What are the differences of vuex store and plain global object?](#what-are-the-differences-of-vuex-store-and-plain-global-object)                                   |
+| 145 | [What is the reason not to update the state directly?](#what-is-the-reason-not-to-update-the-state-directly)                                                         |
+| 146 | [What is Single state tree?](#what-is-single-state-tree)                                                                                                             |
+| 147 | [How do you install vuex?](#how-do-you-install-vuex)                                                                                                                 |
+| 148 | [Do I need promise for vuex?](#do-i-need-promise-for-vuex)                                                                                                           |
+| 149 | [How do you display store state in vue components?](#how-do-you-display-store-state-in-vue-components)                                                               |
+| 150 | [How do you inject store into child components?](#how-do-you-inject-store-into-child-components)                                                                     |
+| 151 | [What is mapState helper?](#what-is-mapstate-helper)                                                                                                                 |
+| 152 | [How do you combine local computed properties with mapState helper?](#how-do-you-combine-local-computed-properties-with-mapstate-helper)                             |
+| 153 | [Do you need to replace entire local state with vuex?](#do-you-need-to-replace-entire-local-state-with-vuex)                                                         |
+| 154 | [What are vuex getters?](#what-are-vuex-getters?)                                                                                                                    |
+| 155 | [What is a property style access?](#what-is-a-property-style-access)                                                                                                 |
+| 156 | [What is a method style access?](#what-is-a-method-style-access)                                                                                                     |
+| 157 | [What is mapGetter helper?](#what-is-mapgetter-helper)                                                                                                               |
+| 158 | [What are mutations?](#what-are-mutations)                                                                                                                           |
+| 159 | [How do you commit with payload?](#how-do-you-commit-with-payload)                                                                                                   |
+| 160 | [What is object style commit?](#what-is-object-style-commit)                                                                                                         |
+| 161 | [What are the caveats with vuex mutations?](#what-are-the-caveats-with-vuex-mutations)                                                                               |
+| 162 | [Why mutations should be synchronous?](#why-mutations-should-be-synchronous)                                                                                         |
+| 163 | [How do you perform mutations in components?](#how-do-you-perform-mutations-in-components)                                                                           |
+| 164 | [Is it mandatory to use constants for mutation types?](#is-it-mandatory-to-use-constants-for-mutation-types)                                                         |
+| 165 | [How do you perform asynchronous operations?](#how-do-you-perform-asynchronous-operations)                                                                           |
+| 166 | [What are differences between mutations and actions?](#what-are-differences-between-mutations-and-actions)                                                           |
+| 167 | [Give an example usage of actions?](#give-an-example-usage-of-actions?)                                                                                              |
+| 168 | [How do you dispatch actions?](#how-do-you-dispatch-actions)                                                                                                         |
+| 169 | [Can you dispatch an action using payload or object?](#can-you-dispatch-an-action-using-payload-or-object)                                                           |
+| 170 | [Can I use styled components in vuejs?](#can-i-use-styled-components-in-vuejs)                                                                                       |
+| 171 | [How do you dispatch actions in components?](#how-do-you-dispatch-actions-in-components)                                                                             |
+| 172 | [How do you compose actions?](#how-do-you-compose-actions)                                                                                                           |
+| 173 | [What are modules in vuex?](#what-are-modules-in-vuex)                                                                                                               |
+| 174 | [What is module local state?](#what-is-module-local-state)                                                                                                           |
+| 175 | [What is namespacing in vuex](#what-is-namespacing-in-vuex)                                                                                                          |
+| 176 | [What is the default namespace behavior in vuex?](#what-is-the-default-namespace-behavior-in-vuex)                                                                   |
+| 177 | [When do you reuse modules?](#when-do-you-reuse-modules)                                                                                                             |
+| 178 | [What are the principles enforced by vuex?](#what-are-the-principles-enforced-by-vuex)                                                                               |
+| 179 | [Can I perform mutations directly in strict mode?](#can-i-perform-mutations-directly-in-strict-mode)                                                                 |
+| 180 | [How to use model directive with two way computed property?](#how-to-use-model-directive-with-two-way-computed-property)                                             |
+| 181 | [What is Vue CLI?](#what-is-vue-cli)                                                                                                                                 |
+| 182 | [What are the features provided by Vue CLI?](#what-are-the-features-provided-by-vue-cli)                                                                             |
+| 183 | [What is instant prototyping?](#what-is-instant-prototyping)                                                                                                         |
+| 184 | [How do you create project using Vue CLI?](#how-do-you-create-project-using-vue-cli)                                                                                 |
+| 185 | [How do you create project using GUI?](#how-do-you-create-project-using-gui)                                                                                         |
+| 186 | [What are plugins in vue CLI?](#what-are-plugins-in-vue-cli)                                                                                                         |
+| 187 | [How do you install plugins in an existing Vue CLI project?](#how-do-you-install-plugins-in-an-existing-vue-cli-project)                                             |
+| 188 | [How to access local plugins in a project?](#how-to-access-local-plugins-in-a-project)                                                                               |
+| 189 | [How do you create UI plugins kind of behavior?](#how-do-you-create-ui-plugins-kind-of-behavior)                                                                     |
+| 190 | [What are presets?](#what-are-presets)                                                                                                                               |
+| 191 | [What is the versioning behavior in preset plugins?](#what-is-the-versioning-behavior-in-preset-plugins)                                                             |
+| 192 | [How do you allow plugin prompts?](#how-do-you-allow-plugin-prompts)                                                                                                 |
+| 193 | [What are remote presets?](#what-are-remote-presets)                                                                                                                 |
+| 194 | [Can I use local presets?](#can-i-use-local-presets)                                                                                                                 |
+| 195 | [What is the purpose of browserslist option?](#what-is-the-purpose-of-browserslist-option)                                                                           |
+| 196 | [How do you find VueJS version using API?](#how-do-you-find-vuejs-version-using-api)                                                                                 |
+| 197 | [How do you create reactive objects](#how-do-you-create-reactive-objects)                                                                                            |
+| 198 | [What is the purpose new slot directive?](#what-is-the-purpose-new-slot-directive)                                                                                   |
+| 199 | [What is the use of compile method?](#what-is-the-use-of-compile-method)                                                                                             |
+| 200 | [What does nextTick do in VueJS?](#what-does-nexttick-do-in-vuejs)                                                                                                   |
+| 201 | [What is async error handling?](#what-is-async-error-handling)                                                                                                       |
+| 202 | [What are Dynamic Directive Arguments?](#what-are-dynamic-directive-arguments)                                                                                       |
+| 203 | [What are the drawbacks of dynamic directive arguments?](#what-are-the-drawbacks-of-dynamic-directive-arguments)                                                     |
+| 204 | [What is the special handling for null values in dynamic directive arguments?](#what-is-the-special-handling-for-null-values-in-dynamic-directive-arguments)         |
+| 205 | [Can I use dynamic directive null value for slots?](#can-i-use-dynamic-directive-null-value-for-slots)                                                               |
+| 206 | [What is Vue I18n plugin?](#what-is-vue-i-8n--plugin)                                                                                                                |
+| 207 | [#What are the types of formatting?](#what-are-the-types-of-formatting)                                                                                              |
+| 208 | [What is custom formatting?](#what-is-custom-formatting)                                                                                                             |
+| 209 | [How do you handle Pluralization?](#how-do-you-handle-pluralization)                                                                                                 |
+| 210 | [How to implement DateTime localization?](#how-to-implement-date-time-localization)                                                                                  |
+| 211 | [How do you implement Number localization?](#how-do-you-implement-number-localization)                                                                               |
+| 212 | [How do you perform locale changing](#how-do-you-perform-locale-changin)                                                                                             |
+| 213 | [What is Lazy loading translations?](#what-is-lazy-loading-translations)                                                                                             |
+| 214 | [What is the main difference between method and computed property?](#what-is-the-main-difference-between-method-and-computed-property)                               |
+| 215 | [What is vuetify?](#what-is-vuetify)                                                                                                                                 |
+| 216 | [How do you watch for nested data changes?](#how-do-you-watch-for-nested-data-changes)                                                                               |
+| 217 | [How to trigger watchers on initialization?](#how-to-trigger-watchers-on-initialization)                                                                             |
+| 218 | [What is the purpose of comments option?](#what-is-the-purpose-of-comments-option)                                                                                   |
+| 219 | [How to identify whether code is running on client or server?](#how-to-identify-whether-code-is-running-on-client-or-server)                                         |
+| 220 | [How do you watch route object changes?](#how-do-you-watch-route-object-changes)                                                                                     |
+| 221 | [How do you sync current route in vuex store?](#how-do-you-sync-current-route-in-vuex-store)                                                                         |
+| 222 | [What are navigation guards in vue router?](#what-are-navigation-guards-in-vue-router)                                                                               |
+| 223 | [Can I use computed property in another computed property?](#can-i-use-computed-property-in-another-computed-property)                                               |
+| 224 | [How can I use imported constant in template section?](#How-can-i-use-imported-constant-in-template-section)                                                         |
+| 225 | [Is recommended to use async for computed properties?](#is-recommended-to-use-async-for-computed-properties)                                                         |
+| 226 | [What happens if you use duplicate field names?](#what-happens-if-you-use-duplicate-field-names)                                                                     |
+| 227 | [Why the component data must be a function?](#why-the-component-data-must-be-a-function)                                                                             |
+| 228 | [What is the reason for recommendation for multi-word component names?](#what-is-the-reason-for-recommendation-for-multi-word-component-names)                       |
+| 229 | [How to use composition API in Vue2.0?](#how-to-use-composition-api-in-vue2.0)                                                                                       |
+| 230 | [What is composition API?](#what-is-composition-api)                                                                                                                 |
 
-1.  ### What is VueJS?
-    **Vue.js** is an open-source, progressive Javascript framework for building user interfaces that aim to be incrementally adoptable. The core library of VueJS is focused on the `view layer` only, and is easy to pick up and integrate with other libraries or existing projects.
+1.  ### Что такое VueJS?
+    **Vue.js** это прогрессивный фреймворк для создания пользовательских интерфейсов. Vue создан пригодным для постепенного внедрения. Его ядро в первую очередь решает задачи уровня представления (view), что упрощает интеграцию с другими библиотеками и существующими проектами.
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-2.  ### What are the major features of VueJS?
-    Below are the some of major features available with VueJS
-    1. **Virtual DOM:** It uses virtual DOM similar to other existing frameworks such as ReactJS, Ember etc. Virtual DOM is a light-weight in-memory tree representation of the original HTML DOM and updated without affecting the original DOM.
-    2. **Components:** Used to create reusable custom elements in VueJS applications.
-    3. **Templates:** VueJS provides HTML based templates that bind the DOM with the Vue instance data
-    4. **Routing:** Navigation between pages is achieved through vue-router
-    5. **Light weight:** VueJS is light weight library compared to other frameworks.
+2.  ### Каковы основные особенности VueJS?
+    Ниже приведены некоторые из основных особенностей, доступных на VueJS.
+    1. **Виртуальный DOM:** Он использует виртуальный DOM, как и другие существующие фреймворки, такие как ReactJS, Ember и т.д. Виртуальная модель DOM - это облегченное древовидное представление исходной модели HTML DOM, которая обновляется, не затрагивая исходный DOM.
+    2. **Компоненты:** Используется для создания переиспользуемых пользовательских элементов в приложениях VueJS.
+    3. **Шаблоны:** VueJS предоставляет шаблоны на основе HTML, которые связывают DOM с данными экземпляра Vue.
+    4. **Маршрутизация:** Переход между страницами осуществляется через vue-router.
+    5. **Легкий вес:** VueJS - это легкий фреймворк по сравнению с другими фреймворками.
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-3.  ### What are the lifecycle methods of VueJS?
-    Lifecycle hooks are a window into how the library you’re using works behind-the-scenes. By using these hooks, you will know when your component is created, added to the DOM, updated, or destroyed. Let's look at lifecycle diagram before going to each lifecycle hook in detail,
+3.  ### Какие есть методы жизненного цикла VueJS?
+     Каждый экземпляр Vue при создании проходит через последовательность шагов инициализации — например, настраивает наблюдение за данными, компилирует шаблон, монтирует экземпляр в DOM, обновляет DOM при изменении данных. Между этими шагами вызываются функции, называемые хуками жизненного цикла, с помощью которых можно выполнять свой код на определённых этапах. Давайте посмотрим на диаграмму жизненного цикла, прежде чем подробно переходить к каждому жизненному циклу,
 
     <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/vuelifecycle.png" width="400" height="800">
 
-    1. **Creation(Initialization):**
-        Creation Hooks allow you to perform actions before your component has even been added to the DOM. You need to use these hooks if you need to set things up in your component both during client rendering and server rendering. Unlike other hooks, creation hooks are also run during server-side rendering.
+    1. **Создание (инициализация):**
+        Хук создания (Creation Hook) позволяют выполнять действия еще до того, как ваш компонент будет добавлен в DOM. Вам нужно использовать эти хуки, если вам нужно настроить что-то в своем компоненте как во время клиентского, так и серверного рендеринга. В отличие от других хуков, хуки создания также запускаются во время рендеринга на стороне сервера.
         1. beforeCreate:
-           This hook runs at the very initialization of your component. hook observes data and initialization events in your component. Here, data is still not reactive and events that occur during the component’s lifecycle have not been set up yet.
+           Этот хук запускается при самой инициализации вашего компонента. Этот хук наблюдает за данными и событиями инициализации в вашем компоненте. Здесь данные по-прежнему не реактивные, а события, происходящие в течение жизненного цикла компонента, еще не настроены.
         ```javascript
             new Vue({
               data: {
@@ -269,61 +269,61 @@ List of 300 VueJS Interview Questions
               },
               beforeCreate: function () {
                 console.log('Nothing gets called at this moment')
-                // `this` points to the view model instance
+                // `this` указывает на экземпляр модели представления
                 console.log('count is ' + this.count);
               }
             })
-               // count is undefined
+               // count is: undefined
          ```
         2. created:
-            This hook is invoked when Vue has set up events and data observation. Here, events are active and access to reactive data is enabled though templates have not yet been mounted or rendered.
+            Этот хук вызывается, когда Vue настроил события и наблюдение за данными. Здесь события активны, и доступ к реактивным данным разрешен, хотя шаблоны еще не смонтированы или визуализированы.
         ```javascript
           new Vue({
             data: {
              count: 10
             },
             created: function () {
-              // `this` points to the view model instance
+              // `this` указывает на экземпляр модели представления
               console.log('count is: ' + this.count)
             }
           })
              // count is: 10
         ```
-        **Note:** Remember that, You will not have access to the DOM or the target mounting element (this.$el) inside of creation hooks
-    2. **Mounting(DOM Insertion):**
-        Mounting hooks are often the most-used hooks and they allow you to access your component immediately before and after the first render.
+        **Примечание:** Помните, что у вас не будет доступа к DOM или целевому элементу монтирования (this.$el) внутри хуков создания (creation hooks).
+    2. **Монтирование (вставка DOM):**
+        Хуки монтирования (Mounting hooks) являются наиболее часто используемыми, и они позволяют вам получить доступ к вашему компоненту непосредственно до и после первого рендеринга.
         1. beforeMount:
-            The beforeMount allows you to access your component immediately before and after the first render.
+            позволяет вам получить доступ к вашему компоненту непосредственно до и после первого рендеринга.
         ```javascript
           new Vue({
             beforeMount: function () {
-              // `this` points to the view model instance
+              // `this` указывает на экземпляр модели представления
               console.log(`this.$el is yet to be created`);
             }
           })
         ```
         2. mounted:
-            This is a most used hook and you will have full access to the reactive component, templates, and rendered DOM (via. this.$el).  The most frequently used patterns are fetching data for your component.
+            Это наиболее часто используемый хук, и у вас будет полный доступ к реактивному компоненту, шаблонам и визуализированной DOM (через. this.$el). Наиболее часто используемые шаблоны - это получение (fetch) данных для вашего компонента.
         ```javascript
         <div id="app">
-            <p>I’m text inside the component.</p>
+            <p>Я текст внутри компонента.</p>
         </div>
           new Vue({
             el: ‘#app’,
             mounted: function() {
-              console.log(this.$el.textContent); // I'm text inside the component.
+              console.log(this.$el.textContent); // Я текст внутри компонента.
             }
           })
         ```
-    3. **Updating (Diff & Re-render):**
-        Updating hooks are called whenever a reactive property used by your component changes, or something else causes it to re-render
+    3. **Обновление (различие и повторная визуализация) (Updating):**
+        Хуки обновления (Updating) вызываются всякий раз, когда изменяется реактивное свойство, используемое вашим компонентом, или что-то еще вызывает его повторную визуализацию.
         1. beforeUpdate:
-        The beforeUpdate hook runs after data changes on your component and the update cycle begins, right before the DOM is patched and re-rendered.
+        Хук beforeUpdate запускается после изменения данных в вашем компоненте и начинается цикл обновления, прямо перед тем, как DOM будет исправлен и повторно отрисован.
         ```javascript
         <div id="app">
           <p>{{counter}}</p>
         </div>
-        ...// rest of the code
+        ...// остальная часть кода
           new Vue({
             el: '#app',
             data() {
@@ -338,17 +338,17 @@ List of 300 VueJS Interview Questions
             },
 
             beforeUpdate: function() {
-              console.log(this.counter) // Logs the counter value every second, before the DOM updates.
+              console.log(this.counter) // Логирует значение счетчика каждую секунду перед обновлением DOM.
             }
           })
         ```
         2. updated:
-            This hook runs after data changes on your component and the DOM re-renders.
+            Этот хук запускается после изменения данных в вашем компоненте и повторного рендеринга DOM.
         ```javascript
         <div id="app">
           <p ref="dom">{{counter}}</p>
         </div>
-        ...//
+        ...// остальная часть кода
           new Vue({
             el: '#app',
             data() {
@@ -362,19 +362,19 @@ List of 300 VueJS Interview Questions
               }, 1000)
             },
             updated: function() {
-              console.log(+this.$refs['dom'].textContent === this.counter) // Logs true every second
+              console.log(+this.$refs['dom'].textContent === this.counter) // Логирует true каждую секунду
             }
           })
         ```
-    4. **Destruction (Teardown):**
-        Destruction hooks allow you to perform actions when your component is destroyed, such as cleanup or analytics sending.
+    4. **Разрушение (Destruction):**
+        Хуки уничтожения (Destruction) позволяют выполнять действия при уничтожении вашего компонента, такие как очистка или отправка аналитики.
         1. beforeDestroy:
-        `beforeDestroy` is fired right before teardown. If you need to cleanup events or reactive subscriptions, beforeDestroy would probably be the time to do it. Your component will still be fully present and functional.
+        `beforeDestroy` запускается прямо перед уничтоженим. Если вам нужно очистить события или реактивные подписки, то, вероятно, самое время это сделать. Ваш компонент останется полностью функциональным.
         ```javascript
         new Vue ({
           data() {
             return {
-              message: 'Welcome VueJS developers'
+              message: 'Добро пожаловать, разработчики VueJS'
             }
           },
 
@@ -384,66 +384,66 @@ List of 300 VueJS Interview Questions
           }
         })
         ```
-        2. destroyed:
-        This hooks is called after your component has been destroyed, its directives have been unbound and its event listeners have been removed.
+        1. destroyed:
+        Эти хуки вызываются после того, как ваш компонент был уничтожен, его директивы были освобождены, а его прослушиватели событий были удалены.
         ```javascript
         new Vue ({
             destroyed: function() {
-              console.log(this) // Nothing to show here
+              console.log(this) // Здесь нечего показывать
             }
           })
         ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-4.  ### What are the conditional directives?
-    VueJS provides set of directives to show or hide elements based on conditions. The available directives are: **v-if, v-else, v-else-if and v-show**
-    
-    **1. v-if:**  The v-if directive adds or removes DOM elements based on the given expression. For example, the below button will not show if isLoggedIn is set to false.
+4.  ### Что такое условные директивы?
+    VueJS предоставляет набор директив для отображения или скрытия элементов в зависимости от условий. Доступные директивы: **v-if, v-else, v-else-if and v-show**
+
+    **1. v-if:**  Директива v-if добавляет или удаляет элементы DOM на основе заданного выражения. Например, кнопка ниже не будет отображаться, если для isLoggedIn установлено значение false.
     ```javascript
     <button v-if="isLoggedIn">Logout</button>
     ```
-    You can also control multiple elements with a single v-if statement by wrapping all the elements in a `<template>` element with the condition. For example, you can have both label and button together conditionally applied,
+    Вы также можете управлять несколькими элементами с помощью одного оператора v-if, заключив все элементы в элемент `<template>` с условием. Например, вы можете условно применить одновременно метку и кнопку,
     ```javascript
     <template v-if="isLoggedIn">
       <label> Logout </button>
       <button> Logout </button>
     </template>
     ```
-    **2. v-else:**  This directive is used to display content only when the expression adjacent v-if resolves to false. This is similar to else block in any programming language to display alternative content and it is preceded by v-if or v-else-if block. You don't need to pass any value to this.
-    For example, v-else is used to display LogIn button if isLoggedIn is set to false(not logged in).
+    **2. v-else:**  Эта директива используется для отображения содержимого только тогда, когда выражение рядом с v-if принимает значение false. Это похоже на блок else в любом языке программирования для отображения альтернативного содержимого, и ему предшествует блок v-if или v-else-if. Вам не нужно передавать ему значение.
+    Например, v-else используется для отображения кнопки входа в систему, если для isLoggedIn установлено значение false (вход в систему отсутствует).
     ```javascript
     <button v-if="isLoggedIn"> Logout </button>
     <button v-else> Log In </button>
     ```
-    **3. v-else-if:** This directive is used when we need more than two options to be checked.
-    For example, we want to display some text instead of LogIn button when ifLoginDisabled property is set to true. This can be achieved through v-else statement.
+    **3. v-else-if:** Эта директива используется, когда нам нужно проверить более двух параметров.
+    Например, мы хотим отображать некоторый текст вместо кнопки входа в систему, когда для свойства ifLoginDisabled установлено значение true. Этого можно добиться с помощью оператора v-else.
     ```javascript
     <button v-if="isLoggedIn"> Logout </button>
     <label v-else-if="isLoginDisabled"> User login disabled </label>
     <button v-else> Log In </button>
     ```
 
-    **4. v-show:** This directive is similar to v-if but it renders all elements to the DOM and then uses the CSS display property to show/hide elements. This directive is recommended if the elements are switched on and off frequently.
+    **4. v-show:** Эта директива похожа на v-if, но она рендерит все элементы в DOM, а затем использует свойство display CSS для отображения / скрытия элементов. Эта директива рекомендуется, если элементы часто включаются и выключаются.
     ```javascript
     <span v-show="user.name">Welcome user,{{user.name}}</span>
     ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-5.  ### What is the difference between v-show and v-if directives?
-    Below are some of the main differences between between **v-show** and **v-if** directives,
+5.  ### В чем разница между директивами v-show и v-if?
+    Ниже приведены некоторые из основных различий между директивами **v-show** и **v-if**,
 
-    1. v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
-    2. v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
-    3. v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
-    4. v-if supports `<template>` tab but v-show doesn't support.
+    1. v-if отображает элемент в DOM, только если выражение является истинным, тогда как v-show отображает все элементы в DOM, а затем использует свойство display CSS для отображения / скрытия элементов на основе выражения.
+    2. v-if поддерживает директивы v-else и v-else-if, тогда как v-show не поддерживает директивы else.
+    3. v-if имеет более высокую стоимость переключения в производительности, в то время как v-show имеет более высокую начальную стоимость рендеринга. то есть v-show имеет преимущество в производительности, если элементы часто включаются и выключаются, тогда как v-if имеет преимущество, когда дело доходит до начального времени рендеринга.
+    4. v-if поддерживает `<template>` а вот v-show нет.
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-6.  ### What is the purpose of v-for directive?
-    The built-in v-for directive allows us to loop through items in an array or object. You can iterate on each element in the array or object.
-    1. **Array usage:**
+6.  ### Какова цель директивы v-for?
+    Встроенная директива v-for позволяет нам перебирать элементы в массиве или объекте. Вы можете выполнять итерацию по каждому элементу в массиве или объекте.
+    1. **Использование с массивами:**
     ```javascript
     <ul id="list">
       <li v-for="(item, index) in items">
@@ -461,9 +461,9 @@ List of 300 VueJS Interview Questions
       }
     })
     ```
-    You can also use `of` as the delimiter instead of `in`, similar to javascript iterators.
+    Вы также можете использовать `of` в качестве разделителя вместо` in`, подобно итераторам javascript.
 
-    2. **Object usage:**
+    2. **Использование с объектами:**
     ```javascript
     <div id="object">
       <div v-for="(value, key, index) of user">
@@ -483,23 +483,23 @@ List of 300 VueJS Interview Questions
     })
     ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-7.  ### What is vue instance?
-    Every Vue application works by creating a new Vue instance with the Vue function. Generally the variable vm (short for ViewModel) is used to refer Vue instance. You can create vue instance as below,
+7.  ### Что такое экземпляр vue?
+    Каждое приложение Vue работает путем создания нового экземпляра Vue с функцией Vue. Обычно переменная vm (сокращение от ViewModel) используется для ссылки на экземпляр Vue. Вы можете создать экземпляр vue, как показано ниже,
     ```javascript
     var vm = new Vue({
       // options
     })
     ```
-    As mentioned in the above code snippets, you need to pass options object. You can find the full list of options in the API reference.
+    Как упоминалось в приведенных выше фрагментах кода, вам необходимо передать объект options. Вы можете найти полный список опций в справочнике по API.
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-8.  ### How do you achieve conditional group of elements?
-    You can achieve conditional group of elements(toggle multiple elements at a time) by applying **v-if** directive on `<template>` element which works as invisible wrapper(no rendering) for group of elements.
+8.  ### Как добиться условной отрисовки группы элементов?
+    Вы можете создать условную группу элементов (переключать несколько элементов одновременно), применив директиву **v-if** к элементу `<template>`, который работает как невидимая оболочка (без рендеринга) для группы элементов.
 
-    For example, you can conditionally group user details based on valid user condition.
+    Например, вы можете условно сгруппировать сведения о пользователя на основе одного условия.
     ```javascript
     <template v-if="condition">
       <h1>Name</h1>
@@ -508,12 +508,13 @@ List of 300 VueJS Interview Questions
     </template>
     ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-9.  ### How do you reuse elements with key attribute?
-    Vue always tries to render elements as efficient as possible. So it tries to reuse the elements instead of building them from scratch. But this behavior may cause problems in few scenarios.
+9.  ### Как повторно использовать элементы с атрибутом key?
 
-    For example, if you try to render the same input element in both `v-if` and `v-else` blocks then it holds the previous value as below,
+    Vue всегда пытается отрендерить элементы максимально эффективными. Поэтому он пытается повторно использовать элементы вместо того, чтобы создавать их с нуля. Но такое поведение может вызвать проблемы в нескольких сценариях.
+
+    Например, если вы попытаетесь отобразить один и тот же элемент ввода в блоках `v-if` и` v-else`, тогда он будет содержать предыдущее значение, как показано ниже,
     ```javascript
     <template v-if="loginType === 'Admin'">
       <label>Admin</label>
@@ -524,7 +525,7 @@ List of 300 VueJS Interview Questions
       <input placeholder="Enter your name">
     </template>
     ```
-    In this case, it shouldn't reuse. We can make both input elements as separate by applying **key** attribute as below,
+    В этом случае его не следует использовать повторно. Мы можем сделать оба входных элемента отдельными, применив атрибут **key**, как показано ниже,
     ```javascript
         <template v-if="loginType === 'Admin'">
           <label>Admin</label>
@@ -535,18 +536,19 @@ List of 300 VueJS Interview Questions
           <input placeholder="Enter your name" key="user-name">
         </template>
     ```
-    The above code make sure both inputs are independent and doesn't impact each other.
+    Приведенный выше код гарантирует, что оба входа независимы и не влияют друг на друга.
 
-    **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Вернуться к началу](#table-of-contents)**
 
-10. ### Why should not use if and for directives together on the same element?
-    It is recommended not to use v-if on the same element as v-for. Because v-for directive has a higher priority than v-if.
+10. ### Почему не следует использовать директивы if и for вместе в одном элементе?
+    Не рекомендуется использовать v-if для того же элемента, что и v-for. Поскольку директива v-for имеет более высокий приоритет, чем v-if.
 
-    There are two cases where developers try to use this combination,
+    Есть два случая, когда разработчики пытаются использовать эту комбинацию:
 
-     1. To filter items in a list
 
-       For example, if you try to filter the list using v-if tag,
+     1. Чтобы отфильтровать элементы в списке
+
+       Например, когда вы попытаетесь отфильтровать список с помощью тега v-if,
 
        ```javascript
          <ul>
@@ -559,13 +561,11 @@ List of 300 VueJS Interview Questions
            <li>
          </ul>
        ```
-       This can be avoided by preparing the filtered list using computed property on the initial list
+       Этого можно избежать, подготовив отфильтрованный список с использованием вычисляемого свойства в исходном списке.
        ```javascript
          computed: {
            activeUsers: function () {
-             return this.users.filter(function (user) {
-               return user.isActive
-             })
+             return this.users.filter((user) => user.isActive)
            }
          }
          ...... //
@@ -578,9 +578,9 @@ List of 300 VueJS Interview Questions
            <li>
          </ul>
        ```
-     2. To avoid rendering a list if it should be hidden
+     2. Чтобы не рендерить (отображать) список, если он должен быть скрыт
 
-       For example, if you try to conditionally check if the user is to be shown or hidden
+       Например, если вы попытаетесь условно проверить, будет ли пользователь отображаться или скрыт
 
        ```javascript
          <ul>
@@ -593,7 +593,7 @@ List of 300 VueJS Interview Questions
            <li>
          </ul>
        ```
-       This can be solved by moving the condition to a parent by avoiding this check for each user
+       Это можно решить, переместив условие в родительский объект, избегая этой проверки для каждого пользователя.
        ```javascript
          <ul v-if="shouldShowUsers">
            <li
@@ -605,27 +605,27 @@ List of 300 VueJS Interview Questions
          </ul>
        ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-11.  ### Why do you need to use key attribute on for directive?
-     In order to track each node’s identity, and thus reuse and reorder existing elements, you need to provide a unique `key` attribute for each item with in `v-for` iteration. An ideal value for key would be the unique id of each item.
+11.  ### Почему нужно использовать атрибут key в директиве v-for?
+     Чтобы отслеживать идентичность каждого узла и, таким образом, повторно использовать и переупорядочивать существующие элементы, вам необходимо предоставить уникальный атрибут `key` для каждого элемента итерации `v-for`. Идеальным значением ключа был бы уникальный идентификатор каждого элемента.
 
-     Let us take an example usage,
+     Давайте возьмем пример,
      ```javascript
      <div v-for="item in items" :key="item.id">
        {{item.name}}
      </div>
      ```
-     Hence, It is always recommended to provide a key with v-for whenever possible, unless the iterated DOM content is simple.
+     Следовательно, всегда рекомендуется по возможности предоставлять key с v-for, если только повторяющееся содержимое DOM не является простым.
 
-     **Note:** You shouldn’t use non-primitive values like objects and arrays as v-for keys. Use string or numeric values instead.
+     **Примечание:** Не следует использовать непримитивные значения, такие как объекты и массивы, в качестве ключей (key) v-for. Вместо этого используйте строковые или числовые значения.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-12.  ### What are the array detection mutation methods?
-     As the name suggests, mutation methods modifies the original array.
+12.  ### Каковы методы обнаружения мутации массива?
+     Как следует из названия, методы мутации изменяют исходный массив.
 
-     Below are the list of array mutation methods which trigger view updates.
+     Ниже приведен список методов мутации массива, запускающих обновления представления,
      1. push()
      2. pop()
      3. shift()
@@ -633,47 +633,46 @@ List of 300 VueJS Interview Questions
      5. splice()
      6. sort()
      7. reverse()
-     
-     If you perform any of the above mutation method on the list then it triggers view update. For example, push method on array named 'items' trigger a view update,
+
+     Если вы выполните любой из перечисленных выше методов мутации в списке, это приведет к обновлению представления. Например, метод push в массиве с именем 'items' запускает обновление представления,
      ```javascript
      vm.todos.push({ message: 'Baz' })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-13.  ### What are the array detection non-mutation methods?
-     The methods which do not mutate the original array but always return a new array are called non-mutation methods.
+13.  ### Какие существуют методы массива без мутаций?
+     Методы, которые не изменяют исходный массив, но всегда возвращают новый массив, называются методами без мутации.
 
-     Below are the list of non-mutation methods,
+     Ниже приведен список немутационных методов,
      1. filter()
      2. concat()
      3. slice()
+     4. map()
 
-     For example, lets take a todo list where it replaces the old array with new one based on status filter,
+     Например, возьмем список задач, в котором старый массив заменяется новым на основе фильтра статуса,
      ```javascript
-     vm.todos = vm.todos.filter(function (todo) {
-       return todo.status.match(/Completed/)
-     })
+     vm.todos = vm.todos.filter((todo) => todo.status.match(/Completed/))
      ```
-     This approach won't re-render the entire list due to VueJS implementation.
+     Этот подход не будет повторно перерендировать весь список из-за реализации VueJS.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-14.  ### What are the caveats of array changes detection?
-     Vue cannot detect changes for the array in the below two cases,
+14.  ### В каких случаях Vue не может обнаружить изменения в массиве?
+     Vue не может обнаружить изменения в массиве в следующих двух случаях:
 
-     1. When you directly set an item with the index,For example,
+     1. Когда вы напрямую устанавливаете элемент с индексом, например,
         ```javascript
         vm.todos[indexOfTodo] = newTodo
         ```
-     2. When you modify the length of the array, For example,
+     2. Когда вы изменяете длину массива, например,
           ```javascript
           vm.todos.length = todosLength
           ```
 
-     You can overcome both the caveats using `set` and `splice` methods, Let's see the solutions with an examples,
-     
-     **First use case solution**
+     Вы можете преодолеть оба предостережения, используя методы `set` и` splice`. Давайте посмотрим на решения на примерах,
+
+     **Решение для первого варианта использования**
      ```javascript
      // Vue.set
      Vue.set(vm.todos, indexOfTodo, newTodoValue)
@@ -681,17 +680,16 @@ List of 300 VueJS Interview Questions
      // Array.prototype.splice
      vm.todos.splice(indexOfTodo, 1, newTodoValue)
      ```
-     **Second use case solution**
+     **Решение для второго варианта использования**
      ```javascript
      vm.todos.splice(todosLength)
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-15.  ### What are the caveats of object changes detection?
-     Vue cannot detect changes for the object in property addition or deletion.
+15.  ### В каких случаях Vue не может обнаружить изменения в объекте?
+     Vue не может обнаружить изменения объекта при добавлении или удалении свойств.
 
-     Lets take an example of user data changes,
      ```javascript
      var vm = new Vue({
        data: {
@@ -705,32 +703,32 @@ List of 300 VueJS Interview Questions
 
      vm.email = john@email.com // `vm.email` is NOT reactive
      ```
-     You can overcome this scenario using the Vue.set(object, key, value) method or Object.assign(),
+     Вы можете преодолеть этот сценарий, используя метод Vue.set(object, key, value) или Object.assign(),
      ```javascript
      Vue.set(vm.user, 'email', 'john@email.com');
-     // (or)
+     // (или)
      vm.user = Object.assign({}, vm.user, {
        email: john@email.com
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-16.  ### How do you use v-for directive with a range?
-     You can also use integer type(say 'n') for `v-for` directive which repeats the element many times.
+16.  ### Как использовать директиву v-for с диапазоном?
+     Вы также можете использовать целочисленный тип (скажем, 'n') для директивы `v-for`, которая повторяет элемент много раз.
      ```javascript
      <div>
        <span v-for="n in 20">{{ n }} </span>
      </div>
      ```
-     It displays the number 1 to 20.
+     Он отображает числа от 1 до 20.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-17.  ### How do you use v-for directive on template?
-     Just similar to v-if directive on template, you can also use a `<template>` tag with v-for directive to render a block of multiple elements.
+17.  ### Как использовать директиву v-for в шаблоне?
+     Подобно директиве v-if в шаблоне, вы также можете использовать тег `<template>` с директивой v-for для визуализации блока из нескольких элементов.
 
-     Let's take a todo example,
+     Возьмем пример задачи c todo,
      ```javascript
      <ul>
        <template v-for="todo in todos">
@@ -740,58 +738,57 @@ List of 300 VueJS Interview Questions
      </ul>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-18.  ### How do you use event handlers?
-     You can use event handlers in vue similar to plain javascript. The method calls also support the special $event variable.
+18.  ### Как вы используете обработчики событий?
+     Вы можете использовать обработчики событий в vue, аналогично обычному javascript. Вызов метода также поддерживает специальную переменную $event.
      ```javascript
-     <button v-on:click="show('Welcome to VueJS world', $event)">
+     <button v-on:click="show('Добро пожаловать в мир VueJS', $event)">
        Submit
      </button>
 
      methods: {
        show: function (message, event) {
-         // now we have access to the native event
+         // теперь у нас есть доступ к собственному событию
          if (event) event.preventDefault()
          console.log(message);
        }
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-19.  ### What are the event modifiers provided by vue?
-     Normally, javascript provides `event.preventDefault() or event.stopPropagation()` inside event handlers. You can use methods provided by vue, but these methods are meant for data logic instead of dealing with DOM events. Vue provides below event modifiers for v-on and these modifiers are directive postfixes denoted by a dot.
+19.  ### Какие модификаторы событий предоставляет vue?
+     Обычно javascript предоставляет `event.preventDefault() или event.stopPropagation()` внутри обработчиков событий. Vue предоставляет модификаторы событий для v-on, и эти модификаторы представляют собой постфиксы директив, обозначенные точкой,
      1. .stop
      2. .prevent
      3. .capture
      4. .self
      5. .once
      6. .passive
-     
-     Let's take an example of stop modifier,
+
+     Возьмем для примера модификатор stop,
      ```html
-     <!-- the click event's propagation will be stopped -->
+     <!-- распространение события клика (propagation) будет остановлено -->
      <a v-on:click.stop="methodCall"></a>
      ```
      You can also chain modifiers as below,
      ```html
-     <!-- modifiers can be chained -->
+     <!-- модификаторы могут быть связаны -->
      <a v-on:click.stop.prevent="doThat"></a>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-20.  ### What are key modifiers?
-     Vue supports key modifiers on `v-on` for handling keyboard events. Let's take an example of keyup event with enter keycode.
+20.  ### Что такое модификаторы для обработки событий клавиатуры?
+     Vue поддерживает ключевые модификаторы на `v-on` для обработки событий клавиатуры. Давайте возьмем пример события нажатия клавиши с вводом кода клавиши.
      ```html
-     <!-- only call `vm.show()` when the `keyCode` is 13 -->
+     <!-- вызовите `vm.show()` только когда `keyCode` равен 13 -->
      <input v-on:keyup.13="show">
      ```
-     Remembering all the key codes is really difficult. It supports the full list of key codes aliases
      1. .enter
      2. .tab
-     3. .delete (captures both “Delete” and “Backspace” keys)
+     3. .delete (захватывает клавиши “Delete” и “Backspace”)
      4. .esc
      5. .space
      6. .up
@@ -799,21 +796,21 @@ List of 300 VueJS Interview Questions
      8. .left
      9. .right
 
-     Now the above keyup code snippet can be written with aliases as follows,
+     Теперь приведенный выше фрагмент кода клавиатуры можно записать с псевдонимами следующим образом:
      ```vue
      <input v-on:keyup.enter="submit" />
-     <!-- OR with shorthand notation -->
+     <!-- ИЛИ со сокращенным обозначением -->
      <input @keyup.enter="submit" />
      ```
 
-     **Note:** The use of keyCode events is deprecated and may not be supported in new browsers.
+     **Примечание:** Использование событий keyCode устарело и может не поддерживаться в новых браузерах.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-21.  ### How do you define custom key modifier aliases?
-     You can define custom key modifier aliases via the global `config.keyCodes`. There are few guidelines for the properties
-     1. You can't use camelCase. Instead you can use kebab-case with double quotation marks
-     2. You can define multiple values in an array format
+21.  ### Как вы определяете псевдонимы пользовательских (кастомных) модификаторов клавиш?
+     Вы можете определить псевдонимы пользовательских модификаторов клавиш через глобальный файл `config.keyCodes`. Есть несколько рекомендаций по свойствам
+     1. Вы не можете использовать camelCase. Вместо этого можно использовать kebab-case с двойными кавычками
+     2. Вы можете определить несколько значений в формате массива
      ```javascript
      Vue.config.keyCodes = {
        f1: 112,
@@ -822,30 +819,30 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-22.  ### What are the supported System Modifier Keys?
-     Vue supports below modifiers to trigger mouse or keyboard event listeners when the corresponding key is pressed,
+22.  ### Какие поддерживаются Системные Модификаторы Клавиш?
+     Vue поддерживает приведенные ниже модификаторы для запуска прослушивателей событий мыши или клавиатуры при нажатии соответствующей клавиши.
      1. .ctrl
      2. .alt
      3. .shift
      4. .meta
 
-     Lets take an example of control modifier with click event,
+     Давайте рассмотрим пример модификатора управления с событием клика,
      ```vue
      <!-- Ctrl + Click -->
      <div @click.ctrl="doSomething">Do something</div>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-23.  ### What are the supported Mouse Button Modifiers?
-     Vue supports below mouse button modifiers
+23.  ### Какие поддерживаются модификаторы кнопок мыши?
+     Vue поддерживает следующие модификаторы кнопок мыши:
      1. .left
      2. .right
      3. .middle
 
-     For example, the usage of `.right` modifier as below
+     Например, использование модификатора `.right`, как показано ниже
      ```vue
       <button
         v-if="button === 'right'"
@@ -854,45 +851,47 @@ List of 300 VueJS Interview Questions
       />
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-24.  ### How do you implement two-way binding?
-     You can use the `v-model` directive to create two-way data bindings on form input, textarea, and select elements.
+24.  ### Как реализовать двустороннюю привязку?
+     Вы можете использовать директиву `v-model` для создания двусторонних привязок данных для ввода формы, текстового поля и элементов выбора.
 
-     Lets take an example of it using input component,
+     Давайте рассмотрим пример с использованием компонента ввода (input),
      ```vue
      <input v-model="message" placeholder="Enter input here">
      <p>The message is: {{ message }}</p>
      ```
-     Remember, v-model will ignore the initial `value`, `checked` or `selected` attributes found on any form elements. So it always use the Vue instance data as the source of truth.
+     Помните, что v-model будет игнорировать начальные атрибуты value, checked или selected, найденные в любых элементах формы. Поэтому он всегда использует данные экземпляра Vue как источник истины.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-25.  ### What are the supported modifiers on model?
-     There are three modifiers supported for v-model directive.
+25.  ### Какие модификаторы поддерживаются в модели (v-model)?
+     Директива v-model поддерживает три модификатора.
 
-     **1. lazy:** By default, v-model syncs the input with the data after each input event. You can add the lazy modifier to instead sync after change events.
+     **1. lazy:** По умолчанию v-model синхронизирует ввод с данными после каждого события ввода. Вместо этого вы можете добавить модификатор lazy для синхронизации после событий изменения.
      ```vue
-     <!-- synced after "change" instead of "input" -->
+     <!-- синхронизируется после "изменения" ("change") вместо "ввода" ("input") -->
      <input v-model.lazy="msg" >
      ```
-     **2. number:** If you want user input to be automatically typecast as a number, you can add the number modifier to your v-model. Even with type="number", the value of HTML input elements always returns a string. So, this typecast modifier is required.
+     **2. number:** Если вы хотите, чтобы пользовательский ввод автоматически приводился к типу числа, вы можете добавить модификатор числа в вашу v-model. Даже с type = "number" значение входных элементов HTML всегда возвращает строку. Поэтому, этот модификатор приведения типов является обязательным.
      ```vue
      <input v-model.number="age" type="number">
      ```
-     **3. trim:** If you want whitespace from user input to be trimmed automatically, you can add the trim modifier to your v-model.
+     **3. trim:** Если вы хотите, чтобы пробелы из пользовательского ввода были обрезаны автоматически, вы можете добавить модификатор обрезки в свою v-model.
      ```vue
      <input v-model.trim="msg">
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-26.  ### What are components and give an example?
+26.  ### Какие бывают компоненты и приведите пример?
+     Компоненты - это многократно используемые экземпляры Vue с именем. Они принимают те же параметры, что и новый Vue, такие как данные (data), вычисляемые свойства (), слежение (watch), методы (methods) и жизненного циклы (lifecycle hooks), за исключением нескольких параметров, зависящих от корневого каталога, таких как el.
+
      Components are reusable Vue instances with a name. They accept the same options as new Vue, such as data, computed, watch, methods, and lifecycle hooks(except few root-specific options like el).
 
-     Lets take an example of counter component,
+     Давайте рассмотрим пример компонента счетчика,
      ```javascript
-     // Define a new component called button-counter
+     // Определяем новый компонент под названием button-counter
      Vue.component('button-counter', {
        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
        data: function () {
@@ -902,7 +901,7 @@ List of 300 VueJS Interview Questions
        },
      })
      ```
-     Let's use this component inside a root Vue instance created with new Vue
+     Давайте использовать этот компонент внутри корневого экземпляра Vue, созданного с new Vue
      ```javascript
      <div id="app">
        <button-counter></button-counter>
@@ -911,37 +910,37 @@ List of 300 VueJS Interview Questions
      var vm = new Vue({ el: '#app' });
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-27.  ### What are props?
-     Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. You can pass those list of values as props option and use them as similar to data variables in template.
+27.  ### Что такое props (входные параметры)?
+     Props - это настраиваемые атрибуты, которые можно зарегистрировать в компоненте. Когда значение передается в атрибут props (входного параметра), оно становится свойством этого экземпляра компонента. Вы можете передать этот список значений как параметр props и использовать их как переменные данных в шаблоне.
      ```javascript
      Vue.component('todo-item', {
        props: ['title'],
        template: '<h2>{{ title }}</h2>'
      })
      ```
-     Once the props are registered, you can pass them as custom atrtributes.
+     После регистрации входного парамера вы можете передать их как пользовательские атрибуты.
      ```vue
-     <todo-item title="Learn Vue conceptsnfirst"></todo-item>
+     <todo-item title="Сначала изучите концепции Vue"></todo-item>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-28.  ### When component needs a single root element?
-     Every component must have a single root element **when template has more than one element**. In this case, you need to wrap the elements with a parent element.
+28.  ### Когда компоненту нужен единственный корневой элемент?
+     Каждый компонент должен иметь единственный корневой элемент, **если в шаблоне более одного элемента**, в этом случае вам нужно обернуть элементы родительским элементом.
      ```vue
      <div class="todo-item">
        <h2>{{ title }}</h2>
        <div v-html="content"></div>
      </div>
      ```
-     Otherwise there will an error throwing, saying that "Component template should contain exactly one root element...".
+     В противном случае будет выдана ошибка, в которой говорится, что "Component template should contain exactly one root element..." («Шаблон компонента должен содержать ровно один корневой элемент ...»).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-29.  ### How do you communicate from child to parent using events?
-     If you want child wants to communicate back up to the parent, then emit an event from child using `$emit` object to parent,
+29.  ### Как можно передавать события от ребенка к родителю?
+     Если вы хотите, чтобы компонент ребенок имел возможность общаться с родителем, то нужно отправить событие от дочернего элемента родительскому, используя объект `$emit`,
      ```javascript
      Vue.component('todo-tem', {
        props: ['todo'],
@@ -956,7 +955,7 @@ List of 300 VueJS Interview Questions
        `
      })
      ```
-     Now you can use this todo-item in parent component to access the count value.
+     Теперь вы можете использовать этот todo-item в родительском компоненте для доступа к значению счетчика.
      ```vue
      <ul v-for="todo in todos">
        <li>
@@ -970,15 +969,15 @@ List of 300 VueJS Interview Questions
      <span> Total todos count is {{total}}</span>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-30.  ### How do you implement model on custom input components?
-     The custom events can also be used to create custom inputs that work with v-model. The `<input>` inside the component must follow below rules,
+30.  ### Как можно реализовать модель на пользовательских компонентах ввода?
+     Пользовательские события также могут использоваться для создания пользовательских входных данных, которые работают с v-model. `<input>` внутри компонента должен соответствовать следующим правилам:
 
-     1. Bind the value attribute to a value prop
-     2. On input, emit its own custom input event with the new value.
+     1. Свяжите атрибут value с значением входного параметра (prop);
+     2. При вводе генерировать собственное пользовательское событие ввода (emit) с новым значением;
 
-     Let's take a custom-input component as an example,
+     В качестве примера возьмем компонент настраиваемого ввода (кастомный инпут),
         ```javascript
         Vue.component('custom-input', {
           props: ['value'],
@@ -990,17 +989,17 @@ List of 300 VueJS Interview Questions
           `
         })
         ```
-     Now you can use `v-model` with this component,
+     Теперь вы можете использовать `v-model` с этим компонентом,
       ```vue
       <custom-input v-model="searchInput"></custom-input>
       ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-31.  ### What are slots?
-     Vue implements a content distribution API using the <slot> element to serve as distribution outlets for content created after after the current Web Components spec draft.
+31.  ### Что такое слоты (slots)?
+     Vue реализует API распространения контента, используя элемент <slot>, который служит в качестве точек распространения для контента, созданного после текущего черновика спецификации веб-компонентов.
 
-     Let's create an alert component with slots for content insertion,
+     Создадим компонент оповещения со слотами для вставки контента,
      ```javascript
      Vue.component('alert', {
        template: `
@@ -1011,25 +1010,25 @@ List of 300 VueJS Interview Questions
        `
      })
      ```
-     Now you can insert dynamic content as below,
+     Теперь вы можете вставить динамический контент, как показано ниже,
      ```vue
      <alert>
-       There is an issue with in application.
+       В приложении есть проблема.
      </alert>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-32.  ### What is global registration in components?
-     The components which are globally registered can be used in the template of any root Vue instance (new Vue) created after registration.
+32.  ### Что такое глобальная регистрация в компонентах?
+     Компоненты, которые зарегистрированы глобально, могут использоваться в шаблоне любого корневого экземпляра Vue (new Vue), созданного после регистрации.
 
-     In the global registration, the components created using Vue.component as below,
+     При глобальной регистрации, компоненты создаются с использованием Vue.component, как показано ниже,
      ```javascript
      Vue.component('my-component-name', {
        // ... options ...
      })
      ```
-     Let's take multiple components which are globally registered in the vue instance,
+     Давайте возьмем несколько компонентов, которые глобально зарегистрированы в экземпляре vue,
      ```javascript
      Vue.component('component-a', { /* ... */ })
      Vue.component('component-b', { /* ... */ })
@@ -1037,7 +1036,7 @@ List of 300 VueJS Interview Questions
 
      new Vue({ el: '#app' })
      ```
-     The above components can be used in the vue instance,
+     Вышеупомянутые компоненты можно использовать в экземпляре vue,
      ```vue
      <div id="app">
        <component-a></component-a>
@@ -1045,30 +1044,30 @@ List of 300 VueJS Interview Questions
        <component-c></component-c>
      </div>
      ```
-     Remember that the components can be used in subcomponents as well.
+     Помните, что компоненты также можно использовать в подкомпонентах.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-33.  ### Why do you need local registration?
-     Due to global registration, even if you don't use the component it could still be included in your final build. So it will create unnecessary javascript in the application. This can be avoided using local registration with the below steps,
-     1. First you need to define your components as plain JavaScript objects
+33.  ### Зачем нужна локальная регистрация?
+     Благодаря глобальной регистрации, даже если вы не используете компонент, он все равно может быть включен в вашу окончательную сборку. Таким образом, это создаст ненужный javascript в приложении. Этого можно избежать, используя локальную регистрацию, выполнив следующие действия:
+     1. Сначала вам нужно определить свои компоненты как простые объекты JavaScript.
          ```javascript
-         var ComponentA = { /* ... */ }
-         var ComponentB = { /* ... */ }
-         var ComponentC = { /* ... */ }
+         const ComponentA = { /* ... */ }
+         const ComponentB = { /* ... */ }
+         const ComponentC = { /* ... */ }
          ```
-         Locally registered components will not be available in sub components. In this case, you need to add them in components section
+         Локально зарегистрированные компоненты не будут доступны в подкомпонентах. В этом случае вам необходимо добавить их в раздел компонентов
          ```javascript
-         var ComponentA = { /* ... */ }
+         const ComponentA = { /* ... */ }
 
-         var ComponentB = {
+         const ComponentB = {
            components: {
              'component-a': ComponentA
            },
            // ...
          }
          ```
-     2. You can use the components in the components section of the vue instance,
+     2. Вы можете использовать компоненты в разделе компонентов экземпляра vue,
          ```javascript
          new Vue({
            el: '#app',
@@ -1079,12 +1078,12 @@ List of 300 VueJS Interview Questions
          })
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-34.  ### What is the difference between local and global registration in module system?
-     In **local registration**, you need to create each component in components folder(optional but it is recommended) and import them in another component file components section.
+34.  ### В чем разница между локальной и глобальной регистрацией в модульной системе?
+     В **локальной регистрации** вам необходимо создать каждый компонент в папке компонентов (необязательно, но рекомендуется) и импортировать их в другой компонент в раздел компонентов.
 
-     Let's say you want to register component A and B in component C, the configuration seems as below,
+     Допустим, вы хотите зарегистрировать компоненты A и B в компоненте C, конфигурация выглядит так,
      ```javascript
      import ComponentA from './ComponentA'
      import ComponentB from './ComponentC'
@@ -1097,9 +1096,9 @@ List of 300 VueJS Interview Questions
        // ...
      }
      ```
-     Now both ComponentA and ComponentB can be used inside ComponentC‘s template.
+     Теперь и компонент A, и компонент B можно использовать в шаблоне компонента C.
 
-     In **global registration**, you need to export all common or base components in a separate file. But some of the popular bundlers like `webpack` make this process simpler by using `require.context` to globally register base components in the below entry file(one-time).
+     В **глобальной регистрации** вам необходимо экспортировать все общие или базовые компоненты в отдельный файл. Но некоторые популярные бандлеры, такие как `webpack`, упрощают этот процесс, используя `require.context` для глобальной регистрации базовых компонентов в приведенном ниже файле записи,
 
      ```javascript
      import Vue from 'vue'
@@ -1107,41 +1106,41 @@ List of 300 VueJS Interview Questions
      import camelCase from 'lodash/camelCase'
 
      const requireComponent = require.context(
-       // The relative path of the components folder
+       // Относительный путь к папке компонентов
        './components',
-       // Whether or not to look in subfolders
+       // Нужно ли смотреть в подпапки
        false,
-       // The regular expression used to match base component filenames
+       // Регулярное выражение, используемое для сопоставления имен файлов базовых компонентов
        /Base[A-Z]\w+\.(vue|js)$/
      )
 
      requireComponent.keys().forEach(fileName => {
-       // Get component config
+       // Получить конфигурацию компонента
        const componentConfig = requireComponent(fileName)
 
-       // Get PascalCase name of component
+       // Получить PascalCase имя компонента
        const componentName = upperFirst(
          camelCase(
-           // Strip the leading `./` and extension from the filename
+           // Удалите начальный `. /` И расширение из имени файла
            fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
          )
        )
 
-       // Register component globally
+       // Зарегистрировать компонент глобально
        Vue.component(
          componentName,
-         // Look for the component options on `.default`, which will
-         // exist if the component was exported with `export default`,
-         // otherwise fall back to module's root.
+         // Ищите параметры компонента в `.default`, которые будут существовать, если компонент был
+         // экспортирован с помощью` export default`, в противном случае вернитесь к корню модуля.
          componentConfig.default || componentConfig
        )
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-35.  ### What are possible prop types?
-     You can declare props with type or without type. But it is recommended to have prop types because it provides the documentation for the component and warns the developer for any incorrect data type being assigned.
+35.  ### Какие бывают типы входных параметров (props)?
+     Вы можете объявлять входные параметры с типом или без него. Но рекомендуется иметь типы, потому что они предоставляют документацию для компонента и предупреждают разработчика о любом назначенном неправильном типе данных.
+
      ```javascript
      props: {
        name: String,
@@ -1151,16 +1150,17 @@ List of 300 VueJS Interview Questions
        address: Object
      }
      ```
-     As mentioned in the above code snippet, you can list props as an object, where the properties’ names and values contain the prop names and types, respectively.
+     Как упоминалось в приведенном выше фрагменте кода, вы можете указать свойства как объект, где имена и значения свойств содержат имена и типы свойств, соответственно.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-36.  ### What is the data flow followed by props?
-     All props follows a one-way-down binding between the child property and the parent one. i.e, When the parent property is updated then that latest prop value will be passed down to the child, but not the otherway(child to parent) around. The child component should not mutate the prop otherwise it throws a warning in the console.
-     The possible mutation cases can be solved as below,
-     1. When you try to use parent prop as initial value for child property:
+36.  ### Как передается поток данных в props'ах (входные данные)?
+     Все props'ы следуют односторонней привязке между дочерним и родительским свойством. то есть, когда родительское свойство обновляется, последнее значение props'a будет передано дочернему компоненту, но не другим способом (от дочернего к родительскому). Дочерний компонент не должен изменять props, иначе в консоли появится предупреждение.
+     
+     Возможные случаи мутации могут быть решены следующим образом,
+     1. Когда вы пытаетесь использовать родительский props в качестве начального значения для дочернего свойства:
 
-         In this case you can define a local property in child component and assign parent value as initial value
+         В этом случае вы можете определить локальное свойство в дочернем компоненте и назначить родительское значение props'a в качестве начального значения.
          ```javascript
          props: ['defaultUser'],
          data: function () {
@@ -1169,9 +1169,9 @@ List of 300 VueJS Interview Questions
            }
          }
          ```
-     2. When you try to transform the parent prop:
-     
-         You can define a computed property using the prop’s value,
+     2. Когда вы пытаетесь преобразовать родительский props:
+
+         Вы можете определить вычисляемое свойство, используя значение свойства,
          ```javascript
          props: ['environment'],
          computed: {
@@ -1181,16 +1181,16 @@ List of 300 VueJS Interview Questions
          }
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-37.  ### What are non prop attributes?
-     A non-prop attribute is an attribute that is passed to a component, but does not have a corresponding prop defined.
+37.  ### Что такое non-prop атрибуты?
+     Атрибут non-prop - это атрибут, который передается компоненту, но для него не определено соответствующее свойство (prop).
 
-     For example, If you are using a 3rd-party custom-input component that requires a `data-tooltip` attribute on the input then you can add this attribute to component instance,
+     Например, если вы используете сторонний компонент кастомный ввод (custom-input), для которого требуется атрибут data-tooltip на входе, вы можете добавить этот атрибут в экземпляр компонента,
      ```vue
      <custom-input data-tooltip="Enter your input" />
      ```
-     If you try to pass the props from parent component the child props with the same names will be overridden. But props like `class` and `style` are exception to this, these values will be merged in the child component.
+     Если вы попытаетесь передать входные параметры (props) родительского компонента, дочерние реквизиты с такими же именами будут переопределены. Но такие свойства, как `class` и` style`, являются исключением, эти значения будут объединены в дочернем компоненте,
      ```vue
      <!-- Child component -->
      <input type="date" class="date-control">
@@ -1199,42 +1199,41 @@ List of 300 VueJS Interview Questions
      <custom-input class="custom-class" />
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-38.  ### Describe about validations available for props?
-     Vue provides validations such as types, required fields, default values along with customized validations. You can provide an object with validation requirements to the value of props as below,
+38.  ### Расскажите о доступных валидациях для props'ов?
+     Vue предоставляет такие проверки, как типы, обязательные поля, значения по умолчанию, а также настраиваемые проверки. Вы можете предоставить объекту требования к проверке значения props, как показано ниже,
 
-     Let's take an example of user profile Vue component with possible validations,
+     Давайте возьмем пример компонента Vue профиля пользователя с возможными проверками,
      ```javascript
      Vue.component('user-profile', {
        props: {
-         // Basic type check (`null` matches any type)
+         // Проверка базового типа (null соответствует любому типу)
          age: Number,
-         // Multiple possible types
+         // Несколько возможных типов
          identityNumber: [String, Number],
-         // Required string
+         // Обязательная строка
          email: {
            type: String,
            required: true
          },
-         // Number with a default value
+         // Число со значением по умолчанию
          minBalance: {
            type: Number,
            default: 10000
          },
-         // Object with a default value
+         // Объект со значением по умолчанию
          message: {
            type: Object,
-           // Object or array defaults must be returned from
-           // a factory function
+           // значения по умолчанию для объекта или массива должны быть возвращены из функции
            default: function () {
-             return { message: 'Welcome to Vue' }
+             return { message: 'Добро пожаловать во Vue' }
            }
          },
-         // Custom validator function
+         // Пользовательская (кастомная) функция валидатора
          location: {
            validator: function (value) {
-             // The value must match one of these strings
+             // Значение должно соответствовать одной из этих строк
              return ['India', 'Singapore', 'Australia'].indexOf(value) !== -1
            }
          }
@@ -1242,12 +1241,12 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-39.  ### How do you customize model directive for a component?
-     The v-model directive on a component uses **value** as the prop and **input** as the event, but some input types such as `checkboxes` and `radio buttons` may need to use the value attribute for a server side value. In this case, it is preferred to customize model directive.
+39.  ### Как можно кастомизировать директиву v-model для компонента?
+     Директива v-model в компоненте использует **value** в качестве props и **input** в качестве события, но для некоторых типов ввода, таких как `checkboxes` и` radio buttons`, может потребоваться использование атрибута value для значение на стороне сервера. В этом случае предпочтительнее настроить (кастомизировать) директиву v-model.
 
-     Let's take an example of checkbox component,
+     Рассмотрим пример чекбокс компонент,
      ```javascript
      Vue.component('custom-checkbox', {
        model: {
@@ -1266,63 +1265,63 @@ List of 300 VueJS Interview Questions
        `
      })
      ```
-     Now you can use v-model on this customized component as below,
+     Теперь вы можете использовать v-model для этого настроенного компонента, как показано ниже,
      ```vue
      <custom-checkbox v-model="selectFramework"></custom-checkbox>
      ```
-     The selectFramework property will be passed to the checked prop and same property will be updated when custom checkbox component emits a change event with a new value.
+     Свойство selectFramework будет передано проверяемому props'у, и это же свойство будет обновлено, когда пользовательский компонент флажка испускает эмитить изменения с новым значением.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-40.  ### What are the possible ways to provide transitions?
-     There are many ways Vue provides transition effects when items are inserted, updated, or removed from the DOM.
+40.  ### Каковы возможные способы предоставления переходов (transitions)?
+     Есть много способов, которыми Vue предоставляет эффекты перехода, когда элементы вставляются, обновляются или удаляются из DOM.
 
-     Below are the possible ways,
-     1. Automatically apply classes for CSS transitions and animations
-     2. Integrate 3rd-party CSS animation libraries. For example, Animate.css
-     3. Use JavaScript to directly manipulate the DOM during transition hooks
-     4. Integrate 3rd-party JavaScript animation libraries. For example, Velocity.js
+     Ниже приведены возможные способы,
+     1. Автоматически применять классы для переходов и анимации CSS
+     2. Интеграция сторонних библиотек анимации CSS. Например, Animate.css.
+     3. Использовать JavaScript для непосредственного управления DOM во время переходов.
+     4. Интеграция сторонних библиотек анимации JavaScript. Например, Velocity.js
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-41.  ### What is vue router and their features?
-     Vue Router is a official routing library for single-page applications designed for use with the Vue.js framework.
+41.  ### Что такое vue router и его особенности?
+     Vue Router - это официальная библиотека маршрутизации для одностраничных приложений, разработанная для использования с фреймворком Vue.js.
 
-     Below are their features,
-     1. Nested route/view mapping
-     2. Modular, component-based router configuration
-     3. Route params, query, wildcards
-     4. View transition effects powered by Vue.js' transition system
-     5. Fine-grained navigation control
-     6. Links with automatic active CSS classes
-     7. HTML5 history mode or hash mode, with auto-fallback in IE9
-     8. Restore scroll position when going back in history mode
+     Ниже приведены их особенности,
+     1. Вложенное отображение маршрута/представления
+     2. Модульная конфигурация маршрутизатора на основе компонентов
+     3. Параметры маршрута, запрос, подстановочные знаки
+     4. Эффекты перехода на основе системы перехода Vue.js (transitions)
+     5. Детализированное управление навигацией
+     6. Ссылки с автоматическими активными классами CSS
+     7. Режим истории HTML5 или режим хеширования с автоматическим откатом в IE9
+     8. Восстановить положение прокрутки (scroll) при возврате в режим истории
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-42.  ### What are the steps to use vue router and give an example?
-     It is easy to integrate vue router in the vue application.
+42.  ### Что нужно сделать, чтобы использовать vue router и приведите пример?
+     Vue router легко интегрировать в приложение vue.
 
-     Let us see the example with step by step instructions.
+     Давайте посмотрим на пример с пошаговой инструкцией.
 
-     **Step 1:** Configure router link and router view in the template
+     **Шаг 1:** Настройте ссылку и вид маршрутизатора (router link и router view) в шаблоне
         ```vue
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
         <div id="app">
-          <h1>Welcome to Vue routing app!</h1>
+          <h1>Добро пожаловать в приложение маршрутизации Vue!</h1>
           <p>
-            <!-- use router-link component for navigation using `to` prop. It rendered as an `<a>` tag -->
-            <router-link to="/home">Home</router-link>
-            <router-link to="/services">Services</router-link>
+            <!-- использовать компонент router-link для навигации с помощью входного параметра (prop) `to`. Он отображается как тег <a> -->
+            <router-link to="/home">Главная</router-link>
+            <router-link to="/services">Услуги</router-link>
           </p>
-          <!-- route outlet in which component matched by the route will render here -->
+          <!-- компонент, соответствующий маршруту, будет отображаться здесь -->
           <router-view></router-view>
         </div>
         ```
 
-     **Step 2:** Import Vue and VueRouter packages and then apply router
+     **Step 2:** Импортируйте пакеты Vue и VueRouter, а затем примените маршрутизатор
 
         ```javascript
         import Vue from 'vue';
@@ -1330,39 +1329,39 @@ List of 300 VueJS Interview Questions
 
         Vue.use(VueRouter)
         ```
-     **Step 3:** Define or import route components.
+     **Step 3:** Определите или импортируйте компоненты маршрута.
         ```javascript
-        const Home = { template: '<div>Home</div>' }
-        const Services = { template: '<div>Services</div>' }
+        const Home = { template: '<div>Главная</div>' }
+        const Services = { template: '<div>Услуги</div>' }
         ```
-     **Step 4:** Define your route where each one maps to a component
+     **Step 4:** Определите свой маршрут, где каждый из них сопоставляется с компонентом
         ```javascript
         const routes = [
           { path: '/home', component: Home },
           { path: '/services', component: Services }
         ]
         ```
-     **Step 5:** Create the router instance and pass the `routes` option
+     **Step 5:** Создайте экземпляр роутера и передайте опцию `routes`
         ```javascript
         const router = new VueRouter({
-          routes // short for `routes: routes`
+          routes // сокращение от `routes: routes`
         })
         ```
-     **Step 6:**  Create and mount the root instance.
+     **Step 6:**  Создайте и смонтируйте корневой экземпляр.
         ```javascript
         const app = new Vue({
           router
         }).$mount('#app')
         ```
 
-     Now you are able to navigate different pages(Home, Services) with in Vue application.
+     Теперь вы можете перемещаться по разным страницам (Home, Services) с помощью приложения Vue.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-43.  ### What is dynamic route matching?
-     Sometimes it may be required to map routes to the same component based on a pattern.
+43.  ### Что такое динамическое сопоставление маршрутов?
+     Иногда может потребоваться сопоставить маршруты с одним и тем же компонентом на основе шаблона.
 
-     Let's take a user component with the mapped URLs like `/user/john/post/123` and `/user/jack/post/235` using dynamic segments,
+     Давайте возьмем пользовательский компонент с отображенными URL-адресами, такими как `/user/john/post/123` и `/user/jack/post/235` с использованием динамических сегментов,
      ```javascript
      const User = {
        template: '<div>User {{ $route.params.name }}, PostId: {{ route.params.postid }}</div>'
@@ -1370,78 +1369,79 @@ List of 300 VueJS Interview Questions
 
      const router = new VueRouter({
        routes: [
-         // dynamic segments start with a colon
+         // динамические сегменты начинаются с двоеточия
          { path: '/user/:name/post/:postid', component: User }
        ]
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-44.  ### How to make router param changes as reactive?
-     When you navigate from one URL to other(mapped with a single component) using routes with params then the same component instance will be reused. Even though it is more efficient than destroying the old instance and then creating a new one, the lifecycle hooks of the component will not be called.
+44.  ### Как сделать изменения параметров маршрутизатора реактивными?
+     Когда вы переходите с одного URL-адреса на другой (сопоставленный с одним компонентом) с использованием маршрутов с параметрами, то один и тот же экземпляр компонента будет использоваться повторно. Несмотря на то, что это более эффективно, чем уничтожение старого экземпляра и последующее создание нового, хуки жизненного цикла компонента не будут вызываться.
 
-     This problem can be solved using either of the below approaches,
+     Эта проблема может быть решена с использованием любого из следующих подходов,
 
-     1. **Watch the $route object:**
+     1. **Наблюдайте за объектом $route:**
          ```javascript
          const User = {
            template: '<div>User {{ $route.params.name }} </div>',
            watch: {
              '$route' (to, from) {
-               // react to route changes...
+               // реагировать на изменение маршрута...
              }
            }
          }
          ```
-     2. **Use beforeRouteUpdate navigation guard:** This is only available since 2.2 version.
+     2. **Использовать навигационный хук beforeRouteUpdate:** Это доступно только с версии 2.2.
          ```javascript
          const User = {
            template: '<div>User {{ $route.params.name }} </div>',
            beforeRouteUpdate (to, from, next) {
-             // react to route changes and then call next()
+             // реагировать на изменения маршрута, а затем вызывать next ()
            }
          }
          ```
-     Note that the beforeRouteEnter guard does NOT have access to `this`. Instead you can pass a callback to `next` to access the vm instance.
+     Обратите внимание, что хук beforeRouteEnter НЕ имеет доступа к this. Вместо этого вы можете передать обратный вызов `next` для доступа к экземпляру vm.
 
-     **[⬆ Back to Top](#table-of-contents)**
 
-45.  ### What is route matching priority?
-     Sometimes the URL might be matched by multiple routes and the confusion of which route need to be mapped is resolved by route matching priority. The priority is based on order of routes configuration. i.e, The route which declared first has higher priority.
+     **[⬆ Вернуться к началу](#table-of-contents)**
+
+45.  ### Что такое приоритет сопоставления маршрута?
+     Иногда URL-адрес может совпадать по нескольким маршрутам, и путаница с тем, какой маршрут необходимо сопоставить, разрешается с помощью приоритета сопоставления маршрутов. Приоритет зависит от порядка настройки маршрутов. то есть маршрут, объявленный первым, имеет более высокий приоритет.
      ```javascript
      const router = new VueRouter({
             routes: [
-              // dynamic segments start with a colon
-              { path: '/user/:name', component: User } // This route gets higher priority
+              // динамические сегменты начинаются с двоеточия
+              { path: '/user/:name', component: User } // Этот маршрут получает более высокий приоритет
               { path: '/user/:name', component: Admin }
               { path: '/user/:name', component: Customer }
             ]
           })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-46.  ### What are nested routes?
-     Generally, the app is composed of nested components which are nested multiple levels deep. The segments of a URL corresponds to a certain structure of these nested components. To render components into the nested outlet, you need to use the `children` option in `VueRouter` constructor config.
+46.  ### Что такое вложенные маршруты?
+     Как правило, приложение состоит из многоуровневых вложенных компонентов. Сегменты URL соответствуют определенной структуре этих вложенных компонентов. Для рендеринга компонентов во вложенную точку вам нужно использовать опцию `children` в конфигурации конструктора` VueRouter`.
 
-     Let's take a user app composed of profile and posts nested components with respective routes. You can also define a default route configuration when there is no matching nested route.
+     Давайте возьмем пользовательское приложение, состоящее из профиля и размещающее вложенные компоненты с соответствующими маршрутами. Вы также можете определить конфигурацию маршрута по умолчанию, если нет подходящего вложенного маршрута.
      ```javascript
      const router = new VueRouter({
        routes: [
          { path: '/user/:id', component: User,
            children: [
              {
-               // UserProfile will be rendered inside User's <router-view> when /user/:id/profile is matched
+               // UserProfile будет отображаться внутри User <router-view> при совпадении /user/:id/profile
                path: 'profile',
                component: UserProfile
              },
              {
-               // UserPosts will be rendered inside User's <router-view> when /user/:id/posts is matched
+               // UserPosts будет отображаться внутри <router-view> пользователя при сопоставлении /user/:id/posts
                path: 'posts',
                component: UserPosts
              },
-               // UserHome will be rendered inside User's <router-view> when /user/:id is matched
+               // UserHome будет отображаться внутри <router-view> пользователя при совпадении /user/:id
              {  path: '',
                 component: UserHome },
            ]
@@ -1450,19 +1450,19 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-47.  ### What are single file components?
-     Single File Components are an easy concept to understand. Earlier you might heard about all three parts(HTML, JavaScript and CSS) of your application kept in different components. But Single File Components encapsulate the structure, styling and behaviour into one file. In the beginning, it seems strange to have all three parts in one file, but it actually makes a lot more sense.
+47.  ### Что такое однофайловые компоненты?
+     Однофайловые компоненты - это простая для понимания концепция. Ранее вы могли слышать, что все три части (HTML, JavaScript и CSS) вашего приложения хранятся в разных компонентах. Но однофайловые компоненты инкапсулируют структуру, стиль и поведение в один файл. Вначале кажется странным иметь все три части в одном файле, но на самом деле это имеет гораздо больший смысл.
 
-     Let's take an example of Singile File Components
+     Давайте рассмотрим пример однофайловых компонентов
      ```vue
      <template>
        <div>
-         <h1>Welcome {{ name }}!</h1>
+         <h1>Добро пожаловать {{ name }}!</h1>
        </div>
      </template>
-     
+
      <script>
      module.exports = {
        data: function() {
@@ -1472,7 +1472,7 @@ List of 300 VueJS Interview Questions
        }
      }
      </script>
-     
+
      <style scoped>
      h1 {
        color: #34c779;
@@ -1481,38 +1481,37 @@ List of 300 VueJS Interview Questions
      </style>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-48.  ### Is Single File Components violating separation of concerns?
-     As for the latest modern UI development, separation of concerns is not equal to separation of file types. So it is preferred to divide codebase layers into loosely-coupled components and compose them instead of dividing the codebase into three huge layers that interweave with one another. This way makes Single File Components more cohesive and maintainable by combining template, logic and styles together inside a component.
-     You can also still maintain javascript and CSS files separately with hot-reloading and pre-compilation features.
+48.  ### Нарушают ли однофайлайловые компоненты разделение ответственности?
+     Что касается последних современных разработок пользовательского интерфейса, разделение задач не равно разделению типов файлов. Поэтому предпочтительно разделять уровни кодовой базы на слабо связанные компоненты и составлять их, а не разделять кодовую базу на три огромных слоя, которые переплетаются друг с другом. Таким образом, отдельные файловые компоненты становятся более связными и удобными в обслуживании за счет объединения шаблонов, логики и стилей внутри компонента.
+     Вы также можете поддерживать файлы javascript и CSS отдельно с функциями горячей перезагрузки и предварительной компиляции.
 
-     For example,
+     Например,
      ```vue
      <template>
-       <div>This section will be pre-compiled and hot reloaded</div>
+       <div>Этот раздел будет предварительно скомпилирован и перезагружен</div>
      </template>
      <script src="./my-component.js"></script>
      <style src="./my-component.css"></style>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-49.  ### What are the problems solved by Single File Components?
-     The Single File Components solve the common problems occurred in a javascript driven application with a .vue extension. The list of issues are,
-     1. Global definitions force unique names for every component
-     2. String templates lack syntax highlighting and require ugly slashes for multiline HTML
-     3. No CSS support means that while HTML and JavaScript are modularized into components, CSS is conspicuously left out
-     4. No build step restricts us to HTML and ES5 JavaScript, rather than preprocessors like Pug (formerly Jade) and Babel.
+49.  ### Какие проблемы решают однофайловые компоненты?
+     Однофайловые компоненты решают типичные проблемы, возникающие в приложениях на основе javascript с расширением .vue. Список проблем который решает однофайловые компоненты,
+     1. Глобальные определения заставляют придумывать уникальные имена для каждого компонента
+     2. В строковых шаблонах отсутствует подсветка синтаксиса и требуется некрасивая косая черта для многострочного HTML
+     3. Отсутствие поддержки CSS означает, что, хотя HTML и JavaScript разбиты на компоненты, CSS явно не учитывается
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-50.  ### What are filters?
-     Filters can be used to apply common text formatting. These Filters should be appended to the end of the JavaScript expression, denoted by the “pipe” symbol. You can use them in two specific cases:
-     1. mustache interpolations
-     2. v-bind expressions
+50.  ### Что такое фильтры?
+     Фильтры можно использовать для применения общего форматирования текста. Эти фильтры должны быть добавлены в конец выражения JavaScript, обозначенного символом «вертикальная черта». Вы можете использовать их в двух конкретных случаях:
+     1. Mustache (двойных фигурных скобок) интерполяции
+     2. Выражения v-bind
 
-     For example, Let's define a local filter named capitalize in a component’s options
+     Например, давайте определим локальный фильтр с именем "Заглавные буквы" в параметрах компонента
      ```javascript
      filters: {
        capitalize: function (value) {
@@ -1522,21 +1521,21 @@ List of 300 VueJS Interview Questions
        }
      }
      ```
-     Now you can use the filter in either mustache interpolation or v-bind expression,
+     Теперь вы можете использовать фильтр либо в Mustache интерполяции, либо в выражении v-bind,
      ```vue
-     <!-- in mustaches -->
+     <!-- в mustaches -->
      {{ username | capitalize }}
 
-     <!-- in v-bind -->
+     <!-- в v-bind -->
      <div v-bind:id="username | capitalize"></div>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-51.  ### What are the different ways to create filters?
-     You can define filters in two ways,
-     1. **Local filters:**
-     You can define local filters in a component’s options. In this case, filter is applicable to that specific component.
+51.  ### Какие существуют способы создания фильтров?
+     Вы можете определить фильтры двумя способами,
+     1. **Локальные фильтры:**
+     Вы можете определить локальные фильтры в параметрах компонента. В этом случае фильтр применим к этому конкретному компоненту.
      ```javascript
      filters: {
        capitalize: function (value) {
@@ -1546,8 +1545,8 @@ List of 300 VueJS Interview Questions
        }
      }
      ```
-     2. **Global filters:**
-     You can also define a filter globally before creating the Vue instance. In this case, filter is applicable to all the components with in the vue instance,
+     1. **Глобальные фильтры:**
+     Вы также можете определить фильтр глобально перед созданием экземпляра Vue. В этом случае фильтр применим ко всем компонентам в экземпляре vue,
      ```javascript
      Vue.filter('capitalize', function (value) {
        if (!value) return ''
@@ -1560,85 +1559,85 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-52.  ### How do you chain filters?
-     You can chain filters one after the other to perform multiple manipulations on the expression. The generic structure of filter chain would be as below,
+52.  ### Как можно связать фильтры один за другим?
+     Вы можете связать фильтры один за другим, чтобы выполнять несколько манипуляций с выражением. Общая структура цепочки фильтров будет такой, как показано ниже,
      ```vue
      {{ message | filterA | filterB | filterB ... }}
      ```
-     In the above chain stack, you can observe that message expression applied with three filters, each separated by a pipe(|) symbol. The first filter(filterA) takes the expression as a single argument and the result of the expression becomes an argument for second filter(filterB) and the chain continue for remaining filters.
+     В приведенном выше стеке цепочки вы можете увидеть выражение message, примененный три фильтра, каждый из которых разделен вертикальной чертой (|). Первый фильтр (filterA) принимает выражение как единственный аргумент, а результат выражения становится аргументом для второго фильтра (filterB), и цепочка продолжается для оставшихся фильтров.
 
-     For example, if you want to transform date expression with a full date format and uppercase then you can apply dateFormat and uppercase filters as below,
+     Например, если вы хотите преобразовать выражение birthday в полный формат даты и верхний регистр, вы можете применить фильтры dateFormat и uppercase, как показано ниже,
      ```vue
      {{ birthday | dateFormat | uppercase }}
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-53.  ### Is it possible to pass parameters for filters?
-     Yes, you can pass arguments for a filter similar to a javascript function. The generic structure of filter parameters would be as follows,
+53.  ### Можно ли передавать параметры для фильтров?
+     Да, вы можете передавать аргументы для фильтра, подобного функциям javascript. Общая структура параметров фильтра будет следующей,
      ```vue
      {{ message | filterA('arg1', arg2) }}
      ```
-     In this case, filterA takes message expression as first argument and the explicit parameters mentioned in the filter as second and third arguments.
+     В этом случае filterA принимает выражение сообщения как первый аргумент, а явные параметры, упомянутые в фильтре, как второй и третий аргументы.
 
-     For example, you can find the exponential strength of a particular value
+     Например, вы можете найти экспоненциальную силу определенного значения
      ```vue
-     {{ 2 | exponentialStrength(10) }} <!-- prints 2 power 10 = 1024 -->
+     {{ 2 | exponentialStrength(10) }} <!-- выведит 2 в 10 степени = 1024 -->
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-54.  ### What are plugins and their various services?
+54.  ### Что такое плагины и их различные сервисы?
 
-     Plugins provides global-level functionality to Vue application. The plugins provide various services,
-     1. Add some global methods or properties. For example, vue-custom-element
-     2. Add one or more global assets (directives, filters and transitions). For example, vue-touch
-     3. Add some component options by global mixin. For example, vue-router
-     4. Add some Vue instance methods by attaching them to Vue.prototype.
-     5. A library that provides an API of its own, while at the same time injecting some combination of the above. For example, vue-router
+     Плагины обеспечивают функциональность глобального уровня для приложения Vue. Плагины предоставляют различные услуги,
+     1. Добавляет некоторые глобальные методы или свойства. Например, vue-custom-element
+     2. Добавляет один или несколько глобальных ресурсов (directives, filters and transitions). Например, vue-touch
+     3. Добавляет некоторые параметры компонента с помощью глобального миксина. Например, vue-router
+     4. Добавляет несколько методов экземпляра Vue, прикрепив их к Vue.prototype
+     5. Библиотека, которая предоставляет собственный API, в то же время внедряя некоторую комбинацию вышеперечисленного. Например, vue-router
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-55.  ### How to create a plugin?
-     The Plugin is created by exposing an `install` method which takes Vue constructor as a first argument along with options. The structure of VueJS plugin with possible functionality would be as follows,
+55.  ### Как создать плагин?
+     Плагин создается путем предоставления метода install, который принимает конструктор Vue в качестве первого аргумента вместе с параметрами. Структура плагина VueJS с возможными функциями будет следующей,
       ```javascript
       MyPlugin.install = function (Vue, options) {
-        // 1. add global method or property
+        // 1. добавить глобальный метод или свойство
         Vue.myGlobalMethod = function () {
-          // some logic ...
+          // какая-то логика...
         }
 
-        // 2. add a global asset
+        // 2. добавить глобальную директиву
         Vue.directive('my-directive', {
           bind (el, binding, vnode, oldVnode) {
-            // some logic ...
+            // какая-то логика...
           }
           // ...
         })
 
-        // 3. inject some component options
+        // 3. ввести некоторые параметры компонента
         Vue.mixin({
           created: function () {
-            // some logic ...
+            // какая-то логика...
           }
           // ...
         })
 
-        // 4. add an instance method
+        // 4. добавить метод экземпляра
         Vue.prototype.$myMethod = function (methodOptions) {
-          // some logic ...
+          // какая-то логика...
         }
       }
       ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-56.  ### How to use a plugin?
-     You can use plugin by passing your plugin to Vue's **use** global method. You need to apply this method before start your app by calling new Vue().
+56.  ### Как пользоваться плагином?
+     Вы можете использовать плагин, передав его глобальному методу Vue - **use**. Вам необходимо применить этот метод перед запуском приложения, вызвав new Vue ().
      ```javascript
-     // calls `MyPlugin.install(Vue, { someOption: true })`
+     // вызывает `MyPlugin.install(Vue, { someOption: true })`
      Vue.use(MyPlugin)
 
      new Vue({
@@ -1646,14 +1645,14 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-57.  ### What are mixins?
-     Mixin gives us a way to distribute reusable functionalities in Vue components. These reusable functions are merged with existing functions. A mixin object can contain any component options. Let us take an example of mixin with `created` lifecycle which can be shared across components,
+57.  ### Что такое миксины?
+     Mixin дает нам возможность распространять повторно используемые функции в компонентах Vue. Эти повторно используемые функции объединяются с существующими функциями. Объект миксина может содержать любые параметры компонента. Давайте возьмем пример миксина с жизненным циклом created, который может использоваться всеми компонентами,
      ```javascript
      const myMixin = {
        created(){
-         console.log("Welcome to Mixins!")
+         console.log("Добро пожаловать в Mixins!")
        }
      }
      var app = new Vue({
@@ -1661,18 +1660,18 @@ List of 300 VueJS Interview Questions
        mixins: [myMixin]
      })
      ```
-     **Note:** Multiple mixins can be specified in the mixin array of the component.
+     **Примечание:** В массиве миксинов компонента можно указать несколько миксинов.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-58.  ### What are global mixins?
-     Sometimes there is a need to extend the functionality of Vue or apply an option to all Vue components available in our application. In this case, mixins can be applied globally to affect all components in Vue. These mixins are called as global mixins.
+58.  ### Что такое глобальные миксины?
+     Иногда возникает необходимость расширить функциональность Vue или применить опцию ко всем компонентам Vue, доступным в нашем приложении. В этом случае миксины можно применять глобально, чтобы воздействовать на все компоненты во Vue. Эти миксины называются глобальными миксинами.
 
-     Let's take an example of global mixin,
+     Рассмотрим пример глобального миксина,
      ```javascript
      Vue.mixin({
        created(){
-         console.log("Write global mixins")
+         console.log("Напишите глобальные миксины")
        }
      })
 
@@ -1680,23 +1679,23 @@ List of 300 VueJS Interview Questions
        el: '#app'
      })
      ```
-     In the above global mixin, the mixin options spread across all components with the console running during the instance creation. These are useful during test, and debugging or third party libraries. At the same time, You need to use these global mixins sparsely and carefully, because it affects every single Vue instance created, including third party components.
+     В приведенном выше глобальном миксине параметры миксина распределяются по всем компонентам с запущенной консолью во время создания экземпляра. Они полезны во время тестирования, отладки или сторонних библиотек. В то же время вам нужно использовать эти глобальные миксины редко и осторожно, потому что они влияют на каждый созданный экземпляр Vue, включая сторонние компоненты.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-59.  ### How do you use mixins in CLI?
-     Using Vue CLI, mixins can be specified anywhere in the project folder but preferably within `/src/mixins` for ease of access. Once these mixins are created in a `.js` file and exposed with the `export` keyword, they can be imported in any component with the `import` keyword and their file paths.
+59.  ### Как можно использовать миксины в CLI?
+     Используя Vue CLI, миксины могут быть указаны в любом месте папки проекта, но предпочтительно в `/src/mixins`. После того, как эти миксины созданы в файле `.js` и представлены с ключевым словом` export`, они могут быть импортированы в любой компонент с ключевым словом `import` и путями к ним.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-60.  ### What are the merging strategies in mixins?
-     When a mixin and the component itself contain overlapping options, the options will be merged based on some strategies.
-     1. The data objects undergo a recursive merge, with the component’s data taking priority over mixins in cases of overlapping or conflicts.
+60.  ### Каковы стратегии слияния в миксинах?
+     Когда миксин и сам компонент содержат перекрывающиеся параметры, параметры будут объединены на основе некоторых стратегий.
+     1. Объекты данных подвергаются рекурсивному слиянию, при этом данные компонента имеют приоритет над миксинами в случаях перекрытия или конфликтов.
          ```javascript
          var mixin = {
            data: function () {
              return {
-               message: 'Hello, this is a Mixin'
+               message: 'Привет, это миксин!'
              }
            }
          }
@@ -1704,19 +1703,19 @@ List of 300 VueJS Interview Questions
            mixins: [mixin],
            data: function () {
              return {
-               message: 'Hello, this is a Component'
+               message: 'Привет, это компонент!'
              }
            },
            created: function () {
-             console.log(this.$data); // => { message: "Hello, this is a Component'" }
+             console.log(this.$data); // => { message: "Привет, это компонент!" }
            }
          })
          ```
-     2. The Hook functions which are overlapping merged into an array so that all of them will be called. Mixin hooks will be called before the component’s own hooks.
+     2. Перекрывающиеся функции хуков объединены в массив, так что все они будут вызваны. Хуки миксинов будут вызываться перед собственными хуками компонента.
          ```javascript
          const myMixin = {
            created(){
-             console.log("Called from Mixin")
+             console.log("Вызывается из Миксина!")
            }
          }
 
@@ -1724,14 +1723,14 @@ List of 300 VueJS Interview Questions
            el: '#root',
            mixins: [myMixin],
            created(){
-             console.log("Called from Component")
+             console.log("Вызывается из Компонента!")
            }
          })
 
-         // Called from Mixin
-         // Called from Component
+         // Вызывается из Миксина!
+         // Вызывается из Компонента!
          ```
-     3. The options that expect object values(such as methods, components and directives) will be merged into the same object. In this case, the component’s options will take priority when there are conflicting keys in these objects.
+     3. Параметры, которые ожидают значения объекта (например, методы, компоненты и директивы), будут объединены в один и тот же объект. В этом случае параметры компонента будут иметь приоритет, если в этих объектах есть конфликтующие ключи.
          ```javascript
          var mixin = {
            methods: {
@@ -1761,18 +1760,18 @@ List of 300 VueJS Interview Questions
          vm.contact() // "+91 893839389"
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-61.  ### What are custom options merging strategies?
-     Vue uses the default strategy which overwrites the existing value while custom options are merged. But if you want a custom option merged using custom login then you need to attach a function to `Vue.config.optionMergeStrategies`
+61.  ### Какие существуют стратегии слияния пользовательских опций?
+     Vue использует стратегию по умолчанию, которая перезаписывает существующее значение при объединении пользовательских параметров. Но если вы хотите, чтобы пользовательский параметр был объединен с использованием пользовательского входа в систему, вам необходимо прикрепить функцию к `Vue.config.optionMergeStrategies`
 
-     For the example, the structure of `myOptions` custom option would be as below,
+     Например, структура настраиваемой опции myOptions будет такой, как показано ниже,
      ```javascript
      Vue.config.optionMergeStrategies.myOption = function (toVal, fromVal) {
        // return mergedVal
      }
      ```
-     Let's take below Vuex 1.0 merging strategy as an advanced example,
+     Давайте рассмотрим стратегию слияния Vuex 1.0 в качестве продвинутого примера,
      ```javascript
      const merge = Vue.config.optionMergeStrategies.computed
      Vue.config.optionMergeStrategies.vuex = function (toVal, fromVal) {
@@ -1786,87 +1785,88 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-62.  ### What are custom directives?
-     Custom Directives are tiny commands that you can attach to DOM elements. They are prefixed with v- to let the library know you're using a special bit of markup and to keep syntax consistent. They are typically useful if you need low-level access to an HTML element to control a bit of behavior.
+62.  ### Что такое пользовательские директивы?
+     Пользовательские директивы - это крошечные команды, которые вы можете прикреплять к элементам DOM. Они имеют префикс v-, чтобы библиотека знала, что вы используете специальный фрагмент разметки, и чтобы синтаксис был согласован. Обычно они полезны, если вам нужен низкоуровневый доступ к HTML-элементу для управления поведением.
 
-     Let's create a custom focus directive to provide focus on specific form element during page load time,
+     Давайте создадим настраиваемую директиву focus, чтобы сфокусироваться на конкретном элементе формы во время загрузки страницы,
      ```javascript
-     // Register a global custom directive called `v-focus`
+     // Зарегистрируйте глобальную настраиваемую директиву под названием `v-focus`
      Vue.directive('focus', {
-       // When the bound element is inserted into the DOM...
+       // Когда связанный элемент вставляется в DOM ...
        inserted: function (el) {
-         // Focus the element
+         // Сфокусируйте на элементе
          el.focus()
        }
      })
      ```
-     Now you can use v-focus directive on any element as below,
+     Теперь вы можете использовать директиву v-focus для любого элемента, как показано ниже,
      ```vue
      <input v-focus>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-63.  ### How do you register directives locally?
-     You can also register directives locally(apart from globally) using directives option in component as below,
+63.  ### Как можно регистрировать директивы локально?
+     Вы также можете зарегистрировать директивы локально (помимо глобального), используя параметр директив в компоненте, как показано ниже,
      ```javascript
      directives: {
        focus: {
-         // directive definition
+         // определение директивы
          inserted: function (el) {
            el.focus()
          }
        }
      }
      ```
-     Now you can use v-focus directive on any element as below,
+     Теперь вы можете использовать директиву v-focus для любого элемента, как показано ниже,
      ```vue
      <input v-focus>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-64.  ### What are the hook functions provided by directives?
-     A directive object can provide several hook functions,
-     1. bind: This occurs once the directive is attached to the element.
-     2. inserted: This hook occurs once the element is inserted into the parent DOM.
-     3. update: This hook is called when the element updates, but children haven't been updated yet.
-     4. componentUpdated: This hook is called once the component and the children have been updated.
-     5. unbind: This hook is called only once when the directive is removed.
+64.  ### Какие хук функции предоставляются директивами?
+     Объект-директива может предоставлять несколько хук функций,
+     1. bind: это происходит, когда директива прикрепляется к элементу.
+     2. Insert: этот хук возникает после того, как элемент вставлен в родительский DOM.
+     3. update: этот хук вызывается, когда элемент обновляется, но дочерние элементы еще не обновлены.
+     4. componentUpdated: этот хук вызывается после обновления компонента и дочерних элементов.
+     5. unbind: этот хук вызывается только один раз при удалении директивы.
 
-     **Note:** There are several arguments that can be passed to the above hooks.
+     **Примечание:** Вышеупомянутым хукам можно передать несколько аргументов.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-65.  ### What are the directive Hook Arguments?
-     All the hooks have `el`, `binding`, and `vnode` as arguments. Along with that, **update** and **componentUpdated** hooks expose `oldVnode`, to differentiate between the older value passed and the newer value. Below are the arguments passed to the hooks,
-     1. `el`: The element the directive is bound to and it can be used to directly manipulate the DOM.
-     2. `binding`: An object containing the following properties.
-        1. `name`: The name of the directive, without the `v-` prefix.
-        2. `value`: The value passed to the directive. For example in `v-my-directive="1 + 1"`, the value would be 2.
-        3. `oldValue`: The previous value, only available in update and componentUpdated. It is available whether or not the value has changed.
-        4. `expression`: The expression of the binding as a string. For example in `v-my-directive="1 + 1"`, the expression would be "1 + 1".
-        5. `arg`: The argument passed to the directive, if any. For example in v-my-directive:foo, the arg would be "foo".
-        6. `modifiers`: An object containing modifiers, if any. For example in v-my-directive.foo.bar, the modifiers object would be `{ foo: true, bar: true }`.
-     3. `vnode`: The virtual node produced by Vue’s compiler.
-     4. `oldVnode`: The previous virtual node, only available in the update and componentUpdated hooks.
+65.  ### Что такое аргументы хука директивы?
+     Все хуки имеют аргументы el, binding и vnode. Наряду с этим, в хуках **update** и **componentUpdated** доступен oldVnode, чтобы различать переданное старое значение и новое значение. Ниже приведены аргументы, переданные хукам,
+     1. `el`: Элемент, к которому привязана директива, и его можно использовать для непосредственного управления DOM.
+     2. `binding`: Объект, содержащий следующие свойства:
+        1. `name`: Имя директивы без префикса `v-`.
+        2. `value`: Значение, переданное в директиву. Например, в `v-my-directive =" 1 + 1 "` значение будет 2.
+        3. `oldValue`: Предыдущее значение, доступное только в update и componentUpdated. Он доступен независимо от того, изменилось ли значение.
+        4. `expression`: Выражение привязки в виде строки. Например, в `v-my-directive =" 1 + 1 "` выражение будет "1 + 1".
+        5. `arg`: Аргумент, переданный в директиву, если есть. Например, в v-my-directive:foo аргументом будет «foo».
 
-     The arguments can be represented diagrammatically across the hooks as below,
+        6. `modifiers`: Объект, содержащий модификаторы, если они есть. Например, в v-my-directive.foo.bar объектом модификаторов будет `{foo: true, bar: true}`.
+     3. `vnode`: Виртуальный узел, созданный компилятором Vue.
+     4. `oldVnode`: Предыдущий виртуальный узел, доступный только в хуках update и componentUpdated.
+
+     Аргументы могут быть представлены схематически через хуки, как показано ниже:
 
         ![custom-directives](images/custom-directives.svg)
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
-66.  ### How do you pass multiple values to a directive?
-     A directive can take any valid javascript expression. So if you want to pass multiple values then you can pass in a JavaScript object literal.
+66.  ### Как передать директиве несколько значений?
+     Директива может принимать любое допустимое выражение javascript. Поэтому, если вы хотите передать несколько значений, вы можете передать литерал объекта JavaScript.
 
-     Let's pass object literal to an avatar directive as below
+     Давайте передадим литерал объекта в директиву аватара, как показано ниже.
      ```vue
      <div v-avatar="{ width: 500, height: 400, url: 'path/logo', text: 'Iron Man' }"></div>
      ```
-     Now let us configure avatar directive globally,
+     Теперь давайте настроим директиву аватара глобально,
      ```javascript
      Vue.directive('avatar', function (el, binding) {
        console.log(binding.value.width) // 500
@@ -1876,7 +1876,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 67.  ### What is function shorthand in directive hooks?
      In few cases, you may want the same behavior on `bind` and `update` hooks irrespective of other hooks. In this situation you can use function shorthand,
@@ -1886,12 +1886,12 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 68.  ### What is the benefit of render functions over templates?
      In VueJS, the templates are very powerful and recommended to build HTML as part of your application. However, some of the special cases like dynamic component creation based on input or slot value can be achieved through render functions. Also, these functions gives the full programmatic power of javascript eco system.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 69.  ### What is a render function?
      Render function is a normal function which receives a `createElement` method as it’s first argument used to create virtual nodes. Internally Vue.js' templates actually compile down to render functions at build time. Hence templates are just syntactic sugar of render functions.
@@ -1919,7 +1919,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** The react components are built with render functions in JSX.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 70.  ### Explain the structure of createElement with arguments?
      The createElement accepts few arguments to use all the template features.
@@ -1932,7 +1932,7 @@ List of 300 VueJS Interview Questions
        // Type is {String | Object | Function}
        // Required.
        'div',
- 
+
        // A data object corresponding to the attributes you would use in a template.
        // Type is {Object}
        // Optional.
@@ -1965,7 +1965,7 @@ List of 300 VueJS Interview Questions
          }
          // ....
        },
- 
+
        // Children VNodes, built using `createElement()`, or using strings to get 'text VNodes'.
        // Type is {String | Array}
        // Optional.
@@ -1982,7 +1982,7 @@ List of 300 VueJS Interview Questions
      ```
      See details of the date object in official [doc](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 71.  ### How can you write duplicate virtual nodes in a component?
      All virtual nodes(VNodes) in the component tree must be unique.i.e, You can't write duplicated nodes in a straightforward way. If you want to duplicate the same element/component many times then you should use factory function.
@@ -2007,22 +2007,22 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 72.  ### List down the template equivalents in render functions?
      VueJS provides proprietary alternatives and plain javascript usage for the template features.
 
      Let's list down them in a table for comparision,
 
-        | Templates | Render function |
-        |---- | --------- |
-        | Conditional and looping directives: v-if and v-for  | Use JavaScript’s if/else and map concepts|
-        | Two-way binding: v-model  | Apply own JS logic with value binding and event binding |
-        | Capture Event modifiers: .passive, .capture, .once and .capture.once or .once.capture| &, !, ~ and ~! |
+        | Templates                                                                                                         | Render function                                                                                                                                                                              |
+        | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | Conditional and looping directives: v-if and v-for                                                                | Use JavaScript’s if/else and map concepts                                                                                                                                                    |
+        | Two-way binding: v-model                                                                                          | Apply own JS logic with value binding and event binding                                                                                                                                      |
+        | Capture Event modifiers: .passive, .capture, .once and .capture.once or .once.capture                             | &, !, ~ and ~!                                                                                                                                                                               |
         | Event and key modifiers: .stop, .prevent, .self, keys(.enter, .13) and Modifiers Keys(.ctrl, .alt, .shift, .meta) | Use javascript solutions: event.stopPropagation(), event.preventDefault(), if (event.target !== event.currentTarget) return, if (event.keyCode !== 13) return and if (!event.ctrlKey) return |
-        | Slots: slot attributes | Render functions provide this.$slots and this.$scopedSlots instance properties|
+        | Slots: slot attributes                                                                                            | Render functions provide this.$slots and this.$scopedSlots instance properties                                                                                                               |
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 73.  ### What are functional components?
      The functional components are just simple functions to create simple components just by passing a context. Every functional component follows two rules,
@@ -2046,7 +2046,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** The functional components are quite popular in React community too.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 74.  ### What are the similarities between VueJS and ReactJS?
      Even though ReactJS and VueJS are two different frameworks there are few similarities(apart from the common goal of utilized in interface design) between them.
@@ -2054,22 +2054,22 @@ List of 300 VueJS Interview Questions
      2. They provide features such Component-based structure and reactivity
      3. They are intended for working with the root library, while all the additional tasks are transferred to other libraries(routing, state management etc).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 75.  ### What is the difference between VueJS and ReactJS?
      Even though VueJS and ReactJS share few common features there are many difference between them.
 
      Let's list down them in a table format.
 
-      | Feature | VueJS | ReactJS |
-      |---- | --------- | ---- |
-      | Type |  JavaScript MVC Framework | JavaScript Library |
-      | Platform  | Primarily focused on web development | Both Web and Native |
-      | Learning Curve | Easy to learn the framework  | A steep learning curve and requires deep knowledge |
-      | Simplicity | Vue is simpler than React | React is more complex than Vue |
-      | Bootstrap Application | Vue-cli | CRA (Create React App) |
+      | Feature               | VueJS                                | ReactJS                                            |
+      | --------------------- | ------------------------------------ | -------------------------------------------------- |
+      | Type                  | JavaScript MVC Framework             | JavaScript Library                                 |
+      | Platform              | Primarily focused on web development | Both Web and Native                                |
+      | Learning Curve        | Easy to learn the framework          | A steep learning curve and requires deep knowledge |
+      | Simplicity            | Vue is simpler than React            | React is more complex than Vue                     |
+      | Bootstrap Application | Vue-cli                              | CRA (Create React App)                             |
 
-      **[⬆ Back to Top](#table-of-contents)**
+      **[⬆ Вернуться к началу](#table-of-contents)**
 
 76.  ### What are the advantages of VueJS over ReactJS?
      Vue has the following advantages over React
@@ -2077,7 +2077,7 @@ List of 300 VueJS Interview Questions
      2. The convenient templates ease the process of developing
      3. It has simpler javascript syntax without learning JSX
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 77.  ### What are the advantages of ReactJS over VueJS?
      React has the following advantages over Vue
@@ -2086,24 +2086,24 @@ List of 300 VueJS Interview Questions
      3. Well-suited for mobile apps creation
      4. The eco system is quite big and well matured.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 78.  ### What are the differences between VueJS and AngularJS?
      The  the syntax of Vue and Angular is common at some points because Angular is the basis for VueJS development in the beginning.
 
      But there are many differences between VueJS and Angular as listed,
 
-      | Feature | VueJS | AngularJS |
-      |---- | --------- | ---- |
-      | Complexity | Easy to learn, simple API and design | The framework is bit huge and need some learning curve on typescript etc |
-      | Binding of Data  | One-way binding | Two-way binding |
-      | Learning Curve | Easy to learn the framework | A steep learning curve and requires deep knowledge |
-      | Founders | Created by Former Google Employee | Powered by Google |
-      | Initial Release | February 2014 | September 2016 |
-      | Model | Based on Virtual DOM(Document Object Model) | Based on MVC(Model-View-Controller) |
-      | Written in | JavaScript | TypeScript |
+      | Feature         | VueJS                                       | AngularJS                                                                |
+      | --------------- | ------------------------------------------- | ------------------------------------------------------------------------ |
+      | Complexity      | Easy to learn, simple API and design        | The framework is bit huge and need some learning curve on typescript etc |
+      | Binding of Data | One-way binding                             | Two-way binding                                                          |
+      | Learning Curve  | Easy to learn the framework                 | A steep learning curve and requires deep knowledge                       |
+      | Founders        | Created by Former Google Employee           | Powered by Google                                                        |
+      | Initial Release | February 2014                               | September 2016                                                           |
+      | Model           | Based on Virtual DOM(Document Object Model) | Based on MVC(Model-View-Controller)                                      |
+      | Written in      | JavaScript                                  | TypeScript                                                               |
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 79.  ### What are dynamic components?
      The dynamic component is used to dynamically switch beetween multiple components using **<component>** element and pass data to v-bind:is attribute.
@@ -2138,7 +2138,7 @@ List of 300 VueJS Interview Questions
      </div>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 80.  ### What is the purpose of keep alive tag?
      Keep-alive tag is an abstract component used to preserve component state or avoid re-rendering. When you wrapped <keep-alive> tag around a dynamic component,  it caches the inactive component instances without destroying them.
@@ -2161,7 +2161,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** Remember that keep-alive tag doesn’t render a DOM element itself, and doesn’t show up in the component parent chain.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 81.  ### What are async components?
      In large applications, we may need to divide the app into smaller chunks and only load a component from the server when it’s needed. To make this happen, Vue allows you to define your component as a factory function that asynchronously resolves your component definition. These components are known as async component.
@@ -2175,7 +2175,7 @@ List of 300 VueJS Interview Questions
      ```
      Vue will only trigger the factory function when the component needs to be rendered and will cache the result for future re-renders.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 82.  ### What is the structure of async component factory?
      Async component factory is useful to resolve the component asynchronously. The async component factory can  return an object of the below format.
@@ -2195,7 +2195,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 83.  ### What are inline templates?
      If you keep an `inline-template` on a child component then it will use its inner content as a template instead of treating as reusable independent content.
@@ -2209,7 +2209,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** Even though this inline-templates gives more flexibility for template authoring, it is recommended to define template using template property or <template> tag inside .vue component.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 84.  ### What are X Templates?
      Apart from regular templates and inline templates, you can also define templates using a script element with the type `text/x-template` and then referencing the template by an id.
@@ -2227,7 +2227,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 85.  ### What are recursive components?
      The Components that can recursively invoke themselves in their own template are known as recursive components.
@@ -2241,7 +2241,7 @@ List of 300 VueJS Interview Questions
 
      **Note:** Remember that recursive component can lead infinite loops with `max stack size exceeded` error, so make sure recursive invocation is conditional(for example, v-if directive).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 86.  ### How do you resolve circular dependencies between components?
      In complex applications, vue components will actually be each other’s descendent and ancestor in the render tree.
@@ -2274,7 +2274,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 87.  ### How do you make sure vue application is CSP complaint?
 
@@ -2282,7 +2282,7 @@ List of 300 VueJS Interview Questions
 
      In this case you can use **runtime-only** builds with Webpack + vue-loader or Browserify + vueify technology stack through which templates will be precompiled into render functions. This way you can make sure VueJS applications are 100% CSP complaint.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 88.  ### What is the difference between full and runtime only builds?
 
@@ -2292,19 +2292,19 @@ List of 300 VueJS Interview Questions
 
      **2. Runtime Only:** These builds doesn't include compiler but the code is responsible for creating Vue instances, rendering and patching virtual DOM. These are about 6KB lighter min+gzip.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 89.  ### List down different builds of vuejs?
      Below are the list of different builds of VueJS based on type of build,
 
-        | Type | UMD | CommonJS | ES Module (for bundlers) | ES Module (for browsers) |
-        |---- | --------- | ---- | ---- | --- |
-        | Full | vue.js | vue.common.js | vue.esm.js | vue.esm.browser.js |
-        | Runtime only  | vue.runtime.js | vue.runtime.common.js | vue.runtime.esm.js | NA |
-        | Full (production) | vue.min.js | NA | NA | vue.esm.browser.min.js |
-        | Runtime-only (production) | vue.runtime.min.js | NA | NA | NA |
+        | Type                      | UMD                | CommonJS              | ES Module (for bundlers) | ES Module (for browsers) |
+        | ------------------------- | ------------------ | --------------------- | ------------------------ | ------------------------ |
+        | Full                      | vue.js             | vue.common.js         | vue.esm.js               | vue.esm.browser.js       |
+        | Runtime only              | vue.runtime.js     | vue.runtime.common.js | vue.runtime.esm.js       | NA                       |
+        | Full (production)         | vue.min.js         | NA                    | NA                       | vue.esm.browser.min.js   |
+        | Runtime-only (production) | vue.runtime.min.js | NA                    | NA                       | NA                       |
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 90.  ### How do you configure vuejs in webpack?
      You can configure vueJS in webpack using alias as below,
@@ -2320,7 +2320,7 @@ List of 300 VueJS Interview Questions
         }
         ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 91.  ### What is the purpose of vuejs compiler?
      The compiler is  is responsible for compiling template strings into JavaScript render functions.
@@ -2340,7 +2340,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 92.  ### What is Dev Tools and its purpose?
      DevTools is a browser extension allowing you to inspect and debug your Vue applications in a more user-friendly interface. You can find the below extensions for different browsers or environments,
@@ -2356,12 +2356,12 @@ List of 300 VueJS Interview Questions
      1. If the page uses a production/minified build of Vue.js, devtools inspection is disabled by default so the Vue pane won't show up.
      2. To make it work for pages opened via `file://` protocol, you need to check "Allow access to file URLs" for this extension in Chrome's extension management panel.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 93.  ### What is the browser support of VueJS?
      It supports all ECMAScript5 complaint browsers as mentioned in this [url](https://caniuse.com/#feat=es5). VueJS doesn't support IE8 browser and below, because it uses ECMAScript 5 features that are un-shimmable(require support from the underlying JS engine) in IE8.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 94.  ### How do you use various CDNs?
      VueJS is available in jsdelivr, unpkg and cdnjs etc CDNs. Normally you can use them for prototyping or learning purposes.
@@ -2379,14 +2379,14 @@ List of 300 VueJS Interview Questions
 
      **Note:** You can remove version number to get latest version.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 95.  ### How do you force update?
      It is extremely rare situation of having to manually force an update despite the fact that no reactive data has changed. i.e, To force the Vue instance to re-render manually. You can do it force update using **vm.$forceUpdate()** API method.
 
      **Note:**  It does not affect all child components but only the instance itself and child components with inserted slot content.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 96.  ### What is the purpose of vuejs once directive?
      If you want to render `a lot of static content` then you need to make sure it only evaluated once and then cached thereafter. In this case, you can use `v-once` directive by wrapping at the root level.
@@ -2405,7 +2405,7 @@ List of 300 VueJS Interview Questions
 
      **Note:** It is recommended not to overuse unless there is slow rendering due to lot of static content.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 97.  ### How do you access the root instance?
      The root instance(new Vue()) can be accessed with the `$root` property.
@@ -2443,7 +2443,7 @@ List of 300 VueJS Interview Questions
      ```
      It is recommend using Vuex to manage state instead of using root instance as a global store.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 98.  ### List out top 10 organizations using Vuejs?
      Below are the top 10 organizations using VueJS for their applications or products,
@@ -2459,7 +2459,7 @@ List of 300 VueJS Interview Questions
      9. GitLab
      10. Laracasts
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 99.  ### What is the purpose of renderError?
      When the default render function encounters an error then you can use rennderError as an alternative render output. The error will be passed to renderError as the second argument.
@@ -2476,17 +2476,17 @@ List of 300 VueJS Interview Questions
      }).$mount('#app')
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 100. ### How do you access parent instance?
      The $parent object refers to the **immediate outer scope**. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent’s $children array. It establishes a parent-child relationship between the two instances(parent and child). You can access parent data and properties similar to $root.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 101. ### What is vuex?
      Vuex is a state management pattern + library (Flux-inspired Application Architecture) for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 102. ### What are the major components of State Management Pattern?
      The state management has state, view and actions as major components. The pattern followed by these components in a application is known as State Management Pattern. Below are the components in a detail,
@@ -2516,14 +2516,14 @@ List of 300 VueJS Interview Questions
          })
         ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 103. ### How do you represent one way data flow in vuex?
      Vue.js has a one-way data flow model, through the props property. The same concept can be represented in vuex has below,
 
      <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/flow.png" width="400" height="500">
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 104. ### What is a vuejs loader?
      Vue loader is a loader for webpack that allows you to author Vue components in a format called Single-File Components (SFCs).
@@ -2551,7 +2551,7 @@ List of 300 VueJS Interview Questions
      </style>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 105. ### How do you configure vue loader in webpack?
      Vue Loader's configuration is a bit different from other loaders by adding Vue Loader's plugin to your webpack config. The vue loader plugin is required for cloning any other rules(js and css rules) defined and applying them to the corresponding language blocks(<script> and <style>) in .vue files.
@@ -2591,7 +2591,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 106. ### What are asset url transform rules?
      Below are the list of Asset URL transform rules
@@ -2600,12 +2600,12 @@ List of 300 VueJS Interview Questions
      3. **URLs starts with ~ symbol**: If the URL starts with `~` symbol(for example, ./some-node-package/loader.png) then it is interpreted as a module request. This way it can reference assets inside node modules too.
      4. **URLs starts with @ symbol**: If the URL starts with `@` symbol then it is interpreted as a module request. This is useful if your webpack config has an alias for @, which by default points to `/src` path.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 107. ### How do you work with preprocessors using vue loader?
      `Vue-loader` will automatically infer the proper loaders to use based on the `lang` attribute of a language block and the rules defined in webpack config. You can use pre-processors such as `SASS,LESS, Stylus and PostCSS` using vuejs loader.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 108. ### What is scoped CSS?
      Scoped CSS is a mechanism in VueJS Single File Components(SFC) that prevents styles from leaking out of the current component and affecting other unintended components on your page. i.e, When a <style> tag has the scoped attribute, its CSS will apply to elements of the current component only. It uses PostCSS to transform scoped css to plain CSS.
@@ -2635,7 +2635,7 @@ List of 300 VueJS Interview Questions
       </template>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 109. ### Is it possible to mix both local and global styles?
      Yes, you can include both scoped and non-scoped styles in the same component. If you don't mention scoped attribute then it will become global style.
@@ -2649,7 +2649,7 @@ List of 300 VueJS Interview Questions
      </style>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 110. ### How do you use deep selectors?
      In scoped css, if you need to modify the styles of a child component using deep selectors(i,e from parent scoped css) then you need to use **>>>** combinator.
@@ -2666,7 +2666,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** If you preprocessors such as SASS then it may not be able to processs >>> properly. In such cases use the /deep/ or ::v-deep combinator instead >>> combinator.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 111. ### Is parent styles leaked into child components in scoped css?
      The parent component's styles will not leak into child components. But a child component's root node will be affected by both the parent's scoped CSS and the child's scoped CSS. i.e, your child component's root element has a class that also exists in the parent component, the parent component's styles will leak to the child. Anyway this is by design so that the parent can style the child root element for layout purposes.
@@ -2720,22 +2720,22 @@ List of 300 VueJS Interview Questions
      ```
      Now the background color of child wrapper is going to be blue instead red.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 112. ### How do you style dynamic generated content using scoped css?
      The scoped css style doesn't impact v-html directive's dynamically generated content. In this case, you can use deep selectors to solve this styling issue.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 113. ### Is CSS modules supported in Vuejs?
      Yes, vue-loader provides first-class integration with CSS Modules as an alternative for simulated scoped CSS.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 114. ### Can I use runtime builds for all templates?
      No, templates (or any Vue-specific HTML) are ONLY allowed in .vue files and render functions are required in other cases.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 115. ### How to use CSS modules in vuejs?
      Below are the steps to use css modules in VueJS,
@@ -2784,7 +2784,7 @@ List of 300 VueJS Interview Questions
 
      It can work with object/array syntax of :class binding.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 116. ### Can I use CSS modules for preprocessors?
      Yes, you can use preprocessors with CSS Modules.
@@ -2806,7 +2806,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 117. ### Is it possible to use custom inject name for CSS modules?
      You can customize the name of the injected computed property by giving the module attribute a value. This will be helpful to avoid overwriting injected styled if you have more than one <style> tags in a single *.vue component.
@@ -2823,12 +2823,12 @@ List of 300 VueJS Interview Questions
      </style>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 118. ### What is hot reloading in vue loader?
      Hot reloading is not about reloading the page when you edit any .vue file. Instead, when you edit a *.vue file, all instances of that component will be swapped in without reloading the page. It improves the development experience when you are tweaking the templates or styling of your components.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 119. ### What is the default behavior of hot reloading?
      Hot Reload is always enabled except below situations:
@@ -2837,7 +2837,7 @@ List of 300 VueJS Interview Questions
      2. webpack minifies the code
      3. process.env.NODE_ENV === 'production'
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 120. ### How do you disable hot reloading explicitly?
      You can use `hotReload: false` option to disable the Hot Reload explicitly.
@@ -2857,12 +2857,12 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 121. ### How do you use hot reloading?
      The vue loader plugin internally uses hot reloading. If you are scaffolding project with `vue-cli`, hot reloading comes out of the box but if you are manually setting up the project then hot reloading is enabled by default with `webpack-dev-server --hot` command.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 122. ### What are state preservation rules in hot reloading?
      Below are the state preservation rules in hot reloading,
@@ -2871,7 +2871,7 @@ List of 300 VueJS Interview Questions
      2. When editing the `<script>` part of a component, instances of the edited component will be destroyed and re-created in place.
      3. When editing the `<style>` hot reload operates on its own via vue-style-loader without affecting application state.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 123. ### How to create functional components using vue loader?
      You can create functional components by adding functional attribute to template block,
@@ -2882,7 +2882,7 @@ List of 300 VueJS Interview Questions
      </template>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 124. ### How do you access global properties of functional components?
      If you need to access properties defined globally on `Vue.prototype` then you can access them on parent,
@@ -2893,7 +2893,7 @@ List of 300 VueJS Interview Questions
      </template>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 125. ### How do you perform testing in vuejs?
      You can perform testing in two ways,
@@ -2901,7 +2901,7 @@ List of 300 VueJS Interview Questions
      1. **Using vue-cli:** It offers pre-configured unit testing and e2e testing setups
      2. **Manual setup:** You can manually setting up unit tests for *.vue files using either mocha-webpack or jest
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 126. ### How do you apply linting for css?
      The stylelint linter supports linting style parts of Vue single file components. You can run linter on particular vue file as below,
@@ -2922,7 +2922,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 127. ### How do you use eslint plugin?
      The official `eslint-plugin-vue` supports linting both the template and script parts of Vue single file components. You can configure plugin in your ESLint config,
@@ -2941,7 +2941,7 @@ List of 300 VueJS Interview Questions
      eslint --ext js,vue MyComponent.vue
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 128. ### What is the purpose of eslint loader?
      You can use `eslint-loader` for *.vue files in order to automatically linted on save during development. It can be installed as npm module,
@@ -2966,7 +2966,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 129. ### What is CSS extraction?
      `CSS Extraction` is used to extract all the processed CSS in all Vue components into a single CSS file. For webpack4, you need to install below npm command,
@@ -3003,7 +3003,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 130. ### What are custom blocks?
      You can define custom language blocks inside *.vue files based on the `lang` attribute of the block, the block's tag name, and the rules in your webpack config. You can also use `resourceQuery` to match a rule against a custom block with no lang.
@@ -3022,7 +3022,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 131. ### What are the features of stylelint?
      Below are the list of major stylelint features
@@ -3032,7 +3032,7 @@ List of 300 VueJS Interview Questions
      4. Parses **CSS-like syntaxes** like SCSS, Sass, Less and SugarSS
      5. Supports **Plugins** for reusing community plugins and creating own plugins
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 132. ### What are the principles for vuex application structure?
      Vuex enforces below rules to structure any application.
@@ -3043,12 +3043,12 @@ List of 300 VueJS Interview Questions
      The project structure for any non-trivial application would be as below,
      <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/vuex-app-structure.png" width="700" height="500">
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 133. ### Is Vuex supports hot reloading?
      Yes, vuex supports hot-reloading for mutations, modules, actions and getters during development. You need to use either webpack's hot module replacement API or browserify's hot module replacement plugin.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 134. ### What is the purpose of hotUpdate API of vuex store?
      The store.hotUpdate() API method is used for mutations and modules.
@@ -3090,7 +3090,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 135. ### How do you test mutations?
      Since mutations are just functions that completely rely on their arguments it will be easier to test. You need to keep mutations inside your store.js file and should also export the mutations as a named export apart from default export.
@@ -3123,7 +3123,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 136. ### How do you test your getters?
      It is easier to test getters similar to mutations. It is recommended to test these getters if they have complicated computation.
@@ -3170,7 +3170,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 137. ### What is the procedure to run tests in node?
      By proper mocking, you can bundle tests with webpack and run them on node without having depenceny on Browser API.  It involves 2 steps,
@@ -3200,7 +3200,7 @@ List of 300 VueJS Interview Questions
          mocha test-bundle.js
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 138. ### What is the procedure to run tests in browser?
      Below are the steps to run tests in real browser,
@@ -3209,7 +3209,7 @@ List of 300 VueJS Interview Questions
      3. Start webpack-dev-server using the config.
      4. Go to `localhost:8080/webpack-dev-server/test-bundle` to see the test result
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 139. ### What is the purpose of strict mode in vuex?
      In strict mode, whenever Vuex state is mutated outside of mutation handlers, an error will be thrown. It make sure that all state mutations can be explicitly tracked by debugging tools. You can just enable this by passing `strict: true` while creating the vuex store.
@@ -3220,7 +3220,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 140. ### Can I use strict mode in production environment?
      No, it is not recommended to use strict mode in production environment. Strict mode runs a synchronous deep watcher on the state tree for detecting inappropriate mutations and it can be quite expensive when you perform large amount of mutations. i.e, It can impact performance if you enable in production mode.
@@ -3232,7 +3232,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 141. ### What is vuex plugin?
      The vuex plugin is an option hat exposes hooks for each mutation. It is a normal function that receives the store as the only argument. You can create your own plugin or use built-in plugins.
@@ -3254,7 +3254,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 142. ### How do you mutate state in plugins?
      Similar to components you can't mutate state directly but they can trigger changes by by committing mutations. This way a plugin can be used to sync a data source to the store.
@@ -3285,7 +3285,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 143. ### What is vuex store?
      A Vuex "store" is basically a container that holds your application state. The store creation is pretty straightforward.
@@ -3318,7 +3318,7 @@ List of 300 VueJS Interview Questions
          console.log(store.state.count) // -> 1
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 144. ### What are the differences of vuex store and plain global object?
      Below are the two major differences between vuex store and plain global object,
@@ -3326,17 +3326,17 @@ List of 300 VueJS Interview Questions
      1. **Vuex stores are reactive:** If the store's state changes then vue components will reactively and efficiently get updated
      2. **Cannot directly mutate the store's state:** The store's state is changed by explicitly committing mutations to ensure that every state change leaves a track-able record for tooling purpose
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 145. ### What is the reason not to update the state directly?
      We want to explicitly track application state in order to implement tools that can log every mutation, take state snapshots, or even perform time travel debugging. So we need to commit a mutation instead of changing store's state directly.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 146. ### What is Single state tree?
      Vuex's single state tree is single object contains all your application level state and serves as the "single source of truth". It  does not conflict with modularity when you split state and mutations into sub modules.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 147. ### How do you install vuex?
      You can install vuex using npm or yarn as below,
@@ -3361,7 +3361,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** You can  use a specific version/tag via URLs like https://unpkg.com/vuex@2.0.0. If you don't mention any version then it will point to latest version.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 148. ### Do I need promise for vuex?
      Yes, vuex requires Promise. If your supporting browsers do not implement Promise (e.g. IE), you can use a polyfill library, such as es6-promise using npm or yarn.
@@ -3374,7 +3374,7 @@ List of 300 VueJS Interview Questions
      import 'es6-promise/auto'
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 149. ### How do you display store state in vue components?
      Since Vuex stores are reactive, you can retrieve" state from store by simply returning store's state from within a computed property. i.e, Whenever store state changes, it will cause the computed property to re-evaluate, and trigger associated DOM updates.
@@ -3392,7 +3392,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 150. ### How do you inject store into child components?
      Vuex provides a mechanism to "inject" the store into all child components from the root component with the store option. It will be enabled by vue.use(vuex).
@@ -3425,7 +3425,7 @@ List of 300 VueJS Interview Questions
           }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 151. ### What is mapState helper?
      In Vuex application, creating a computed property every time whenever we want to access the store's state property or getter is going to be repetitive and verbose, especially if a component needs more than one state property. In this case, we can make use of the mapState helper of vuex which generates computed getter functions for us.
@@ -3459,7 +3459,7 @@ List of 300 VueJS Interview Questions
      ])
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 152. ### How do you combine local computed properties with mapState helper?
      You can use object spread operator syntax in order to combine mapState helper(which returns an object) with other local computed properties. This way it simplify merging techniques using utilities.
@@ -3473,12 +3473,12 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 153. ### Do you need to replace entire local state with vuex?
      No, if a piece of state strictly belongs to a single component, it could be just fine leaving it as local state. i.e, Even though vuex used in the application, it doesn't mean that you need to keep all the local state in vuex store. Other than that the code becomes more verbose and indirect although it makes your state mutations more explicit and debuggable.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 154. ### What are vuex getters??
      Vuex getters acts as computed properties for stores to compute derived state based on store state. Similar to computed properties, a getter's result is cached based on its dependencies, and will only re-evaluate when some of its dependencies have changed.
@@ -3503,7 +3503,7 @@ List of 300 VueJS Interview Questions
 
      **Note:** Getters receive state as first argument.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 155. ### What is a property style access?
      You can access values of store's getter object(store.getters) as properties. This is known as property style access.
@@ -3522,7 +3522,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** The getters accessed as properties are cached as part of Vue's reactivity system.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 156. ### What is a method style access?
      You can access store's state in a method style by passing arguments.
@@ -3540,7 +3540,7 @@ List of 300 VueJS Interview Questions
      store.getters.getUserProfileById(111); {id: '111', name: 'John', age: 33}
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 157. ### What is mapGetter helper??
      The mapGetters is a helper that simply maps store getters to local computed properties.
@@ -3561,7 +3561,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 158. ### What are mutations?
      Vuex mutations are similar to any events with a string `type` and a `handler`. The handler function is where we perform actual state modifications, and it will receive the state as the first argument.
@@ -3585,7 +3585,7 @@ List of 300 VueJS Interview Questions
      store.commit('increment')
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 159. ### How do you commit with payload?
      You can also pass **payload** for the mutation as an additional argument to `store.commit`.
@@ -3606,7 +3606,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** You can also pass primitives as payload.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 160. ### What is object style commit?
      You can also commit a mutation is by directly using an object that has a **type** property.
@@ -3625,7 +3625,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 161. ### What are the caveats with vuex mutations?
      Since a Vuex store's state is made reactive by Vue, the same reactivity caveats of vue will apply to vuex mutations. These are the rules should be followed for vuex mutations,
@@ -3639,7 +3639,7 @@ List of 300 VueJS Interview Questions
          state.stateObject = { ...state.stateObject, newProperty: 'John' }
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 162. ### Why mutations should be synchronous?
      You need to remember that mutation handler functions must be synchronous. This is why because any state mutation performed in the callback is essentially un-trackable. It is going to be problematic when the devtool will need to capture a "before" and "after" snapshots of the state during the mutations.
@@ -3653,7 +3653,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 163. ### How do you perform mutations in components?
      You can commit mutations in components with  either **this.$store.commit('mutation name')** or mapMutations helper to map component methods to **store.commit** calls.
@@ -3677,7 +3677,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 164. ### Is it mandatory to use constants for mutation types?
      No, it is not mandatory. But you might observed that State management implementations such Flux and Redux use constants for mutation types. This convention is just a preference and useful to take advantage of tooling like linters, and putting all constants in a single file allows your collaborators to get an at-a-glance view of what mutations are possible in the entire application.
@@ -3704,19 +3704,19 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 165. ### How do you perform asynchronous operations?
      In Vuex, mutations are synchronous transactions. But if you want to handle asynchronous operations then you should use **actions**.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 166. ### What are differences between mutations and actions?
      Actions are similar to mutations, but there are two main differences,
      1. Mutations perform mutations on the state, actions commit mutations.
      2. Actions can contain arbitrary asynchronous operations unlike mutations.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 167. ### Give an example usage of actions?
      Vuex provides actions property similar mutations property in order to define action handlers. These action handlers receive context object as an argument which has same properties and methods of store instance.
@@ -3740,7 +3740,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 168. ### How do you dispatch actions?
      Actions are simply triggered with the store.dispatch method as below,
@@ -3749,7 +3749,7 @@ List of 300 VueJS Interview Questions
      store.dispatch('increment')
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 169. ### Can you dispatch an action using payload or object style?
      Yes, actions support both payload and object style format similar to mutations.
@@ -3766,12 +3766,12 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 170. ### Can I use styled components in vuejs?
      Styled components is basically used for ReactJS applications. If you want to use for VueJS applications, there is vuejs styled components library available under styled component library. VueJS Styled component is a javascript library for stying vuejs applications.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 171. ### How do you dispatch actions in components?
      You can dispatch actions in components with **this.$store.dispatch('action name')**, or use the **mapActions** helper which maps component methods to store.dispatch calls.
@@ -3796,7 +3796,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 172. ### How do you compose actions?
      You can write multiple actions together to handle more complex async flows either by chaining promises or async/await. i.e, `store.dispatch` can handle Promise returned by the triggered action handler and it also returns Promise.
@@ -3832,7 +3832,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 173. ### What are modules in vuex?
      If you keep all state of our application in a single big state, the store can get really bloated. To solve this problem, Vuex allows us to divide our store into modules. Here, each module can contain its own state, mutations, actions, getters, and even nested modules.
@@ -3864,7 +3864,7 @@ List of 300 VueJS Interview Questions
      store.state.two // -> `moduleTwo's state
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 174. ### What is module local state?
      When you use modules the local state will be available to mutations, getters and actions in different ways.
@@ -3898,16 +3898,16 @@ List of 300 VueJS Interview Questions
          }
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 175. ### What is namespacing in vuex?
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 176. ### What is the default namespace behavior in vuex?
      By default, actions, mutations and getters inside modules are still registered under the global namespace. Because of that multiple modules react to the same mutation/action type.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 177. ### When do you reuse modules?
      Sometime you may need to create multiple instances of a module.
@@ -3924,7 +3924,7 @@ List of 300 VueJS Interview Questions
          }
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 178. ### What are the principles enforced by vuex?
      Vuex enforces below high-level principles,
@@ -3932,7 +3932,7 @@ List of 300 VueJS Interview Questions
      2. The state should be mutated by committing mutations only(i.e, for synchronous transactions)
      3. The actions should be used for asynchronous transactions.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 179. ### Can I perform mutations directly in strict mode?
      In strict mode, you can't mutate state directly using `v-model` attribute. If you use v-model it throws an error because mutation is not performed inside an explicit Vuex mutation handler.
@@ -3962,7 +3962,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 180. ### How to use model directive with two way computed property?
      You can still use model directive using two-way computed property with a setter.
@@ -3985,7 +3985,7 @@ List of 300 VueJS Interview Questions
       }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 181. ### What is Vue CLI?
      Vue CLI is a simple command line interface for scaffolding Vue.js projects. It will be helpful for rapid Vue.js development. You can install the npm package globally as below,
@@ -3997,7 +3997,7 @@ List of 300 VueJS Interview Questions
      You can find the install version using `vue --version` command.
      **Note:** Vue CLI requires Node.js version 8.9 or above (8.11.0+ recommended).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 182. ### What are the features provided by Vue CLI?
      VueCLI provides below major features,
@@ -4019,7 +4019,7 @@ List of 300 VueJS Interview Questions
      vue build MyComponent.vue
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 184. ### How do you create project using vue CLI?
      You can create project using `vue create` command
@@ -4036,19 +4036,19 @@ List of 300 VueJS Interview Questions
 
         <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/cli-manual-features.png" width="400" height="500">
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 185. ### How do you create project using GUI?
      You can also create and manage projects using a graphical interface with the `vue ui` command. Once you apply this command, it opens a browser window with a GUI that guides you through the project creation process.
 
         <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/cli-gui.png" width="400" height="500">
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 186. ### What are plugins in vue CLI?
      Vue CLI uses a plugin-based architecture where each plugin can modify the internal webpack configuration and inject commands to `vue-cli-service`. i.e, Each feature is implemented as a plugin. This architecture makes Vue CLI flexible and extensible.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 187. ### How do you install plugins in an existing Vue CLI project?
      You can install a plugin into an already created project with the `vue add` command.
@@ -4063,7 +4063,7 @@ List of 300 VueJS Interview Questions
      ```
      If a plugin is already installed, you can skip the installation and only invoke its generator with the `vue invoke` command.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 188. ### How to access local plugins in a project?
      If you need access to the plugin API in your project without creating a full plugin, you can use the `vuePlugins.service` option in your package.json file
@@ -4075,7 +4075,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 189. ### How do you create UI plugins kind of behavior?
      You can also add files that will behave like UI plugins with the `vuePlugins.ui` option
@@ -4087,7 +4087,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 190. ### What are presets?
      A Vue CLI preset is a JSON object that contains pre-defined options and plugins for creating a new project without interactive prompts to select them. During project creation(using vue create), the presets will be saved in a `~/.vuerc` which can modified at any time.
@@ -4109,7 +4109,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 191. ### What is the versioning behavior in preset plugins?
      You can explicitly specify versions of the plugins being used.
@@ -4125,7 +4125,7 @@ List of 300 VueJS Interview Questions
      ```
      For official plugins, the CLI will automatically use the latest version available in the registry
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 192. ### How do you allow plugin prompts?
      Each plugin can inject its own prompts during the project creation process irrespective of preset declarations using **prompts: true** setting
@@ -4142,7 +4142,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 193. ### What are remote presets?
      You can share a preset with other developers by publishing it in a git repo. The repo can be published in either github, GitLab or BitBucket.
@@ -4156,7 +4156,7 @@ List of 300 VueJS Interview Questions
          vue create --preset username/repo my-project
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 194. ### Can I use local presets?
      Yes, Vue CLI will load local presets if the value for the --preset option is a relative or absolute file path, or ends with .json. i.e, You can work with local presets directly. These local presets avoids repeatedly pushing the preset to a remote repo to test.
@@ -4167,7 +4167,7 @@ List of 300 VueJS Interview Questions
      vue create --preset my-preset.json my-project
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 195. ### What is the purpose of browserslist option?
      The `browserslist` option is available in package.json file in order to specify a range of browsers the project is supported. This value is going to be used by babel and autoprefixer to transpile javascript features and applying vendor prefixes.
@@ -4181,7 +4181,7 @@ List of 300 VueJS Interview Questions
        ]
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 196. ### How do you find VueJS version using API?
      The community plugins and components might need different strategies for different versions. In this case, you can use **Vue.version** which provides installed version of Vue as a string.
@@ -4199,7 +4199,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 197. ### How do you create reactive objects?
      In version 3.0 you can create a reactive object with the reactive() API.
@@ -4225,7 +4225,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 198. ### What is the purpose new slot directive?
      In Vue 2.6 version, the new slot syntax is provided using v-slot directive which aligns syntax with Vue 3.0. This is going to be replacement for old slot syntax.
@@ -4247,7 +4247,7 @@ List of 300 VueJS Interview Questions
      </user>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 199. ### What is the use of compile method?
      VueJS provides compile method which is used to compile a template string into a render function. This method is only available in the full build.
@@ -4265,7 +4265,7 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 200. ### What does nextTick do in VueJS?
      The nextTick method is just a comfortable way to execute a function after the data has been set, and the DOM has been updated. As an example, the usage is going to be similar to setTimeout:
@@ -4284,7 +4284,7 @@ List of 300 VueJS Interview Questions
        })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 201. ### What is async error handling?
      From 2.6 version onwards, Vue's built-in error handling mechanism can capture errors inside v-on handlers. Also,if any of your lifecycle hooks or event handlers performs asynchronous operations, you can now return a Promise from the function so that any uncaught errors from that Promise chain are also sent to your error handlers.
@@ -4300,7 +4300,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 202. ### What are Dynamic Directive Arguments?
      In Vue 2.6 release onwards, Directive arguments can now accept dynamic JavaScript expressions. i.e, the specific argument that we want to use is only known at runtime.
@@ -4311,7 +4311,7 @@ List of 300 VueJS Interview Questions
      <div v-on:[event]="handler"></div>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 203. ### What are the drawbacks of dynamic directive arguments?
      Apart from the benefits of dynamic directives arguments, it brings two drawbacks or considerations on the usage
@@ -4326,17 +4326,17 @@ List of 300 VueJS Interview Questions
         ```
      2. **Custom Directives:** The custom directive implementations need to have potential argument changes in addition to value changes.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 204. ### What is the special handling for null values in dynamic directive arguments?
      Dynamic argument values are expected to be strings but it allows `null` as a special value that explicitly indicates that the binding should be removed. Other types will be treated as  mistakes and will trigger a warning. So null value can be applied for v-bind and v-on.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 205. ### Can I use dynamic directive null value for slots?
      No. It can be applied only for v-bind and v-on but not v-slot. This is because v-slot is not a binding and cannot be removed.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 206. ### What is Vue I18n plugin?
      Vue I18n is an internationalization plugin of Vue.js. It easily integrates some localization features to your Vue.js Application.
@@ -4382,7 +4382,7 @@ List of 300 VueJS Interview Questions
        <p>Guten Morgen</p>
      </div>
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 207. ### What are the types of formatting?
      Basically there are 4 types of formatting available in i18n plugin,
@@ -4465,7 +4465,7 @@ List of 300 VueJS Interview Questions
          <p>Good Morning</p>
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 208. ### What is custom formatting?
      You can use custom formatting for some of the formatting cases such as ICU formatting syntax (message "pattern" strings with variable-element placeholders enclosed in {curly braces}). It implement Formatter Interface.
@@ -4497,7 +4497,7 @@ List of 300 VueJS Interview Questions
      new Vue({ i18n }).$mount('#app')
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 209. ### How do you handle Pluralization?
      You can translate with pluralization by defining the locale that have a pipe | separator, and define plurals in pipe separator. Remember that template should use $tc() instead of $t().
@@ -4530,7 +4530,7 @@ List of 300 VueJS Interview Questions
      <p>10 friends</p>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 210. ### How to implement DateTime localization?
      You can localize the datetime with definition formats(e.g. short, long, etc).
@@ -4585,7 +4585,7 @@ List of 300 VueJS Interview Questions
          </div>
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 211. ### How do you implement Number localization?
      You can localize the number with definition formats(e.g. currency, etc)
@@ -4632,7 +4632,7 @@ List of 300 VueJS Interview Questions
          </div>
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 212. ### How do you perform locale changing?
      All child components of a root instance are localized using the locale property of the VueI18n class. You can change the value of the locale property of the VueI18n instance as below.
@@ -4671,7 +4671,7 @@ List of 300 VueJS Interview Questions
      </script>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 213. ### What is Lazy loading translations?
      The loading of all translation files at once is unnecessary and it may impact the performance too. It will be easy for lazy loading or asynchronously loading the translation files when you use webpack. i.e, You can dynamically load or import language translations using webpack as below,
@@ -4721,12 +4721,12 @@ List of 300 VueJS Interview Questions
      })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 214. ### What is the main difference between method and computed property?
      The main difference between a computed property and a method is that computed properties are cached and invoke/change only when their dependencies change. Whereas a method will evaluate every time it's called.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 215. ### What is vuetify?
      Vuetify is a semantic component material framework for Vue. It aims to provide clean, semantic and reusable components that make building application easier. The installation and configuration is simple as below,
@@ -4740,7 +4740,7 @@ List of 300 VueJS Interview Questions
      Vue.use(Vuetify) // Add Vuetify as a plugin
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 216. ### How do you watch for nested data changes?
      You can use deep watcher by setting `deep: true` in the options object. This option enables us to detect nested value changes inside Objects.
@@ -4753,7 +4753,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** This is not required to listen for Array mutations.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 217. ### How to trigger watchers on initialization?
      You can use `immediate: true` option in order to trigger watchers when the vue instance (or component) is being created. i.e This option will trigger the callback immediately with the current value of the expression.
@@ -4768,7 +4768,7 @@ List of 300 VueJS Interview Questions
      },
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 218. ### What is the purpose of comments option?
      When `comments` option enabled, it will preserve and render HTML comments found in templates. By default, it's value is false. Let's see the action in an example,
@@ -4793,7 +4793,7 @@ List of 300 VueJS Interview Questions
      ```
      **Note:** This option is only available in the full build, with in-browser compilation. i.e, It won't work with Single File Components(SFC).
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 219. ### How to identify whether code is running on client or server?
      You can use `vm.$isServer` method to know whether the current Vue instance is running on the server or client.
@@ -4806,7 +4806,7 @@ List of 300 VueJS Interview Questions
      this.$isServer // With in component
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 220. ### How do you watch route object changes?
      You can setup a watcher on the `$route` in your component. It observes for route changes and when changed ,sets the message property.
@@ -4818,7 +4818,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 221. ### How do you sync current route in vuex store?
      You can use `vue-router-sync` library to sync current $route object in vuex store's state.
@@ -4838,7 +4838,7 @@ List of 300 VueJS Interview Questions
          unsync() // Unsyncs store from router
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 222. ### What are navigation guards in vue router?
      The navigation guards of vue-router are used to protect navigations either by redirecting it or canceling it.
@@ -4848,7 +4848,7 @@ List of 300 VueJS Interview Questions
      2. Per-route:
      3. In-component:
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 223. ### Can I use computed property in another computed property?
      Yes, you can access it directly as you would data props.
@@ -4873,7 +4873,7 @@ List of 300 VueJS Interview Questions
      }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 224. ### How can I use imported constant in template section?
      The variables need to be exposed on your data in order to use them in template section. i.e, You can't use them directly on template.
@@ -4897,7 +4897,7 @@ List of 300 VueJS Interview Questions
      </script>
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 225. ### Is recommended to use async for computed properties?
      No, it is not recommended. Computed properties should be synchronous. But if you still use asynchronous actions inside them, they may not work as expected and can lead to an unexpected behaviour.
@@ -4911,11 +4911,11 @@ List of 300 VueJS Interview Questions
 
      **Note:** If you still prefer to use async computed properties for some reason then you can consider using additional plugin such as `vue-async-computed`.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 226. ### What happens if you use duplicate field names?
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 227. ### Why the component data must be a function?
      The component data must be a function instead directly providing the object. This is because each instance needs to maintain an independent copy of the returned data object. Otherwise one component instance data changes will impact the data of all other instances.
@@ -4932,7 +4932,7 @@ List of 300 VueJS Interview Questions
          }
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 228. ### What is the reason for recommendation for multi-word component names?
      Component names should always be multi-word, except for root level or built-in vue components(such as `<transition>` or `<component>` etc). This recommendation is  to prevent conflicts with existing and future HTML elements, since all HTML elements are a single word.
@@ -4945,7 +4945,7 @@ List of 300 VueJS Interview Questions
           })
      ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 229. ### How to use composition API in Vue2.0?
      Even though the Composition API is a part of Vue 3, it has been made available for Vue 2 as well by installing `@vue/composition-api` as a plugin via `Vue.use()`.
@@ -4974,9 +4974,9 @@ List of 300 VueJS Interview Questions
          import { ref, reactive } from '@vue/composition-api'
          ```
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
 
 230. ### What is composition API?
      Composition API is a set of additive, function-based APIs that allow flexible composition of component logic.
 
-     **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Вернуться к началу](#table-of-contents)**
