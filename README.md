@@ -1888,24 +1888,24 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-68.  ### What is the benefit of render functions over templates?
-     In VueJS, the templates are very powerful and recommended to build HTML as part of your application. However, some of the special cases like dynamic component creation based on input or slot value can be achieved through render functions. Also, these functions gives the full programmatic power of javascript eco system.
+68.  ### В чем преимущество функций render перед шаблонами?
+     В VueJS шаблоны очень мощные и рекомендуются для создания HTML как части вашего приложения. Однако некоторые особые случаи, такие как создание динамических компонентов на основе ввода или значения слота, могут быть реализованы с помощью функций рендеринга. Кроме того, эти функции предоставляют полную программную мощь экосистемы javascript.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-69.  ### What is a render function?
-     Render function is a normal function which receives a `createElement` method as it’s first argument used to create virtual nodes. Internally Vue.js' templates actually compile down to render functions at build time. Hence templates are just syntactic sugar of render functions.
+69.  ### Что такое render функция?
+     Render функция - это обычная функция, которая получает метод createElement в качестве первого аргумента, используемого для создания виртуальных узлов. Внутренне шаблоны Vue.js фактически компилируются в render функций во время сборки. Следовательно, шаблоны - это просто синтаксический сахар функций рендеринга.
 
-     Let's take an example of simple Div markup and corresponding render function.
-     The HTML markup can be written in template tag as below,
+     Возьмем пример простую разметку Div и соответствующую render функцию.
+     Разметку HTML можно записать в теге шаблона, как показано ниже,
      ```vue
      <template>
        <div :class="{'is-rounded': isRounded}">
-         <p>Welcome to Vue render functions</p>
+         <p>Добро пожаловать в render функции Vue</p>
        </div>
      </template>
      ```
-     and the compiled down or explicit render function would appear as below,
+     и скомпилированная или явная функция рендеринга будет выглядеть, как показано ниже,
      ```javascript
      render: function (createElement) {
        return createElement('div', {
@@ -1913,52 +1913,52 @@
            'is-rounded': this.isRounded
           }
        }, [
-         createElement('p', 'Welcome to Vue render functions')
+         createElement('p', 'Добро пожаловать в render функцию Vue')
        ]);
      }
      ```
-     **Note:** The react components are built with render functions in JSX.
+     **Примечание:** Компоненты React построены с помощью render функций в JSX.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-70.  ### Explain the structure of createElement with arguments?
-     The createElement accepts few arguments to use all the template features.
+70.  ### Объясните структуру createElement с аргументами?
+     CreateElement принимает несколько аргументов для использования всех функций шаблона.
 
-     Let us see the basic structure of createElement with possible arguments,
+     Давайте посмотрим на базовую структуру createElement с возможными аргументами,
      ```javascript
      // @returns {VNode}
      createElement(
-       // An HTML tag name, component options, or async function resolving to one of these.
+       // Имя тега HTML, параметры компонента или асинхронная функция, которая резолвить одно из них.
        // Type is {String | Object | Function}
-       // Required.
+       // Обязательный
        'div',
 
-       // A data object corresponding to the attributes you would use in a template.
-       // Type is {Object}
-       // Optional.
+       // Объект данных, соответствующий атрибутам, которые вы будете использовать в шаблоне.
+       // Тип - {Object}
+       // Опциональный
        {
-         // Normal HTML attributes
+         // Обычные атрибуты HTML
          attrs: {
            id: 'someId'
          },
-         // Component props
+         // props'ы компонента
          props: {
            myProp: 'somePropValue'
          },
-         // DOM properties
+         // Свойства DOM
          domProps: {
            innerHTML: 'This is some text'
          },
-         // Event handlers are nested under `on`
+         // Обработчики событий вложены в `on`
          on: {
            click: this.clickHandler
          },
-         // Similar to `v-bind:style`, accepting either a string, object, or array of objects.
+         // Подобно `v-bind:style`, принимает строку, объект или массив объектов.
          style: {
            color: 'red',
            fontSize: '14px'
          },
-         // Similar to `v-bind:class`, accepting either a string, object, or array of strings and objects.
+         // Подобно `v-bind:class`, принимает строку, объект или массив строк и объектов.
          class: {
            classsName1: true,
            classsName2: false
@@ -1966,11 +1966,11 @@
          // ....
        },
 
-       // Children VNodes, built using `createElement()`, or using strings to get 'text VNodes'.
-       // Type is {String | Array}
-       // Optional.
+       // Дочерние виртуальные узлы, созданные с использованием createElement() или строк для получения текстовых виртуальных узлов.
+       // Тип - {String | Array}
+       // Опциональный
        [
-         'Learn about createElement arguments.',
+         'Узнайте об аргументах createElement.',
          createElement('h1', 'Headline as a child virtual node'),
          createElement(MyComponent, {
            props: {
@@ -1980,28 +1980,28 @@
        ]
      )
      ```
-     See details of the date object in official [doc](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth).
+     Смотрите подробную информацию об объекте data в официальном [doc](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth).
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-71.  ### How can you write duplicate virtual nodes in a component?
-     All virtual nodes(VNodes) in the component tree must be unique.i.e, You can't write duplicated nodes in a straightforward way. If you want to duplicate the same element/component many times then you should use factory function.
+71.  ### Как можно записать в компоненте повторяющиеся виртуальные узлы?
+     Все виртуальные узлы (VNodes) в дереве компонентов должны быть уникальными. То есть вы не можете записывать дублированные узлы прямым способом. Если вы хотите дублировать один и тот же элемент/компонент много раз, вам следует использовать фабричную функцию.
 
-     The below render function is invalid where you are trying to duplicate h1 element 3 times,
+     Приведенная ниже функция рендеринга недействительна, если вы пытаетесь дублировать элемент h1 3 раза,
      ```javascript
      render: function (createElement) {
-       var myHeadingVNode = createElement('h1', 'This is a Virtual Node')
+       var myHeadingVNode = createElement('h1', 'Это виртуальный узел')
        return createElement('div', [
          myHeadingVNode, myHeadingVNode, myHeadingVNode
        ])
      }
      ```
-     You can make duplicates with factory function,
+     Вы можете делать дубликаты с помощью фабричной функции,
      ```javascript
      render: function (createElement) {
        return createElement('div',
          Array.apply(null, { length: 3 }).map(function () {
-           return createElement('h1', 'This is a Virtual Node')
+           return createElement('h1', 'Это виртуальный узел')
          })
        )
      }
@@ -2009,106 +2009,104 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-72.  ### List down the template equivalents in render functions?
-     VueJS provides proprietary alternatives and plain javascript usage for the template features.
+72.  ### Перечислить эквиваленты шаблонов в функциях рендеринга (render functions)?
+     VueJS предоставляет проприетарные альтернативы и использование простого javascript для функций шаблона.
 
-     Let's list down them in a table for comparision,
+     Перечислим их в таблице для сравнения,
 
-        | Templates                                                                                                         | Render function                                                                                                                                                                              |
-        | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-        | Conditional and looping directives: v-if and v-for                                                                | Use JavaScript’s if/else and map concepts                                                                                                                                                    |
-        | Two-way binding: v-model                                                                                          | Apply own JS logic with value binding and event binding                                                                                                                                      |
-        | Capture Event modifiers: .passive, .capture, .once and .capture.once or .once.capture                             | &, !, ~ and ~!                                                                                                                                                                               |
-        | Event and key modifiers: .stop, .prevent, .self, keys(.enter, .13) and Modifiers Keys(.ctrl, .alt, .shift, .meta) | Use javascript solutions: event.stopPropagation(), event.preventDefault(), if (event.target !== event.currentTarget) return, if (event.keyCode !== 13) return and if (!event.ctrlKey) return |
-        | Slots: slot attributes                                                                                            | Render functions provide this.$slots and this.$scopedSlots instance properties                                                                                                               |
+        | Шаблоны                                                                                                                    | Функции рендеринга (Render function)                                                                                                                                                             |
+        | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+        | Условные и циклические директивы: v-if и v-for                                                                             | Используйте JavaScript if / else и map                                                                                                                                                           |
+        | Двусторонняя привязка: v-model                                                                                             | Применение собственной логики JS с привязкой значений и привязкой событий                                                                                                                        |
+        | Модификаторы события захвата: .passive, .capture, .once и .capture.once или .once.capture                                  | &, !, ~ и ~!                                                                                                                                                                                     |
+        | Модификаторы событий и ключей: .stop, .prevent, .self, keys(.enter, .13) и Ключи модификаторов(.ctrl, .alt, .shift, .meta) | Используйте решения javascript: event.stopPropagation(), event.preventDefault(), if (event.target !== event.currentTarget) return, if (event.keyCode !== 13) return и if (!event.ctrlKey) return |
+        | Slot'ы: slot attributes                                                                                                    | Функции рендеринга предоставляют свойства экземпляра this.\$slots и this.$scopedSlots                                                                                                            |
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-73.  ### What are functional components?
-     The functional components are just simple functions to create simple components just by passing a context. Every functional component follows two rules,
-      1. **Stateless:** It doesn’t keep any state by itself
-      2. **Instanceless:** It has no instance, thus no this
+73.  ### Что такое функциональные компоненты?
+     Функциональные компоненты - это простые функции для создания простых компонентов, просто передавая контекст. Каждый функциональный компонент следует двум правилам:
+      1. **Stateless:** Сам по себе он не сохраняет никакого состояния
+      2. **Instanceless:** У него нет экземпляра, поэтому нет this
 
-     You need to define `functional: true` to make it functional. Let's take an example of functional components,
+     Чтобы сделать его функциональным, вам нужно определить `function: true`. Рассмотрим пример функциональных компонентов,
      ```javascript
      Vue.component('my-component', {
        functional: true,
-       // Props are optional
+       // Props'ы не является обязательным
        props: {
          // ...
        },
-       // To compensate for the lack of an instance,
-       // we are now provided a 2nd context argument.
+       // Чтобы компенсировать отсутствие экземпляра, нам теперь предоставляется второй аргумент контекста.
        render: function (createElement, context) {
          // ...
        }
      })
      ```
-     **Note:** The functional components are quite popular in React community too.
+     **Примечание:** Функциональные компоненты также довольно популярны в сообществе React.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-74.  ### What are the similarities between VueJS and ReactJS?
-     Even though ReactJS and VueJS are two different frameworks there are few similarities(apart from the common goal of utilized in interface design) between them.
-     1. Both frameworks are based on the **Virtual DOM** model
-     2. They provide features such Component-based structure and reactivity
-     3. They are intended for working with the root library, while all the additional tasks are transferred to other libraries(routing, state management etc).
+74.  ### В чем сходство между VueJS и ReactJS?
+     Несмотря на то, что ReactJS и VueJS - две разные структуры, между ними есть немного общего (помимо общей цели, используемой в дизайне интерфейса).
+     1. Обе структуры основаны на модели **Virtual DOM**
+     2. Они предоставляют такие функции, как структура на основе компонентов и реактивность.
+     3. Они предназначены для работы с корневой библиотекой, при этом все дополнительные задачи передаются другим библиотекам (маршрутизация, управление состоянием и т.д.).
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-75.  ### What is the difference between VueJS and ReactJS?
-     Even though VueJS and ReactJS share few common features there are many difference between them.
+75.  ### В чем разница между VueJS и ReactJS?
+     Несмотря на то, что VueJS и ReactJS имеют немного общего, между ними есть много различий.
 
-     Let's list down them in a table format.
+     Перечислим их в виде таблицы.
 
-      | Feature               | VueJS                                | ReactJS                                            |
-      | --------------------- | ------------------------------------ | -------------------------------------------------- |
-      | Type                  | JavaScript MVC Framework             | JavaScript Library                                 |
-      | Platform              | Primarily focused on web development | Both Web and Native                                |
-      | Learning Curve        | Easy to learn the framework          | A steep learning curve and requires deep knowledge |
-      | Simplicity            | Vue is simpler than React            | React is more complex than Vue                     |
-      | Bootstrap Application | Vue-cli                              | CRA (Create React App)                             |
+      | Фича                  | VueJS                                           | ReactJS                                                 |
+      | --------------------- | ----------------------------------------------- | ------------------------------------------------------- |
+      | Тип                   | JavaScript MVC фреймворк                        | JavaScript библиотека                                   |
+      | Платформа             | В первую очередь ориентирован на веб-разработку | Как веб-разработка, так и нативная мобильная разработка |
+      | Кривая обучения       | Легко изучить фреймворк                         | Крутая кривая обучения и требует глубоких знаний        |
+      | Простота              | Vue проще, чем React                            | React сложнее, чем Vue Vue                              |
+      | Bootstrap Application | Vue-cli                                         | CRA (Create React App)                                  |
 
       **[⬆ Вернуться к началу](#table-of-contents)**
 
-76.  ### What are the advantages of VueJS over ReactJS?
-     Vue has the following advantages over React
-     1. Vue is smaller and faster
-     2. The convenient templates ease the process of developing
-     3. It has simpler javascript syntax without learning JSX
+76.  ### В чем преимущества VueJS перед ReactJS?
+     Vue имеет следующие преимущества перед React
+     1. Vue меньше и быстрее
+     2. Удобные шаблоны облегчают процесс разработки
+     3. Он имеет более простой синтаксис javascript без изучения JSX
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-77.  ### What are the advantages of ReactJS over VueJS?
-     React has the following advantages over Vue
-     1. ReactJS gives more flexibility in large apps developing
-     2. Easy to test
-     3. Well-suited for mobile apps creation
-     4. The eco system is quite big and well matured.
+77.  ### В чем преимущества ReactJS перед VueJS?
+     React имеет следующие преимущества перед Vue
+     1. ReactJS дает больше гибкости при разработке больших приложений
+     2. Легко тестировать
+     3. Хорошо подходит для создания мобильных приложений
+     4. Экосистема довольно большая и хорошо созревшая.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-78.  ### What are the differences between VueJS and AngularJS?
-     The  the syntax of Vue and Angular is common at some points because Angular is the basis for VueJS development in the beginning.
+78.  ### В чем разница между VueJS и AngularJS?
+     Синтаксис Vue и Angular в некоторых случаях является общим, потому что Angular изначально являелся основой для разработки VueJS.
 
-     But there are many differences between VueJS and Angular as listed,
+     Но есть много различий между VueJS и Angular, как указано ниже,
 
-      | Feature         | VueJS                                       | AngularJS                                                                |
-      | --------------- | ------------------------------------------- | ------------------------------------------------------------------------ |
-      | Complexity      | Easy to learn, simple API and design        | The framework is bit huge and need some learning curve on typescript etc |
-      | Binding of Data | One-way binding                             | Two-way binding                                                          |
-      | Learning Curve  | Easy to learn the framework                 | A steep learning curve and requires deep knowledge                       |
-      | Founders        | Created by Former Google Employee           | Powered by Google                                                        |
-      | Initial Release | February 2014                               | September 2016                                                           |
-      | Model           | Based on Virtual DOM(Document Object Model) | Based on MVC(Model-View-Controller)                                      |
-      | Written in      | JavaScript                                  | TypeScript                                                               |
+      | Фичи              | VueJS                               | AngularJS                                                         |
+      | ----------------- | ----------------------------------- | ----------------------------------------------------------------- |
+      | Сложность         | Легко изучить, простой API и дизайн | Фреймворк большой и требует некоторого изучения typescript и т.д. |
+      | Связывание данных | Односторонняя привязка              | Двусторонняя привязка                                             |
+      | Кривая обучения   | Легко изучить фреймворк             | Крутая кривая обучения и требует глубоких знаний                  |
+      | Founders          | Создано бывшим сотрудником Google   | Google                                                            |
+      | Модель            | На основе Virtual DOM               | На основе MVC (модель-представление-контроллер)                   |
+      | Написано в        | JavaScript                          | TypeScript                                                        |
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-79.  ### What are dynamic components?
-     The dynamic component is used to dynamically switch beetween multiple components using **<component>** element and pass data to v-bind:is attribute.
+79.  ### Что такое динамические компоненты?
+     Динамический компонент используется для динамического переключения между несколькими компонентами с помощью элемента **<component>** и передачи данных в атрибут v-bind: is.
 
-     Let's create a dynamic component to switch between different pages of a website,
+     Давайте создадим динамический компонент для переключения между разными страницами веб-сайта,
      ```javascript
      new Vue({
        el: '#app',
@@ -2117,13 +2115,13 @@
        },
        components: {
          home: {
-           template: "<p>Home</p>"
+           template: "<p>Главная</p>"
          },
          about: {
-           template: "<p>About</p>"
+           template: "<p>О нас</p>"
          },
          contact: {
-           template: "<p>Contact</p>"
+           template: "<p>Контакты</p>"
          }
        }
      })
@@ -2132,95 +2130,94 @@
      ```html
      <div id="app">
         <component v-bind:is="currentPage">
-            <!-- component changes when currentPage changes! -->
-            <!-- output: Home -->
+            <!-- компонент изменяется при изменении currentPage! -->
+            <!-- output: Главная -->
         </component>
      </div>
      ```
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-80.  ### What is the purpose of keep alive tag?
-     Keep-alive tag is an abstract component used to preserve component state or avoid re-rendering. When you wrapped <keep-alive> tag around a dynamic component,  it caches the inactive component instances without destroying them.
+80.  ### Какова цель тега keep alive?
+     Тег Keep-alive - это абстрактный компонент, используемый для сохранения состояния компонента или предотвращения повторного рендеринга. Когда вы обернули тег `<keep-alive>` вокруг динамического компонента, он кэширует экземпляры неактивных компонентов, не уничтожая их.
 
-     Let's see the example usage of it,
+     Давайте посмотрим на пример его использования,
      ```javascript
-     <!-- Inactive components will be cached! -->
+     // Неактивные компоненты будут кэшироваться!
      <keep-alive>
        <component v-bind:is="currentTabComponent"></component>
      </keep-alive>
      ```
-     When there are multiple conditional children, it requires that only one child is rendered at a time.
+     Когда есть несколько условных дочерних элементов, одновременно отобразится только один дочерний элемент.
 
      ```javascript
-     <!-- multiple conditional children -->
+     // несколько условных дочерних элементов
      <keep-alive>
        <comp-a v-if="a > 1"></comp-a>
        <comp-b v-else></comp-b>
      </keep-alive>
      ```
-     **Note:** Remember that keep-alive tag doesn’t render a DOM element itself, and doesn’t show up in the component parent chain.
+     **Примечание:** Помните, что тег keep-alive не отображается как элемент DOM и не отображается в родительской цепочке компонента.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-81.  ### What are async components?
-     In large applications, we may need to divide the app into smaller chunks and only load a component from the server when it’s needed. To make this happen, Vue allows you to define your component as a factory function that asynchronously resolves your component definition. These components are known as async component.
+81.  ### Что такое асинхронные компоненты?
+     В больших приложениях нам может потребоваться разделить приложение на более мелкие части и загружать компонент с сервера только тогда, когда это необходимо. Чтобы это произошло, Vue позволяет вам определить ваш компонент как фабричную функцию, которая асинхронно разрешает определение вашего компонента. Эти компоненты известны как асинхронный компонент.
 
-     Let's see an example of async component using webpack code-splitting feature,
+     Давайте посмотрим на пример асинхронного компонента, использующего фичу разделения кода (code-splitting) webpack,
      ```javascript
      Vue.component('async-webpack-example', function (resolve, reject) {
-       // Webpack automatically split your built code into bundles which are loaded over Ajax requests.
+       // Webpack автоматически разбивает ваш встроенный код на пакеты, которые загружаются через запросы Ajax.
        require(['./my-async-component'], resolve)
      })
      ```
-     Vue will only trigger the factory function when the component needs to be rendered and will cache the result for future re-renders.
+     Vue будет запускать фабричную функцию только тогда, когда компонент необходимо отрендерить, и кэширует результат для будущих повторных отрисовок.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-82.  ### What is the structure of async component factory?
-     Async component factory is useful to resolve the component asynchronously. The async component factory can  return an object of the below format.
+82.  ### Какова структура фабрика асинхронных компонентов (Async component factory)?
+     Фабрика асинхронных компонентов полезна для асинхронного разрешения компонента. Фабрика асинхронных компонентов может возвращать объект следующего формата.
      ```javascript
      const AsyncComponent = () => ({
-       // The component to load (should be a Promise)
+       // Компонент для загрузки (должен быть Promise)
        component: import('./MyComponent.vue'),
-       // A component to use while the async component is loading
+       // Компонент для использования во время загрузки асинхронного компонента.
        loading: LoadingComponent,
-       // A component to use if the load fails
+       // Компонент для использования в случае сбоя загрузки.
        error: ErrorComponent,
-       // Delay before showing the loading component. Default: 200ms.
+       // Задержка перед показом компонента загрузки. По умолчанию: 200 мс.
        delay: 200,
-       // The error component will be displayed if a timeout is
-       // provided and exceeded. Default: Infinity.
+       // Компонент ошибки будет отображаться, если установлен и превышен тайм-аут. По умолчанию: бесконечность.
        timeout: 3000
      })
      ```
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-83.  ### What are inline templates?
-     If you keep an `inline-template` on a child component then it will use its inner content as a template instead of treating as reusable independent content.
+83.  ### Что такое встроенные (инлайн) шаблоны (inline-template)?
+     Если вы сохраните встроенный шаблон в дочернем компоненте, он будет использовать его внутреннее содержимое в качестве шаблона вместо того, чтобы рассматривать его как повторно используемое независимое содержимое.
      ```javascript
      <my-component inline-template>
         <div>
-            <h1>Inline templates</h1>
-            <p>Treated as component component owne content</p>
+            <h1>Встроенные шаблоны</h1>
+            <p>Рассматривается как собственное содержимое компонента</p>
         </div>
      </my-component>
      ```
-     **Note:** Even though this inline-templates gives more flexibility for template authoring, it is recommended to define template using template property or <template> tag inside .vue component.
+     **Примечание:** Несмотря на то, что эти встроенные шаблоны обеспечивают большую гибкость для создания шаблонов, рекомендуется определять шаблон с помощью свойства шаблона или тега `<template>` внутри компонента `.vue`.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-84.  ### What are X Templates?
-     Apart from regular templates and inline templates, you can also define templates using a script element with the type `text/x-template` and then referencing the template by an id.
+84.  ### Что такое шаблоны X?
+     Помимо обычных шаблонов и встроенных шаблонов, вы также можете определять шаблоны, используя элемент сценария с типом `text/x-template` и затем ссылаясь на шаблон по идентификатору.
 
-     Let's create a x-template for simple use case as below,
+     Давайте создадим X-шаблон для простого случая использования, как показано ниже,
      ```javascript
      <script type="text/x-template" id="script-template">
-       <p>Welcome to X-Template feature</p>
+       <p>Добро пожаловать в X-шаблон</p>
      </script>
      ```
-     Now you can define the template using reference id,
+     Теперь вы можете определить шаблон, используя идентификатор ссылки,
      ```javascript
      Vue.component('x-template-example', {
        template: '#script-template'
@@ -2229,24 +2226,25 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-85.  ### What are recursive components?
-     The Components that can recursively invoke themselves in their own template are known as recursive components.
+85.  ### Что такое рекурсивные компоненты?
+     Компоненты, которые могут рекурсивно вызывать себя в собственном шаблоне, известны как рекурсивные компоненты.
      ```javascript
      Vue.component('recursive-component', {
-       template: `<!--Invoking myself!-->
-                  <recursive-component></recursive-component>`
+       // Вызываю себя!
+       template: `<recursive-component></recursive-component>`
      });
      ```
-     Recursive components are useful for displaying comments on a blog, nested menus, or basically anything where the parent and child are the same, eventhough with different content.
+     Рекурсивные компоненты полезны для отображения комментариев в блоге, вложенных меню или практически всего, где родительский и дочерний элементы совпадают, хотя и с разным содержанием.
 
-     **Note:** Remember that recursive component can lead infinite loops with `max stack size exceeded` error, so make sure recursive invocation is conditional(for example, v-if directive).
+     **Примечание:** Помните, что рекурсивный компонент может приводить к бесконечным циклам с ошибкой `max stack size exceeded` (превышен максимальный размер стека), поэтому убедитесь, что рекурсивный вызов является условным (например, директива v-if).
+
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-86.  ### How do you resolve circular dependencies between components?
-     In complex applications, vue components will actually be each other’s descendent and ancestor in the render tree.
+86.  ### Как разрешить циклические зависимости между компонентами?
+     В сложных приложениях компоненты vue фактически являются потомками и предками друг друга в дереве рендеринга.
 
-     Let's say componentA and componentB included in their respective templates which makes circular dependency,
+     Скажем, componentA и componentB включены в их соответствующие шаблоны, что создает циклическую зависимость,
      ```javascript
      //ComponentA
      <div>
@@ -2259,15 +2257,16 @@
        <component-b >
      </div>
      ```
-     This can be solved by either registering(or wait until) the child component in `beforeCreate` hook or using webpack's asynchronous import while registering the component,
+     Это можно решить, зарегистрировав (или дождавшись) дочерний компонент в хуке `beforeCreate` или используя асинхронный импорт webpack при регистрации компонента,
 
-     **Solution1:**
+
+     **Решение 1:**
      ```javascript
      beforeCreate: function () {
       this.$options.components.componentB = require('./component-b.vue').default
      }
      ```
-     **Solution2:**
+     **Решение 2:**
      ```javascript
      components: {
       componentB: () => import('./component-b.vue')
@@ -2282,20 +2281,25 @@
 
      In this case you can use **runtime-only** builds with Webpack + vue-loader or Browserify + vueify technology stack through which templates will be precompiled into render functions. This way you can make sure VueJS applications are 100% CSP complaint.
 
-     **[⬆ Вернуться к началу](#table-of-contents)**
+     Некоторые среды (приложения Google Chrome) запрещают использование `new Function()` для оценки выражений, и полные сборки приложений vue зависят от этой функции для компиляции шаблонов. По этой причине полные сборки приложения VueJS не являются жалобой CSP.
 
-88.  ### What is the difference between full and runtime only builds?
-
-     There are two types of builds provided by VueJS,
-
-     **1. Full:** These are the builds that contain both the compiler and the runtime.
-
-     **2. Runtime Only:** These builds doesn't include compiler but the code is responsible for creating Vue instances, rendering and patching virtual DOM. These are about 6KB lighter min+gzip.
+     В этом случае вы можете использовать сборки **runtime-only** с технологическим стеком Webpack + vue-loader или Browserify + vueify, с помощью которого шаблоны будут предварительно скомпилированы в функции рендеринга. Таким образом вы можете убедиться, что приложения VueJS на 100% соответствуют требованиям CSP.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-89.  ### List down different builds of vuejs?
-     Below are the list of different builds of VueJS based on type of build,
+88.  ### В чем разница между полной сборкой и сборкой только во время выполнения?
+
+     VueJS предоставляет два типа сборок:
+
+     **1. Полная (Full):** Это сборки, которые содержат как компилятор, так и среду выполнения.
+
+     **2. Только время выполнения (Runtime Only):** Эти сборки не включают компилятор, но код отвечает за создание экземпляров Vue, рендеринг и исправление виртуальной DOM. Это примерно на 6Кб легче min+gzip.
+
+
+     **[⬆ Вернуться к началу](#table-of-contents)**
+
+89.  ### Перечислить различные сборки vuejs?
+     Ниже приведен список различных сборок VueJS в зависимости от типа сборки,
 
         | Type                      | UMD                | CommonJS              | ES Module (for bundlers) | ES Module (for browsers) |
         | ------------------------- | ------------------ | --------------------- | ------------------------ | ------------------------ |
@@ -2306,15 +2310,15 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-90.  ### How do you configure vuejs in webpack?
-     You can configure vueJS in webpack using alias as below,
+90.  ### Как вы настраиваете vuejs в webpack?
+     Вы можете настроить vueJS в webpack, используя псевдоним, как показано ниже,
 
         ```javascript
         module.exports = {
           // ...
           resolve: {
             alias: {
-              'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+              'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' для webpack 1
             }
           }
         }
@@ -2322,17 +2326,17 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-91.  ### What is the purpose of vuejs compiler?
-     The compiler is  is responsible for compiling template strings into JavaScript render functions.
+91.  ### Какова цель компилятора vuejs?
+     Компилятор отвечает за компиляцию строк шаблона в функции рендеринга (render functions) JavaScript.
 
-     For example, the below code snippet shows the difference of templates which need compiler and not,
+     Например, приведенный ниже фрагмент кода показывает разницу между шаблонами, которым нужен компилятор и которым не нужен,
      ```javascript
-     // this requires the compiler
+     // для этого требуется компилятор
      new Vue({
        template: '<div>{{ message }}</div>'
      })
 
-     // this does not
+     // тут не требуется
      new Vue({
        render (h) {
          return h('div', this.message)
@@ -2342,79 +2346,79 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-92.  ### What is Dev Tools and its purpose?
-     DevTools is a browser extension allowing you to inspect and debug your Vue applications in a more user-friendly interface. You can find the below extensions for different browsers or environments,
-     1. Chrome Extension
-     2. Firefox Addon
-     3. Standalone Electron app (works with any environment)
+92.  ### Что такое Dev Tools и их цель?
+     DevTools - это расширение для браузера, позволяющее проверять и отлаживать приложения Vue в более удобном интерфейсе. Вы можете найти нижеприведенные расширения для разных браузеров или сред,
+     1. Расширение Chrome
+     2. Дополнение для Firefox
+     3. Автономное приложение Electron (работает в любой среде)
 
-     The DevTools plugins can be used as shown in the below snapshot,
+     Плагины DevTools можно использовать, как показано на снимке ниже,
 
      <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/DevTools.png" width="700" height="500">
 
-     **Note:**
-     1. If the page uses a production/minified build of Vue.js, devtools inspection is disabled by default so the Vue pane won't show up.
-     2. To make it work for pages opened via `file://` protocol, you need to check "Allow access to file URLs" for this extension in Chrome's extension management panel.
+     **Примечание:**
+     1. Если на странице используется production/minified сборка Vue.js, проверка инструментов разработчика отключена по умолчанию, поэтому панель Vue не отображается.
+     2. Чтобы он работал для страниц, открытых по протоколу `file://`, вам необходимо установить флажок "Allow access to file URLs" (Разрешить доступ к URL-адресам файлов) для этого расширения в панели управления расширениями Chrome.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-93.  ### What is the browser support of VueJS?
-     It supports all ECMAScript5 complaint browsers as mentioned in this [url](https://caniuse.com/#feat=es5). VueJS doesn't support IE8 browser and below, because it uses ECMAScript 5 features that are un-shimmable(require support from the underlying JS engine) in IE8.
+93.  ### Какая поддержка VueJS в браузерах?
+     Он поддерживает все браузеры жалоб ECMAScript5, как указано в этом [url](https://caniuse.com/#feat=es5). VueJS не поддерживает браузер IE8 и более ранние версии, поскольку он использует функции ECMAScript 5, которые не могут быть синхронизированы (требуют поддержки базового движка JS) в IE8.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-94.  ### How do you use various CDNs?
-     VueJS is available in jsdelivr, unpkg and cdnjs etc CDNs. Normally you can use them for prototyping or learning purposes.
+94.  ### Как можно использовать различные CDN?
+     VueJS доступен в CDN jsdelivr, unpkg, cdnjs и т.д. Обычно вы можете использовать их для создания прототипов или обучения.
 
-     For example, you can use them using jsdelivr with latest versions as below,
+     Например, вы можете использовать их с помощью jsdelivr с последними версиями, как показано ниже,
      ```javascript
      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
      ```
-     You can use it for native ES modules as below,
+     Вы можете использовать его для собственных модулей ES, как показано ниже,
      ```javascript
      <script type="module">
        import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.esm.browser.js'
      </script>
      ```
 
-     **Note:** You can remove version number to get latest version.
+     **Примечание:** Вы можете удалить номер версии, чтобы получить последнюю версию.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-95.  ### How do you force update?
-     It is extremely rare situation of having to manually force an update despite the fact that no reactive data has changed. i.e, To force the Vue instance to re-render manually. You can do it force update using **vm.$forceUpdate()** API method.
+95.  ### Как принудительно обновить?
+     Крайне редко приходится принудительно выполнять обновление вручную, несмотря на то, что никакие реактивные данные не изменились. то есть, чтобы заставить экземпляр Vue повторно отрисоваться вручную. Вы можете сделать это принудительно, используя метод API **vm. $forceUpdate()**.
 
-     **Note:**  It does not affect all child components but only the instance itself and child components with inserted slot content.
+     **Примечание:** Это влияет не на все дочерние компоненты, а только на сам экземпляр и дочерние компоненты со вставленным содержимым слота.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-96.  ### What is the purpose of vuejs once directive?
-     If you want to render `a lot of static content` then you need to make sure it only evaluated once and then cached thereafter. In this case, you can use `v-once` directive by wrapping at the root level.
+96.  ### Какова цель директивы once?
+     Если вы хотите отобразить «много статического контента», вам нужно убедиться, что он оценивается только один раз, а затем кешируется. В этом случае вы можете использовать директиву v-once, обернув ее на корневом уровне.
 
-     The example usage of v-once directive would be as below,
+     Пример использования директивы v-once будет выглядеть следующим образом:
      ```javascript
      Vue.component('legal-terms', {
        template: `
          <div v-once>
            <h1>Legal Terms</h1>
-           ... a lot of static content goes here...
+           ... здесь много статического контента ...
          </div>
        `
      })
      ```
 
-     **Note:** It is recommended not to overuse unless there is slow rendering due to lot of static content.
+     **Примечание:** Рекомендуется не злоупотреблять, за исключением случаев медленного рендеринга из-за большого количества статического содержимого.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-97.  ### How do you access the root instance?
-     The root instance(new Vue()) can be accessed with the `$root` property.
+97.  ### Как получить доступ к корневому экземпляру?
+     К корневому экземпляру (new Vue()) можно получить доступ с помощью свойства `$root`.
 
-     Let's see the usage of root instance with an example.
+     Давайте посмотрим на примере использования корневого экземпляра.
 
-     First let's create a root instance with properties and methods as below,
+     Сначала давайте создадим корневой экземпляр со свойствами и методами, как показано ниже,
      ```javascript
-     // The root Vue instance
+     // Корневой экземпляр Vue
      new Vue({
        data: {
          age: 26
@@ -2427,33 +2431,33 @@
        }
      })
      ```
-     Now you can access root instance data and it's methods with in subcomponents as below,
+     Теперь вы можете получить доступ к данным корневого экземпляра и его методам в подкомпонентах, как показано ниже:
      ```javascript
-     // Get root data
+     // Получить корневые данные
      this.$root.age
 
-     // Set root data
+     // Установить корневые данные
      this.$root.age = 29
 
-     // Access root computed properties
+     // Доступ к корневым вычисляемым свойствам
      this.$root.fullName
 
-     // Call root methods
+     // Вызов корневых методов
      this.$root.interest()
      ```
-     It is recommend using Vuex to manage state instead of using root instance as a global store.
+     Для управления состоянием рекомендуется использовать Vuex вместо использования корневого экземпляра в качестве глобального хранилища.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-98.  ### List out top 10 organizations using Vuejs?
-     Below are the top 10 organizations using VueJS for their applications or products,
+98.  ### Перечислите 10 лучших организаций, использующих Vuejs?
+     Ниже приведены 10 ведущих организаций, использующих VueJS для своих приложений или продуктов.
 
-     1. Facebook - Used on marketing side of its Newsfeed
-     2. Netflix - Used in two internal apps for building movie streaming interfaces
-     3. Adobe -  Used for Portfolio, a custom website builder designed to help users showcase their creative work
-     4. Xiaomi - Used for products where it sells from consumer electronics to software
-     5. Alibaba - Provide their apps an excellent experience to its customers
-     6. WizzAir - A budget airline WizzAir used for their customers user interface
+     1. Facebook - Используется в маркетинговой части ленты новостей
+     2. Netflix - Используется в двух внутренних приложениях для создания интерфейсов потоковой передачи фильмов
+     3. Adobe - Используется для Portfolio, специального конструктора веб-сайтов, призванного помочь пользователям продемонстрировать свои творческие работы.
+     4. Xiaomi - Используется для продуктов, от бытовой электроники до программного обеспечения.
+     5. Alibaba - Предоставлять своим клиентам отличный опыт работы с их приложениями
+     6. WizzAir - Бюджетная авиакомпания WizzAir использовала для своих клиентов пользовательский интерфейс
      7. EuroNews
      8. Laracasts
      9. GitLab
@@ -2461,14 +2465,14 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-99.  ### What is the purpose of renderError?
-     When the default render function encounters an error then you can use rennderError as an alternative render output. The error will be passed to renderError as the second argument.
+99.  ### Какова цель renderError
+     Когда функция рендеринга по умолчанию обнаруживает ошибку, вы можете использовать rennderError в качестве альтернативного вывода рендеринга. Ошибка будет передана в renderError в качестве второго аргумента.
 
-     The example usage of renderError is as below,
+     Пример использования renderError приведен ниже,
      ```javascript
      new Vue({
        render (h) {
-         throw new Error('An error')
+         throw new Error('Ошибка')
        },
        renderError (h, err) {
          return h('div', { style: { color: 'red' }}, err.stack)
@@ -2478,8 +2482,8 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-100. ### How do you access parent instance?
-     The $parent object refers to the **immediate outer scope**. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent’s $children array. It establishes a parent-child relationship between the two instances(parent and child). You can access parent data and properties similar to $root.
+100. ### Как получить доступ к родительскому экземпляру?
+     Объект $parent относится к **непосредственной внешней области**. Родитель будет доступен для дочернего элемента как `this. $parent`, а дочерний элемент будет помещен в родительский массив `$children`. Он устанавливает отношения родитель-потомок между двумя экземплярами (родительским и дочерним). Вы можете получить доступ к родительским данным и свойствам аналогично `$root`.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -2664,7 +2668,7 @@
      ```javascript
      .class1[data-v-f3f3eg9] .class2 { /* ... */ }
      ```
-     **Note:** If you preprocessors such as SASS then it may not be able to processs >>> properly. In such cases use the /deep/ or ::v-deep combinator instead >>> combinator.
+     **Примечание:** If you preprocessors such as SASS then it may not be able to processs >>> properly. In such cases use the /deep/ or ::v-deep combinator instead >>> combinator.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -3359,7 +3363,7 @@
      <script src="https://unpkg.com/vue.js"></script>
      <script src="https://unpkg.com/vuex.js"></script>
      ```
-     **Note:** You can  use a specific version/tag via URLs like https://unpkg.com/vuex@2.0.0. If you don't mention any version then it will point to latest version.
+     **Примечание:** You can  use a specific version/tag via URLs like https://unpkg.com/vuex@2.0.0. If you don't mention any version then it will point to latest version.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -3501,7 +3505,7 @@
      })
      ```
 
-     **Note:** Getters receive state as first argument.
+     **Примечание:** Getters receive state as first argument.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -3520,7 +3524,7 @@
        }
      }
      ```
-     **Note:** The getters accessed as properties are cached as part of Vue's reactivity system.
+     **Примечание:** The getters accessed as properties are cached as part of Vue's reactivity system.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -3604,7 +3608,7 @@
        increment: 20
      })
      ```
-     **Note:** You can also pass primitives as payload.
+     **Примечание:** You can also pass primitives as payload.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -3995,7 +3999,7 @@
      yarn global add @vue/cli
      ```
      You can find the install version using `vue --version` command.
-     **Note:** Vue CLI requires Node.js version 8.9 or above (8.11.0+ recommended).
+     **Примечание:** Vue CLI requires Node.js version 8.9 or above (8.11.0+ recommended).
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -4422,7 +4426,7 @@
          ```javascript
          <p>Good morning</p>
          ```
-         **Note:** It also accepts array-like object
+         **Примечание:** It also accepts array-like object
          ```javascript
          <p>{{ $t('message.greeting', {'0': 'Good'}) }}</p>
          ```
@@ -4751,7 +4755,7 @@
      vm.someObject.nestedValue = 123
      // callback is fired
      ```
-     **Note:** This is not required to listen for Array mutations.
+     **Примечание:** This is not required to listen for Array mutations.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -4791,7 +4795,7 @@
      }
      </script>
      ```
-     **Note:** This option is only available in the full build, with in-browser compilation. i.e, It won't work with Single File Components(SFC).
+     **Примечание:** This option is only available in the full build, with in-browser compilation. i.e, It won't work with Single File Components(SFC).
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
@@ -4909,7 +4913,7 @@
          },
      ```
 
-     **Note:** If you still prefer to use async computed properties for some reason then you can consider using additional plugin such as `vue-async-computed`.
+     **Примечание:** If you still prefer to use async computed properties for some reason then you can consider using additional plugin such as `vue-async-computed`.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
