@@ -72,41 +72,41 @@
 | 63  | [Как можно регистрировать директивы локально?](#Как-можно-регистрировать-директивы-локально)                                                                         |
 | 64  | [Какие хук функции предоставляются директивами?](#Какие-хук-функции-предоставляются-директивами)                                                                     |
 | 65  | [Что такое аргументы хука директивы?](#Что-такое-аргументы-хука-директивы)                                                                                           |
-| 66  | [How do you pass multiple values to a directive?](#how-do-you-pass-multiple-values-to-a-directive)                                                                   |
-| 67  | [What is function shorthand in directive hooks?](#what-is-function-shorthand-in-directive-hooks)                                                                     |
-| 68  | [What is the benefit of render functions over templates?](#what-is-the-benefit-of-render-functions-over-templates)                                                   |
-| 69  | [What is a render function?](#What-is-a-render-function)                                                                                                             |
-| 70  | [Explain the structure of createElement with arguments](#explain-the-structure-of-createelement-with-arguments)                                                      |
-| 71  | [How can you write duplicate virtual nodes in a component?](#how-can-you-write-duplicate-virtual-nodes-in-a-component)                                               |
-| 72  | [List down the template equivalents in render functions?](#list-down-the-template-equivalents-in-render-functions)                                                   |
-| 73  | [What are functional components?](#what-are-functional-components)                                                                                                   |
-| 74  | [What are the similarities between VueJS and ReactJS?](#what-are-the-similarities-between-vuejs-and-reactjs)                                                         |
-| 75  | [What is the difference between VueJS and ReactJS?](#what-is-the-difference-between-vuejs-and-reactjs)                                                               |
-| 76  | [What are the advantages of VueJS over ReactJS?](#what-are-the-advantages-of-vuejs-over-reactjs)                                                                     |
-| 77  | [What are the advantages of ReactJS over VueJS?](#what-are-the-advantages-of-reactjs-over-vuejs)                                                                     |
-| 78  | [What are the differences between VueJS and AngularJS?](#What-are-the-differences-between-vuejs-and-angularjs)                                                       |
-| 79  | [What are dynamic components?](#what-are-dynamic-components)                                                                                                         |
-| 80  | [What is the purpose of keep alive tag?](#what-is-the-purpose-of-keep-alive-tag)                                                                                     |
-| 81  | [What are async components?](#what-are-async-components)                                                                                                             |
-| 82  | [What is the structure of async component factory?](#what-is-the-structure-of-async-component-factory)                                                               |
-| 83  | [What are inline templates?](#what-are-inline-templates)                                                                                                             |
-| 84  | [What are X Templates?](#what-are-x-templates)                                                                                                                       |
-| 85  | [What are recursive components?](#what-are-recursive-components)                                                                                                     |
-| 86  | [How do you resolve circular dependencies between components?](#how-do-you-resolve-circular-dependencies-between-components)                                         |
+| 66  | [Как передать директиве несколько значений?](#Как-передать-директиве-несколько-значений)                                                                             |
+| 67  | [Что такое сокращение функции в хуках директив?](#Что-такое-сокращение-функции-в-хуках-директив)                                                                     |
+| 68  | [В чем преимущество функций render перед шаблонами?](#В-чем-преимущество-функций-render-перед-шаблонами)                                                             |
+| 69  | [Что такое render функция?](#Что-такое-render-функция)                                                                                                               |
+| 70  | [Объясните структуру createElement с аргументами](#Объясните-структуру-createElement-с-аргументами)                                                                  |
+| 71  | [Как можно записать в компоненте повторяющиеся виртуальные узлы?](#Как-можно-записать-в-компоненте-повторяющиеся-виртуальные-узлы)                                   |
+| 72  | [Перечислить эквиваленты шаблонов в функциях рендеринга (render functions)?](#Перечислить-эквиваленты-шаблонов-в-функциях-рендеринга-(render-functions))             |
+| 73  | [Что такое функциональные компоненты?](#Что-такое-функциональные-компоненты)                                                                                         |
+| 74  | [В чем сходство между VueJS и ReactJS?](#В-чем-сходство-между-VueJS-и-ReactJS)                                                                                       |
+| 75  | [В чем разница между VueJS и ReactJS?](#В-чем-разница-между-VueJS-и-ReactJS)                                                                                         |
+| 76  | [В чем преимущества VueJS перед ReactJS?](#В-чем-преимущества-VueJS-перед-ReactJS)                                                                                   |
+| 77  | [В чем преимущества ReactJS перед VueJS?](#В-чем-преимущества-ReactJS-перед-VueJS)                                                                                   |
+| 78  | [В чем разница между VueJS и AngularJS?](#В-чем-разница-между-VueJS-и-AngularJS)                                                                                     |
+| 79  | [Что такое динамические компоненты?](#Что-такое-динамические-компоненты)                                                                                             |
+| 80  | [Какова цель тега keep alive?](#Какова-цель-тега-keep-alive)                                                                                                         |
+| 81  | [Что такое асинхронные компоненты?](#Что-такое-асинхронные-компоненты)                                                                                               |
+| 82  | [Какова структура фабрика асинхронных компонентов (Async component factory)?](#Какова-структура-фабрика-асинхронных-компонентов-(Async-component-factory))           |
+| 83  | [Что такое встроенные (инлайн) шаблоны (inline-template)?](#Что-такое-встроенные-(инлайн)-шаблоны-(inline-template))                                                 |
+| 84  | [Что такое шаблоны X?](#Что-такое-шаблоны-X)                                                                                                                         |
+| 85  | [Что такое рекурсивные компоненты?](#Что-такое-рекурсивные-компоненты)                                                                                               |
+| 86  | [Как разрешить циклические зависимости между компонентами?](#Как-разрешить-циклические-зависимости-между-компонентами)                                               |
 | 87  | [How do you make sure vue application is CSP complaint?](#how-do-you-make-sure-vue-application-is-csp-complaint)                                                     |
-| 88  | [What is the difference between full and runtime only builds?](#what-is-the-difference-between-full-and-runtime-only-builds)                                         |
-| 89  | [List down different builds of vuejs?](#list-down-different-builds-of-vuejs)                                                                                         |
-| 90  | [How do you configure vuejs in webpack?](#how-do-you-configure-vuejs-in-webpack)                                                                                     |
-| 91  | [What is the purpose of vuejs compiler?](#what-is-the-purpose-of-vuejs-compiler)                                                                                     |
-| 92  | [What is Dev Tools and its purpose?](#what-is-dev-tools-and-its-purpose)                                                                                             |
-| 93  | [What is the browser support of VueJS?](#what-is-the-browser-support-of-vuejs)                                                                                       |
-| 94  | [How do you use various CDNs?](#how-do-you-use-various-cdns?)                                                                                                        |
-| 95  | [How do you force update?](#how-do-you-force-update)                                                                                                                 |
-| 96  | [What is the purpose of vuejs once directive?](#what-is-the-purpose-of-vuejs-once-directive)                                                                         |
-| 97  | [How do you access the root instance?](#how-do-you-access-the-root-instance)                                                                                         |
-| 98  | [List out top 10 organizations using Vuejs?](#list-out-top-10-organizations-using-vuejs)                                                                             |
-| 99  | [What is the purpose of renderError?](#what-is-the-purpose-of-rendererror)                                                                                           |
-| 100 | [How do you access parent instance?](#how-do-you-access-parent-instance)                                                                                             |
+| 88  | [В чем разница между полной сборкой и сборкой только во время выполнения?](#В-чем-разница-между-полной-сборкой-и-сборкой-только-во-время-выполнения)                 |
+| 89  | [Перечислить различные сборки vuejs?](#Перечислить-различные-сборки-vuejs)                                                                                           |
+| 90  | [Как вы настраиваете vuejs в webpack?](#Как-вы-настраиваете-vuejs-в-webpack)                                                                                         |
+| 91  | [Какова цель компилятора vuejs?](#Какова-цель-компилятора-vuejs)                                                                                                     |
+| 92  | [Что такое Dev Tools и их цель?](#Что-такое-Dev-Tools-и-их-цель)                                                                                                     |
+| 93  | [Какая поддержка VueJS в браузерах?](#Какая-поддержка-VueJS-в-браузерах)                                                                                             |
+| 94  | [Как можно использовать различные CDN?](#Как-можно-использовать-различные-CDN?)                                                                                      |
+| 95  | [Как принудительно обновить?](#Как-принудительно-обновить)                                                                                                           |
+| 96  | [Какова цель директивы once?](#Какова-цель-директивы-once)                                                                                                           |
+| 97  | [Как получить доступ к корневому экземпляру?](#Как-получить-доступ-к-корневому-экземпляру)                                                                           |
+| 98  | [Перечислите 10 лучших организаций, использующих Vuejs?](#Перечислите-10-лучших-организаций,-использующих-Vuejs)                                                     |
+| 99  | [Какова цель renderError?](#Какова-цель-renderError)                                                                                                                 |
+| 100 | [Как получить доступ к родительскому экземпляру?](#Как-получить-доступ-к-родительскому-экземпляру)                                                                   |
 | 101 | [What is vuex?](#what-is-vuex)                                                                                                                                       |
 | 102 | [What are the major components of State Management Pattern?](#what-are-the-major-components-of-state-management-pattern)                                             |
 | 103 | [How do you represent one way data flow in vuex?](#how-do-you-represent-one-way-data-flow-in-vuex)                                                                   |
@@ -1878,8 +1878,8 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-67.  ### What is function shorthand in directive hooks?
-     In few cases, you may want the same behavior on `bind` and `update` hooks irrespective of other hooks. In this situation you can use function shorthand,
+67.  ### Что такое сокращение функции в хуках директив?
+     В некоторых случаях вам может понадобиться одно и то же поведение для хуков `bind` и` update`, независимо от других хуков. В этой ситуации вы можете использовать сокращение функции,
      ```javascript
      Vue.directive('theme-switcher', function (el, binding) {
        el.style.backgroundColor = binding.value
