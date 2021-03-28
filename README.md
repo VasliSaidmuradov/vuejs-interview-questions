@@ -5,238 +5,238 @@
 
 ### Table of Contents
 -------------------------------------------------------------------
-| No. | Вопросы                                                                                                                                                              |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [Что такое VueJS?](#Что-такое-VueJS)                                                                                                                                 |
-| 2   | [Каковы основные особенности VueJS?](#Каковы-основные-особенности-VueJS)                                                                                             |
-| 3   | [Какие есть методы жизненного цикла VueJS?](#Какие-есть-методы-жизненного-цикла-VueJS)                                                                               |
-| 4   | [Что такое условные директивы?](#Что-такое-условные-директивы)                                                                                                       |
-| 5   | [В чем разница между директивами v-show и v-if?](#В-чем-разница-между-директивами-v-show-и-v-if)                                                                     |
-| 6   | [Какова цель директивы v-for?](#Какова-цель-директивы-v-for)                                                                                                         |
-| 7   | [Что такое экземпляр vue?](#Что-такое-экземпляр-vue)                                                                                                                 |
-| 8   | [Как добиться условной отрисовки группы элементов?](#Как-добиться-условной-отрисовки-группы-элементов)                                                               |
-| 9   | [Как повторно использовать элементы с атрибутом key?](#Как-повторно-использовать-элементы-с-атрибутом-key)                                                           |
-| 10  | [Почему не следует использовать директивы if и for вместе в одном элементе?](#Почему-не-следует-использовать-директивы-if-и-for-вместе-в-одном-элементе)             |
-| 11  | [Почему нужно использовать атрибут key в директиве v-for?](#Почему-нужно-использовать-атрибут-key-в-директиве-v-for)                                                 |
-| 12  | [Каковы методы обнаружения мутации массива?](#Каковы-методы-обнаружения-мутации-массива)                                                                             |
-| 13  | [Какие существуют методы массива без мутаций?](#Какие-существуют-методы-массива-без-мутаций)                                                                         |
-| 14  | [В каких случаях Vue не может обнаружить изменения в массиве?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-массиве)                                         |
-| 15  | [В каких случаях Vue не может обнаружить изменения в объекте?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-объекте)                                         |
-| 16  | [Как использовать директиву v-for с диапазоном?](#Как-использовать-директиву-v-for-с-диапазоном)                                                                     |
-| 17  | [Как использовать директиву v-for в шаблоне?](#Как-использовать-директиву-v-for-в-шаблоне)                                                                           |
-| 18  | [Как вы используете обработчики событий?](#Как-вы-используете-обработчики-событий)                                                                                   |
-| 19  | [Какие модификаторы событий предоставляет vue?](#Какие-модификаторы-событий-предоставляет-vue)                                                                       |
-| 20  | [Что такое модификаторы для обработки событий клавиатуры?](#Что-такое-модификаторы-для-обработки-событий-клавиатуры)                                                 |
-| 21  | [Как вы определяете псевдонимы пользовательских (кастомных) модификаторов клавиш?](#Как-вы-определяете-псевдонимы-пользовательских-(кастомных)-модификаторов-клавиш) |
-| 22  | [Какие поддерживаются Системные Модификаторы Клавиш?](#Какие-поддерживаются-Системные-Модификаторы-Клавиш)                                                           |
-| 23  | [Какие поддерживаются модификаторы кнопок мыши?](#Какие-поддерживаются-модификаторы-кнопок-мыши)                                                                     |
-| 24  | [Как реализовать двустороннюю привязку?](#Как-реализовать-двустороннюю-привязку)                                                                                     |
-| 25  | [Какие модификаторы поддерживаются в модели (v-model)?](#Какие-модификаторы-поддерживаются-в-модели-(v-model))                                                       |
-| 26  | [Какие бывают компоненты и приведите пример?](#Какие-бывают-компоненты-и-приведите-пример)                                                                           |
-| 27  | [Что такое props (входные параметры)?](#Что-такое-props-(входные-параметры))                                                                                         |
-| 28  | [Когда компоненту нужен единственный корневой элемент?](#Когда-компоненту-нужен-единственный-корневой-элемент)                                                       |
-| 29  | [Как можно передавать события от ребенка к родителю?](#Как-можно-передавать-события-от-ребенка-к-родителю)                                                           |
-| 30  | [Как можно реализовать модель на пользовательских компонентах ввода?](#Как-можно-реализовать-модель-на-пользовательских-компонентах-ввода)                           |
-| 31  | [Что такое слоты (slots)?](#Что-такое-слоты-(slots))                                                                                                                 |
-| 32  | [Что такое глобальная регистрация в компонентах?](#Что-такое-глобальная-регистрация-в-компонентах)                                                                   |
-| 33  | [Зачем нужна локальная регистрация?](#Зачем-нужна-локальная-регистрация)                                                                                             |
-| 34  | [В чем разница между локальной и глобальной регистрацией в модульной системе?](#В-чем-разница-между-локальной-и-глобальной-регистрацией-в-модульной-системе)         |
-| 35  | [Какие бывают типы входных параметров (props)?](#Какие-бывают-типы-входных-параметров-(props))                                                                       |
-| 36  | [Как передается поток данных в props'ах (входные данные)?](#Как-передается-поток-данных-в-props'ах-(входные-данные))                                                 |
-| 37  | [Что такое non-prop атрибуты?](#Что-такое-non-prop-атрибуты)                                                                                                         |
-| 38  | [Расскажите о доступных валидациях для props'ов?](#Расскажите-о-доступных-валидациях-для-props'ов)                                                                   |
-| 39  | [Как можно кастомизировать директиву v-model для компонента?](#Как-можно-кастомизировать-директиву-v-model-для-компонента)                                           |
-| 40  | [Каковы возможные способы предоставления переходов (transitions)?](#Каковы-возможные-способы-предоставления-переходов-(transitions))                                 |
-| 41  | [Что такое vue router и его особенности?](#Что-такое-vue-router-и-его-особенности)                                                                                   |
-| 42  | [Что нужно сделать, чтобы использовать vue router и приведите пример?](#Что-нужно-сделать,-чтобы-использовать-vue-router-и-приведите-пример)                         |
-| 43  | [Что такое динамическое сопоставление маршрутов?](#Что-такое-динамическое-сопоставление-маршрутов)                                                                   |
-| 44  | [Как сделать изменения параметров маршрутизатора реактивными?](#Как-сделать-изменения-параметров-маршрутизатора-реактивными)                                         |
-| 45  | [Что такое приоритет сопоставления маршрута?](#Что-такое-приоритет-сопоставления-маршрута)                                                                           |
-| 46  | [Что такое вложенные маршруты?](#Что-такое-вложенные-маршруты)                                                                                                       |
-| 47  | [Что такое однофайловые компоненты?](#Что-такое-однофайловые-компоненты)                                                                                             |
-| 48  | [Нарушают ли однофайлайловые компоненты разделение ответственности?](#Нарушают-ли-однофайлайловые-компоненты-разделение-ответственности)                             |
-| 49  | [Какие проблемы решают однофайловые компоненты?](#Какие-проблемы-решают-однофайловые-компоненты)                                                                     |
-| 50  | [Что такое фильтры?](#Что-такое-фильтры)                                                                                                                             |
-| 51  | [Какие существуют способы создания фильтров?](#Какие-существуют-способы-создания-фильтров)                                                                           |
-| 52  | [Как можно связать фильтры один за другим](#Как-можно-связать-фильтры-один-за-другим)                                                                                |
-| 53  | [Можно ли передавать параметры для фильтров?](#Можно-ли-передавать-параметры-для-фильтров)                                                                           |
-| 54  | [Что такое плагины и их различные сервисы?](#Что-такое-плагины-и-их-различные-сервисы)                                                                               |
-| 55  | [Как создать плагин?](#Как-создать-плагин)                                                                                                                           |
-| 56  | [Как пользоваться плагином?](#Как-пользоваться-плагином)                                                                                                             |
-| 57  | [Что такое миксины?](#Что-такое-миксины)                                                                                                                             |
-| 58  | [Что такое глобальные миксины?](#Что-такое-глобальные-миксины)                                                                                                       |
-| 59  | [Как можно использовать миксины в CLI?](#Как-можно-использовать-миксины-в-CLI)                                                                                       |
-| 60  | [Каковы стратегии слияния в миксинах?](#Каковы-стратегии-слияния-в-миксинах)                                                                                         |
-| 61  | [Какие существуют стратегии слияния пользовательских опций?](#Какие-существуют-стратегии-слияния-пользовательских-опций)                                             |
-| 62  | [Что такое пользовательские директивы?](#Что-такое-пользовательские-директивы)                                                                                       |
-| 63  | [Как можно регистрировать директивы локально?](#Как-можно-регистрировать-директивы-локально)                                                                         |
-| 64  | [Какие хук функции предоставляются директивами?](#Какие-хук-функции-предоставляются-директивами)                                                                     |
-| 65  | [Что такое аргументы хука директивы?](#Что-такое-аргументы-хука-директивы)                                                                                           |
-| 66  | [Как передать директиве несколько значений?](#Как-передать-директиве-несколько-значений)                                                                             |
-| 67  | [Что такое сокращение функции в хуках директив?](#Что-такое-сокращение-функции-в-хуках-директив)                                                                     |
-| 68  | [В чем преимущество функций render перед шаблонами?](#В-чем-преимущество-функций-render-перед-шаблонами)                                                             |
-| 69  | [Что такое render функция?](#Что-такое-render-функция)                                                                                                               |
-| 70  | [Объясните структуру createElement с аргументами](#Объясните-структуру-createElement-с-аргументами)                                                                  |
-| 71  | [Как можно записать в компоненте повторяющиеся виртуальные узлы?](#Как-можно-записать-в-компоненте-повторяющиеся-виртуальные-узлы)                                   |
-| 72  | [Перечислить эквиваленты шаблонов в функциях рендеринга (render functions)?](#Перечислить-эквиваленты-шаблонов-в-функциях-рендеринга-(render-functions))             |
-| 73  | [Что такое функциональные компоненты?](#Что-такое-функциональные-компоненты)                                                                                         |
-| 74  | [В чем сходство между VueJS и ReactJS?](#В-чем-сходство-между-VueJS-и-ReactJS)                                                                                       |
-| 75  | [В чем разница между VueJS и ReactJS?](#В-чем-разница-между-VueJS-и-ReactJS)                                                                                         |
-| 76  | [В чем преимущества VueJS перед ReactJS?](#В-чем-преимущества-VueJS-перед-ReactJS)                                                                                   |
-| 77  | [В чем преимущества ReactJS перед VueJS?](#В-чем-преимущества-ReactJS-перед-VueJS)                                                                                   |
-| 78  | [В чем разница между VueJS и AngularJS?](#В-чем-разница-между-VueJS-и-AngularJS)                                                                                     |
-| 79  | [Что такое динамические компоненты?](#Что-такое-динамические-компоненты)                                                                                             |
-| 80  | [Какова цель тега keep alive?](#Какова-цель-тега-keep-alive)                                                                                                         |
-| 81  | [Что такое асинхронные компоненты?](#Что-такое-асинхронные-компоненты)                                                                                               |
-| 82  | [Какова структура фабрика асинхронных компонентов (Async component factory)?](#Какова-структура-фабрика-асинхронных-компонентов-(Async-component-factory))           |
-| 83  | [Что такое встроенные (инлайн) шаблоны (inline-template)?](#Что-такое-встроенные-(инлайн)-шаблоны-(inline-template))                                                 |
-| 84  | [Что такое шаблоны X?](#Что-такое-шаблоны-X)                                                                                                                         |
-| 85  | [Что такое рекурсивные компоненты?](#Что-такое-рекурсивные-компоненты)                                                                                               |
-| 86  | [Как разрешить циклические зависимости между компонентами?](#Как-разрешить-циклические-зависимости-между-компонентами)                                               |
-| 87  | [How do you make sure vue application is CSP complaint?](#how-do-you-make-sure-vue-application-is-csp-complaint)                                                     |
-| 88  | [В чем разница между полной сборкой и сборкой только во время выполнения?](#В-чем-разница-между-полной-сборкой-и-сборкой-только-во-время-выполнения)                 |
-| 89  | [Перечислить различные сборки vuejs?](#Перечислить-различные-сборки-vuejs)                                                                                           |
-| 90  | [Как вы настраиваете vuejs в webpack?](#Как-вы-настраиваете-vuejs-в-webpack)                                                                                         |
-| 91  | [Какова цель компилятора vuejs?](#Какова-цель-компилятора-vuejs)                                                                                                     |
-| 92  | [Что такое Dev Tools и их цель?](#Что-такое-Dev-Tools-и-их-цель)                                                                                                     |
-| 93  | [Какая поддержка VueJS в браузерах?](#Какая-поддержка-VueJS-в-браузерах)                                                                                             |
-| 94  | [Как можно использовать различные CDN?](#Как-можно-использовать-различные-CDN?)                                                                                      |
-| 95  | [Как принудительно обновить?](#Как-принудительно-обновить)                                                                                                           |
-| 96  | [Какова цель директивы once?](#Какова-цель-директивы-once)                                                                                                           |
-| 97  | [Как получить доступ к корневому экземпляру?](#Как-получить-доступ-к-корневому-экземпляру)                                                                           |
-| 98  | [Перечислите 10 лучших организаций, использующих Vuejs?](#Перечислите-10-лучших-организаций,-использующих-Vuejs)                                                     |
-| 99  | [Какова цель renderError?](#Какова-цель-renderError)                                                                                                                 |
-| 100 | [Как получить доступ к родительскому экземпляру?](#Как-получить-доступ-к-родительскому-экземпляру)                                                                   |
-| 101 | [What is vuex?](#what-is-vuex)                                                                                                                                       |
-| 102 | [What are the major components of State Management Pattern?](#what-are-the-major-components-of-state-management-pattern)                                             |
-| 103 | [How do you represent one way data flow in vuex?](#how-do-you-represent-one-way-data-flow-in-vuex)                                                                   |
-| 104 | [What is a vuejs loader?](#what-is-a-vuejs-loader)                                                                                                                   |
-| 105 | [How do you configure vue loader in webpack?](#how-do-you-configure-vue-loader-in-webpack)                                                                           |
-| 106 | [What are asset url transform rules?](#what-are-asset-url-transform-rules)                                                                                           |
-| 107 | [How do you work with preprocessors using vue loader?](#how-do-you-work-with-preprocessors-using-vue-loader)                                                         |
-| 108 | [What is scoped CSS?](#What-is-scoped-CSS)                                                                                                                           |
-| 109 | [Is it possible to mix both local and global styles?](#is-it-possible-to-mix-both-local-and-global-styles)                                                           |
-| 110 | [How do you use deep selectors?](#how-do-you-use-deepselectors)                                                                                                      |
-| 111 | [Is parent styles leaked into child components in scoped css?](#is-parent-styles-leaked-into-child-components-in-scoped-css)                                         |
-| 112 | [How do you style dynamic generated content using scoped css?](#how-do-you-style-dynamic-generated-content-using-scoped-css)                                         |
-| 113 | [Is CSS modules supported in Vuejs?](#is-css-modules-supported-in-vuejs)                                                                                             |
-| 114 | [Can I use runtime builds for all templates?](#can-i-use-runtime-builds-for-all-templates)                                                                           |
-| 115 | [How to use CSS modules in vuejs?](#how-to-use-css-modules-in-vuejs)                                                                                                 |
-| 116 | [Can I use CSS modules for preprocessors?](#can-i-use-css-modules-for-preprocessors)                                                                                 |
-| 117 | [Is it possible to use custom inject name for CSS modules?](#is-it-possible-to-use-custom-inject-name-for-css-modules)                                               |
-| 118 | [What is hot reloading in vue loader?](#what-is-hot-reloading-in-vue-loader)                                                                                         |
-| 119 | [What is the default behavior of hot reloading?](#what-is-the-default-behavior-of-hot-reloading)                                                                     |
-| 120 | [How do you disable hot reloading explicitly?](#how-do-you-disable-hot-reloading-explicitly)                                                                         |
-| 121 | [How do you use hot reloading?](#how-do-you-use-hot-reloading)                                                                                                       |
-| 122 | [What are state preservation rules in hot reloading?](#what-are-state-preservation-rules-in-hot-reloading)                                                           |
-| 123 | [How to create functional components using vue loader?](#how-to-create-functional-components-using-vue-loader)                                                       |
-| 124 | [How do you access global properties of functional components?](#how-do-you-access-global-properties-of-functional-components)                                       |
-| 125 | [How do you perform testing in vuejs?](#how-do-you-perform-testing-in-vuejs)                                                                                         |
-| 126 | [How do you apply linting for css?](#how-do-you-apply-linting-for-css)                                                                                               |
-| 127 | [How do you use eslint plugin?](#how-do-you-use-eslint-plugin)                                                                                                       |
-| 128 | [What is the purpose of eslint loader?](#what-is-the-purpose-of-eslint-loader)                                                                                       |
-| 129 | [What is CSS extraction?](#what-is-css-extraction)                                                                                                                   |
-| 130 | [What are custom blocks?](#what-are-custom-blocks)                                                                                                                   |
-| 131 | [What are the features of stylelint?](#what-are-the-features-of-stylelint?)                                                                                          |
-| 132 | [What are the principles for vuex application structure?](#what-are-the-principles-for-vuex-application-structure)                                                   |
-| 133 | [Is Vuex supports hot reloading?](#is-vuex-supports-hot-reloading)                                                                                                   |
-| 134 | [What is the purpose of hotUpdate API of vuex store?](#what-is-the-purpose-of-hotupdate-api-of-vuex-store)                                                           |
-| 135 | [How do you test mutations?](#how-do-you-test-mutations)                                                                                                             |
-| 136 | [How do you test your getters?](#how-do-you-test-your-getters)                                                                                                       |
-| 137 | [What is the procedure to run tests in node?](#what-is-the-procedure-to-run-tests-in-node)                                                                           |
-| 138 | [What is the procedure to run tests in browser?](#what-is-the-procedure-to-run-tests-in-browser)                                                                     |
-| 139 | [What is the purpose of strict mode in vuex?](#what-is-the-purpose-of-strict-mode-in-vuex)                                                                           |
-| 140 | [Can I use strict mode in production environment?](#can-i-use-strict-mode-in-production-environment)                                                                 |
-| 141 | [What is vuex plugin?](#what-is-vuex-plugin)                                                                                                                         |
-| 142 | [How do you mutate state in plugins?](#how-do-you-mutate-state-in-plugins)                                                                                           |
-| 143 | [What is vuex store?](#what-is-vuex-store)                                                                                                                           |
-| 144 | [What are the differences of vuex store and plain global object?](#what-are-the-differences-of-vuex-store-and-plain-global-object)                                   |
-| 145 | [What is the reason not to update the state directly?](#what-is-the-reason-not-to-update-the-state-directly)                                                         |
-| 146 | [What is Single state tree?](#what-is-single-state-tree)                                                                                                             |
-| 147 | [How do you install vuex?](#how-do-you-install-vuex)                                                                                                                 |
-| 148 | [Do I need promise for vuex?](#do-i-need-promise-for-vuex)                                                                                                           |
-| 149 | [How do you display store state in vue components?](#how-do-you-display-store-state-in-vue-components)                                                               |
-| 150 | [How do you inject store into child components?](#how-do-you-inject-store-into-child-components)                                                                     |
-| 151 | [What is mapState helper?](#what-is-mapstate-helper)                                                                                                                 |
-| 152 | [How do you combine local computed properties with mapState helper?](#how-do-you-combine-local-computed-properties-with-mapstate-helper)                             |
-| 153 | [Do you need to replace entire local state with vuex?](#do-you-need-to-replace-entire-local-state-with-vuex)                                                         |
-| 154 | [What are vuex getters?](#what-are-vuex-getters?)                                                                                                                    |
-| 155 | [What is a property style access?](#what-is-a-property-style-access)                                                                                                 |
-| 156 | [What is a method style access?](#what-is-a-method-style-access)                                                                                                     |
-| 157 | [What is mapGetter helper?](#what-is-mapgetter-helper)                                                                                                               |
-| 158 | [What are mutations?](#what-are-mutations)                                                                                                                           |
-| 159 | [How do you commit with payload?](#how-do-you-commit-with-payload)                                                                                                   |
-| 160 | [What is object style commit?](#what-is-object-style-commit)                                                                                                         |
-| 161 | [What are the caveats with vuex mutations?](#what-are-the-caveats-with-vuex-mutations)                                                                               |
-| 162 | [Why mutations should be synchronous?](#why-mutations-should-be-synchronous)                                                                                         |
-| 163 | [How do you perform mutations in components?](#how-do-you-perform-mutations-in-components)                                                                           |
-| 164 | [Is it mandatory to use constants for mutation types?](#is-it-mandatory-to-use-constants-for-mutation-types)                                                         |
-| 165 | [How do you perform asynchronous operations?](#how-do-you-perform-asynchronous-operations)                                                                           |
-| 166 | [What are differences between mutations and actions?](#what-are-differences-between-mutations-and-actions)                                                           |
-| 167 | [Give an example usage of actions?](#give-an-example-usage-of-actions?)                                                                                              |
-| 168 | [How do you dispatch actions?](#how-do-you-dispatch-actions)                                                                                                         |
-| 169 | [Can you dispatch an action using payload or object?](#can-you-dispatch-an-action-using-payload-or-object)                                                           |
-| 170 | [Can I use styled components in vuejs?](#can-i-use-styled-components-in-vuejs)                                                                                       |
-| 171 | [How do you dispatch actions in components?](#how-do-you-dispatch-actions-in-components)                                                                             |
-| 172 | [How do you compose actions?](#how-do-you-compose-actions)                                                                                                           |
-| 173 | [What are modules in vuex?](#what-are-modules-in-vuex)                                                                                                               |
-| 174 | [What is module local state?](#what-is-module-local-state)                                                                                                           |
-| 175 | [What is namespacing in vuex](#what-is-namespacing-in-vuex)                                                                                                          |
-| 176 | [What is the default namespace behavior in vuex?](#what-is-the-default-namespace-behavior-in-vuex)                                                                   |
-| 177 | [When do you reuse modules?](#when-do-you-reuse-modules)                                                                                                             |
-| 178 | [What are the principles enforced by vuex?](#what-are-the-principles-enforced-by-vuex)                                                                               |
-| 179 | [Can I perform mutations directly in strict mode?](#can-i-perform-mutations-directly-in-strict-mode)                                                                 |
-| 180 | [How to use model directive with two way computed property?](#how-to-use-model-directive-with-two-way-computed-property)                                             |
-| 181 | [What is Vue CLI?](#what-is-vue-cli)                                                                                                                                 |
-| 182 | [What are the features provided by Vue CLI?](#what-are-the-features-provided-by-vue-cli)                                                                             |
-| 183 | [What is instant prototyping?](#what-is-instant-prototyping)                                                                                                         |
-| 184 | [How do you create project using Vue CLI?](#how-do-you-create-project-using-vue-cli)                                                                                 |
-| 185 | [How do you create project using GUI?](#how-do-you-create-project-using-gui)                                                                                         |
-| 186 | [What are plugins in vue CLI?](#what-are-plugins-in-vue-cli)                                                                                                         |
-| 187 | [How do you install plugins in an existing Vue CLI project?](#how-do-you-install-plugins-in-an-existing-vue-cli-project)                                             |
-| 188 | [How to access local plugins in a project?](#how-to-access-local-plugins-in-a-project)                                                                               |
-| 189 | [How do you create UI plugins kind of behavior?](#how-do-you-create-ui-plugins-kind-of-behavior)                                                                     |
-| 190 | [What are presets?](#what-are-presets)                                                                                                                               |
-| 191 | [What is the versioning behavior in preset plugins?](#what-is-the-versioning-behavior-in-preset-plugins)                                                             |
-| 192 | [How do you allow plugin prompts?](#how-do-you-allow-plugin-prompts)                                                                                                 |
-| 193 | [What are remote presets?](#what-are-remote-presets)                                                                                                                 |
-| 194 | [Can I use local presets?](#can-i-use-local-presets)                                                                                                                 |
-| 195 | [What is the purpose of browserslist option?](#what-is-the-purpose-of-browserslist-option)                                                                           |
-| 196 | [How do you find VueJS version using API?](#how-do-you-find-vuejs-version-using-api)                                                                                 |
-| 197 | [How do you create reactive objects](#how-do-you-create-reactive-objects)                                                                                            |
-| 198 | [What is the purpose new slot directive?](#what-is-the-purpose-new-slot-directive)                                                                                   |
-| 199 | [What is the use of compile method?](#what-is-the-use-of-compile-method)                                                                                             |
-| 200 | [What does nextTick do in VueJS?](#what-does-nexttick-do-in-vuejs)                                                                                                   |
-| 201 | [What is async error handling?](#what-is-async-error-handling)                                                                                                       |
-| 202 | [What are Dynamic Directive Arguments?](#what-are-dynamic-directive-arguments)                                                                                       |
-| 203 | [What are the drawbacks of dynamic directive arguments?](#what-are-the-drawbacks-of-dynamic-directive-arguments)                                                     |
-| 204 | [What is the special handling for null values in dynamic directive arguments?](#what-is-the-special-handling-for-null-values-in-dynamic-directive-arguments)         |
-| 205 | [Can I use dynamic directive null value for slots?](#can-i-use-dynamic-directive-null-value-for-slots)                                                               |
-| 206 | [What is Vue I18n plugin?](#what-is-vue-i-8n--plugin)                                                                                                                |
-| 207 | [#What are the types of formatting?](#what-are-the-types-of-formatting)                                                                                              |
-| 208 | [What is custom formatting?](#what-is-custom-formatting)                                                                                                             |
-| 209 | [How do you handle Pluralization?](#how-do-you-handle-pluralization)                                                                                                 |
-| 210 | [How to implement DateTime localization?](#how-to-implement-date-time-localization)                                                                                  |
-| 211 | [How do you implement Number localization?](#how-do-you-implement-number-localization)                                                                               |
-| 212 | [How do you perform locale changing](#how-do-you-perform-locale-changin)                                                                                             |
-| 213 | [What is Lazy loading translations?](#what-is-lazy-loading-translations)                                                                                             |
-| 214 | [What is the main difference between method and computed property?](#what-is-the-main-difference-between-method-and-computed-property)                               |
-| 215 | [What is vuetify?](#what-is-vuetify)                                                                                                                                 |
-| 216 | [How do you watch for nested data changes?](#how-do-you-watch-for-nested-data-changes)                                                                               |
-| 217 | [How to trigger watchers on initialization?](#how-to-trigger-watchers-on-initialization)                                                                             |
-| 218 | [What is the purpose of comments option?](#what-is-the-purpose-of-comments-option)                                                                                   |
-| 219 | [How to identify whether code is running on client or server?](#how-to-identify-whether-code-is-running-on-client-or-server)                                         |
-| 220 | [How do you watch route object changes?](#how-do-you-watch-route-object-changes)                                                                                     |
-| 221 | [How do you sync current route in vuex store?](#how-do-you-sync-current-route-in-vuex-store)                                                                         |
-| 222 | [What are navigation guards in vue router?](#what-are-navigation-guards-in-vue-router)                                                                               |
-| 223 | [Can I use computed property in another computed property?](#can-i-use-computed-property-in-another-computed-property)                                               |
-| 224 | [How can I use imported constant in template section?](#How-can-i-use-imported-constant-in-template-section)                                                         |
-| 225 | [Is recommended to use async for computed properties?](#is-recommended-to-use-async-for-computed-properties)                                                         |
-| 226 | [What happens if you use duplicate field names?](#what-happens-if-you-use-duplicate-field-names)                                                                     |
-| 227 | [Why the component data must be a function?](#why-the-component-data-must-be-a-function)                                                                             |
-| 228 | [What is the reason for recommendation for multi-word component names?](#what-is-the-reason-for-recommendation-for-multi-word-component-names)                       |
-| 229 | [How to use composition API in Vue2.0?](#how-to-use-composition-api-in-vue2.0)                                                                                       |
-| 230 | [What is composition API?](#what-is-composition-api)                                                                                                                 |
+| No. | Вопросы                                                                                                                                                                                                                    |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Что такое VueJS?](#Что-такое-VueJS)                                                                                                                                                                                       |
+| 2   | [Каковы основные особенности VueJS?](#Каковы-основные-особенности-VueJS)                                                                                                                                                   |
+| 3   | [Какие есть методы жизненного цикла VueJS?](#Какие-есть-методы-жизненного-цикла-VueJS)                                                                                                                                     |
+| 4   | [Что такое условные директивы?](#Что-такое-условные-директивы)                                                                                                                                                             |
+| 5   | [В чем разница между директивами v-show и v-if?](#В-чем-разница-между-директивами-v-show-и-v-if)                                                                                                                           |
+| 6   | [Какова цель директивы v-for?](#Какова-цель-директивы-v-for)                                                                                                                                                               |
+| 7   | [Что такое экземпляр vue?](#Что-такое-экземпляр-vue)                                                                                                                                                                       |
+| 8   | [Как добиться условной отрисовки группы элементов?](#Как-добиться-условной-отрисовки-группы-элементов)                                                                                                                     |
+| 9   | [Как повторно использовать элементы с атрибутом key?](#Как-повторно-использовать-элементы-с-атрибутом-key)                                                                                                                 |
+| 10  | [Почему не следует использовать директивы if и for вместе в одном элементе?](#Почему-не-следует-использовать-директивы-if-и-for-вместе-в-одном-элементе)                                                                   |
+| 11  | [Почему нужно использовать атрибут key в директиве v-for?](#Почему-нужно-использовать-атрибут-key-в-директиве-v-for)                                                                                                       |
+| 12  | [Каковы методы обнаружения мутации массива?](#Каковы-методы-обнаружения-мутации-массива)                                                                                                                                   |
+| 13  | [Какие существуют методы массива без мутаций?](#Какие-существуют-методы-массива-без-мутаций)                                                                                                                               |
+| 14  | [В каких случаях Vue не может обнаружить изменения в массиве?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-массиве)                                                                                               |
+| 15  | [В каких случаях Vue не может обнаружить изменения в объекте?](#В-каких-случаях-Vue-не-может-обнаружить-изменения-в-объекте)                                                                                               |
+| 16  | [Как использовать директиву v-for с диапазоном?](#Как-использовать-директиву-v-for-с-диапазоном)                                                                                                                           |
+| 17  | [Как использовать директиву v-for в шаблоне?](#Как-использовать-директиву-v-for-в-шаблоне)                                                                                                                                 |
+| 18  | [Как вы используете обработчики событий?](#Как-вы-используете-обработчики-событий)                                                                                                                                         |
+| 19  | [Какие модификаторы событий предоставляет vue?](#Какие-модификаторы-событий-предоставляет-vue)                                                                                                                             |
+| 20  | [Что такое модификаторы для обработки событий клавиатуры?](#Что-такое-модификаторы-для-обработки-событий-клавиатуры)                                                                                                       |
+| 21  | [Как вы определяете псевдонимы пользовательских (кастомных) модификаторов клавиш?](#Как-вы-определяете-псевдонимы-пользовательских-(кастомных)-модификаторов-клавиш)                                                       |
+| 22  | [Какие поддерживаются Системные Модификаторы Клавиш?](#Какие-поддерживаются-Системные-Модификаторы-Клавиш)                                                                                                                 |
+| 23  | [Какие поддерживаются модификаторы кнопок мыши?](#Какие-поддерживаются-модификаторы-кнопок-мыши)                                                                                                                           |
+| 24  | [Как реализовать двустороннюю привязку?](#Как-реализовать-двустороннюю-привязку)                                                                                                                                           |
+| 25  | [Какие модификаторы поддерживаются в модели (v-model)?](#Какие-модификаторы-поддерживаются-в-модели-(v-model))                                                                                                             |
+| 26  | [Какие бывают компоненты и приведите пример?](#Какие-бывают-компоненты-и-приведите-пример)                                                                                                                                 |
+| 27  | [Что такое props (входные параметры)?](#Что-такое-props-(входные-параметры))                                                                                                                                               |
+| 28  | [Когда компоненту нужен единственный корневой элемент?](#Когда-компоненту-нужен-единственный-корневой-элемент)                                                                                                             |
+| 29  | [Как можно передавать события от ребенка к родителю?](#Как-можно-передавать-события-от-ребенка-к-родителю)                                                                                                                 |
+| 30  | [Как можно реализовать модель на пользовательских компонентах ввода?](#Как-можно-реализовать-модель-на-пользовательских-компонентах-ввода)                                                                                 |
+| 31  | [Что такое слоты (slots)?](#Что-такое-слоты-(slots))                                                                                                                                                                       |
+| 32  | [Что такое глобальная регистрация в компонентах?](#Что-такое-глобальная-регистрация-в-компонентах)                                                                                                                         |
+| 33  | [Зачем нужна локальная регистрация?](#Зачем-нужна-локальная-регистрация)                                                                                                                                                   |
+| 34  | [В чем разница между локальной и глобальной регистрацией в модульной системе?](#В-чем-разница-между-локальной-и-глобальной-регистрацией-в-модульной-системе)                                                               |
+| 35  | [Какие бывают типы входных параметров (props)?](#Какие-бывают-типы-входных-параметров-(props))                                                                                                                             |
+| 36  | [Как передается поток данных в props'ах (входные данные)?](#Как-передается-поток-данных-в-props'ах-(входные-данные))                                                                                                       |
+| 37  | [Что такое non-prop атрибуты?](#Что-такое-non-prop-атрибуты)                                                                                                                                                               |
+| 38  | [Расскажите о доступных валидациях для props'ов?](#Расскажите-о-доступных-валидациях-для-props'ов)                                                                                                                         |
+| 39  | [Как можно кастомизировать директиву v-model для компонента?](#Как-можно-кастомизировать-директиву-v-model-для-компонента)                                                                                                 |
+| 40  | [Каковы возможные способы предоставления переходов (transitions)?](#Каковы-возможные-способы-предоставления-переходов-(transitions))                                                                                       |
+| 41  | [Что такое vue router и его особенности?](#Что-такое-vue-router-и-его-особенности)                                                                                                                                         |
+| 42  | [Что нужно сделать, чтобы использовать vue router и приведите пример?](#Что-нужно-сделать,-чтобы-использовать-vue-router-и-приведите-пример)                                                                               |
+| 43  | [Что такое динамическое сопоставление маршрутов?](#Что-такое-динамическое-сопоставление-маршрутов)                                                                                                                         |
+| 44  | [Как сделать изменения параметров маршрутизатора реактивными?](#Как-сделать-изменения-параметров-маршрутизатора-реактивными)                                                                                               |
+| 45  | [Что такое приоритет сопоставления маршрута?](#Что-такое-приоритет-сопоставления-маршрута)                                                                                                                                 |
+| 46  | [Что такое вложенные маршруты?](#Что-такое-вложенные-маршруты)                                                                                                                                                             |
+| 47  | [Что такое однофайловые компоненты?](#Что-такое-однофайловые-компоненты)                                                                                                                                                   |
+| 48  | [Нарушают ли однофайлайловые компоненты разделение ответственности?](#Нарушают-ли-однофайлайловые-компоненты-разделение-ответственности)                                                                                   |
+| 49  | [Какие проблемы решают однофайловые компоненты?](#Какие-проблемы-решают-однофайловые-компоненты)                                                                                                                           |
+| 50  | [Что такое фильтры?](#Что-такое-фильтры)                                                                                                                                                                                   |
+| 51  | [Какие существуют способы создания фильтров?](#Какие-существуют-способы-создания-фильтров)                                                                                                                                 |
+| 52  | [Как можно связать фильтры один за другим](#Как-можно-связать-фильтры-один-за-другим)                                                                                                                                      |
+| 53  | [Можно ли передавать параметры для фильтров?](#Можно-ли-передавать-параметры-для-фильтров)                                                                                                                                 |
+| 54  | [Что такое плагины и их различные сервисы?](#Что-такое-плагины-и-их-различные-сервисы)                                                                                                                                     |
+| 55  | [Как создать плагин?](#Как-создать-плагин)                                                                                                                                                                                 |
+| 56  | [Как пользоваться плагином?](#Как-пользоваться-плагином)                                                                                                                                                                   |
+| 57  | [Что такое миксины?](#Что-такое-миксины)                                                                                                                                                                                   |
+| 58  | [Что такое глобальные миксины?](#Что-такое-глобальные-миксины)                                                                                                                                                             |
+| 59  | [Как можно использовать миксины в CLI?](#Как-можно-использовать-миксины-в-CLI)                                                                                                                                             |
+| 60  | [Каковы стратегии слияния в миксинах?](#Каковы-стратегии-слияния-в-миксинах)                                                                                                                                               |
+| 61  | [Какие существуют стратегии слияния пользовательских опций?](#Какие-существуют-стратегии-слияния-пользовательских-опций)                                                                                                   |
+| 62  | [Что такое пользовательские директивы?](#Что-такое-пользовательские-директивы)                                                                                                                                             |
+| 63  | [Как можно регистрировать директивы локально?](#Как-можно-регистрировать-директивы-локально)                                                                                                                               |
+| 64  | [Какие хук функции предоставляются директивами?](#Какие-хук-функции-предоставляются-директивами)                                                                                                                           |
+| 65  | [Что такое аргументы хука директивы?](#Что-такое-аргументы-хука-директивы)                                                                                                                                                 |
+| 66  | [Как передать директиве несколько значений?](#Как-передать-директиве-несколько-значений)                                                                                                                                   |
+| 67  | [Что такое сокращение функции в хуках директив?](#Что-такое-сокращение-функции-в-хуках-директив)                                                                                                                           |
+| 68  | [В чем преимущество функций render перед шаблонами?](#В-чем-преимущество-функций-render-перед-шаблонами)                                                                                                                   |
+| 69  | [Что такое render функция?](#Что-такое-render-функция)                                                                                                                                                                     |
+| 70  | [Объясните структуру createElement с аргументами](#Объясните-структуру-createElement-с-аргументами)                                                                                                                        |
+| 71  | [Как можно записать в компоненте повторяющиеся виртуальные узлы?](#Как-можно-записать-в-компоненте-повторяющиеся-виртуальные-узлы)                                                                                         |
+| 72  | [Перечислить эквиваленты шаблонов в функциях рендеринга (render functions)?](#Перечислить-эквиваленты-шаблонов-в-функциях-рендеринга-(render-functions))                                                                   |
+| 73  | [Что такое функциональные компоненты?](#Что-такое-функциональные-компоненты)                                                                                                                                               |
+| 74  | [В чем сходство между VueJS и ReactJS?](#В-чем-сходство-между-VueJS-и-ReactJS)                                                                                                                                             |
+| 75  | [В чем разница между VueJS и ReactJS?](#В-чем-разница-между-VueJS-и-ReactJS)                                                                                                                                               |
+| 76  | [В чем преимущества VueJS перед ReactJS?](#В-чем-преимущества-VueJS-перед-ReactJS)                                                                                                                                         |
+| 77  | [В чем преимущества ReactJS перед VueJS?](#В-чем-преимущества-ReactJS-перед-VueJS)                                                                                                                                         |
+| 78  | [В чем разница между VueJS и AngularJS?](#В-чем-разница-между-VueJS-и-AngularJS)                                                                                                                                           |
+| 79  | [Что такое динамические компоненты?](#Что-такое-динамические-компоненты)                                                                                                                                                   |
+| 80  | [Какова цель тега keep alive?](#Какова-цель-тега-keep-alive)                                                                                                                                                               |
+| 81  | [Что такое асинхронные компоненты?](#Что-такое-асинхронные-компоненты)                                                                                                                                                     |
+| 82  | [Какова структура фабрика асинхронных компонентов (Async component factory)?](#Какова-структура-фабрика-асинхронных-компонентов-(Async-component-factory))                                                                 |
+| 83  | [Что такое встроенные (инлайн) шаблоны (inline-template)?](#Что-такое-встроенные-(инлайн)-шаблоны-(inline-template))                                                                                                       |
+| 84  | [Что такое шаблоны X?](#Что-такое-шаблоны-X)                                                                                                                                                                               |
+| 85  | [Что такое рекурсивные компоненты?](#Что-такое-рекурсивные-компоненты)                                                                                                                                                     |
+| 86  | [Как разрешить циклические зависимости между компонентами?](#Как-разрешить-циклические-зависимости-между-компонентами)                                                                                                     |
+| 87  | [How do you make sure vue application is CSP complaint?](#how-do-you-make-sure-vue-application-is-csp-complaint)                                                                                                           |
+| 88  | [В чем разница между полной сборкой и сборкой только во время выполнения?](#В-чем-разница-между-полной-сборкой-и-сборкой-только-во-время-выполнения)                                                                       |
+| 89  | [Перечислить различные сборки vuejs?](#Перечислить-различные-сборки-vuejs)                                                                                                                                                 |
+| 90  | [Как вы настраиваете vuejs в webpack?](#Как-вы-настраиваете-vuejs-в-webpack)                                                                                                                                               |
+| 91  | [Какова цель компилятора vuejs?](#Какова-цель-компилятора-vuejs)                                                                                                                                                           |
+| 92  | [Что такое Dev Tools и их цель?](#Что-такое-Dev-Tools-и-их-цель)                                                                                                                                                           |
+| 93  | [Какая поддержка VueJS в браузерах?](#Какая-поддержка-VueJS-в-браузерах)                                                                                                                                                   |
+| 94  | [Как можно использовать различные CDN?](#Как-можно-использовать-различные-CDN?)                                                                                                                                            |
+| 95  | [Как принудительно обновить?](#Как-принудительно-обновить)                                                                                                                                                                 |
+| 96  | [Какова цель директивы once?](#Какова-цель-директивы-once)                                                                                                                                                                 |
+| 97  | [Как получить доступ к корневому экземпляру?](#Как-получить-доступ-к-корневому-экземпляру)                                                                                                                                 |
+| 98  | [Перечислите 10 лучших организаций, использующих Vuejs?](#Перечислите-10-лучших-организаций,-использующих-Vuejs)                                                                                                           |
+| 99  | [Какова цель renderError?](#Какова-цель-renderError)                                                                                                                                                                       |
+| 100 | [Как получить доступ к родительскому экземпляру?](#Как-получить-доступ-к-родительскому-экземпляру)                                                                                                                         |
+| 101 | [Что такое vuex?](#Что-такое-vuex)                                                                                                                                                                                         |
+| 102 | [Каковы основные компоненты модели управления состоянием?](#Каковы-основные-компоненты-модели-управления-состоянием)                                                                                                       |
+| 103 | [Как вы представляете односторонний поток данных в vuex?](#Как-вы-представляете-односторонний-поток-данных-в-vuex)                                                                                                         |
+| 104 | [Что такое загрузчик vuejs?](#Что-такое-загрузчик-vuejs)                                                                                                                                                                   |
+| 105 | [Как настроить загрузчик vue в webpack?](#Как-настроить-загрузчик-vue-в-webpack)                                                                                                                                           |
+| 106 | [Каковы правила преобразования URL-адреса ресурса?](#Каковы-правила-преобразования-URL-адреса-ресурса)                                                                                                                     |
+| 107 | [Как вы работаете с препроцессорами с помощью загрузчика vue?](#Как-вы-работаете-с-препроцессорами-с-помощью-загрузчика-vue?)                                                                                              |
+| 108 | [Что такое CSS с ограниченной областью видимости (scoped)?](#Что-такое-CSS-с-ограниченной-областью-видимости-(scoped))                                                                                                     |
+| 109 | [Можно ли смешивать как локальные, так и глобальные стили?](#Можно-ли-смешивать-как-локальные,-так-и-глобальные-стили)                                                                                                     |
+| 110 | [Как вы используете глубокие селекторы?](#Как-вы-используете-глубокие-селекторы)                                                                                                                                           |
+| 111 | [Утекают-ли родительские стили в дочерние компоненты в CSS с ограничением области видимости?](#Утекают-ли-родительские-стили-в-дочерние-компоненты-в-CSS-с-ограничением-области-видимости)                                 |
+| 112 | [Как можно стилизовать динамический сгенерированный контент с помощью CSS с ограниченинымобластью видимости?](#Как-можно-стилизовать-динамический-сгенерированный-контент-с-помощью-CSS-с-ограниченинымобластью-видимости) |
+| 113 | [Поддерживаются ли модули CSS в Vuejs?](#Поддерживаются-ли-модули-CSS-в-Vuejs)                                                                                                                                             |
+| 114 | [Могу ли я использовать сборки среды выполнения для всех шаблонов?](#Могу-ли-я-использовать-сборки-среды-выполнения-для-всех-шаблонов)                                                                                     |
+| 115 | [Как использовать модули CSS в vuejs?](#Как-использовать-модули-CSS-в-vuejs)                                                                                                                                               |
+| 116 | [Могу ли я использовать модули CSS для препроцессоров?](#Могу-ли-я-использовать-модули-CSS-для-препроцессоров)                                                                                                             |
+| 117 | [Можно ли использовать собственное имя инжекта для модулей CSS?](#Можно-ли-использовать-собственное-имя-инжекта-для-модулей-CSS)                                                                                           |
+| 118 | [Что такое горячая перезагрузка в загрузчике vue?](#Что-такое-горячая-перезагрузка-в-загрузчике-vue)                                                                                                                       |
+| 119 | [Каково поведение горячей перезагрузки по умолчанию?](#Каково-поведение-горячей-перезагрузки-по-умолчанию)                                                                                                                 |
+| 120 | [Как явно отключить горячую перезагрузку?](#Как-явно-отключить-горячую-перезагрузку)                                                                                                                                       |
+| 121 | [Как использовать горячую перезагрузку?](#Как-использовать-горячую-перезагрузку)                                                                                                                                           |
+| 122 | [Каковы правила сохранения состояния при горячей перезагрузке?](#Каковы-правила-сохранения-состояния-при-горячей-перезагрузке)                                                                                             |
+| 123 | [Как создать функциональные компоненты с помощью загрузчика vue?](#Как-создать-функциональные-компоненты-с-помощью-загрузчика-vue)                                                                                         |
+| 124 | [Как получить доступ к глобальным свойствам функциональных компонентов?](#Как-получить-доступ-к-глобальным-свойствам-функциональных-компонентов)                                                                           |
+| 125 | [Как вы проводите тестирование в vuejs?](#Как-вы-проводите-тестирование-в-vuejs)                                                                                                                                           |
+| 126 | [How do you apply linting for css?](#how-do-you-apply-linting-for-css)                                                                                                                                                     |
+| 127 | [How do you use eslint plugin?](#how-do-you-use-eslint-plugin)                                                                                                                                                             |
+| 128 | [What is the purpose of eslint loader?](#what-is-the-purpose-of-eslint-loader)                                                                                                                                             |
+| 129 | [What is CSS extraction?](#what-is-css-extraction)                                                                                                                                                                         |
+| 130 | [What are custom blocks?](#what-are-custom-blocks)                                                                                                                                                                         |
+| 131 | [What are the features of stylelint?](#what-are-the-features-of-stylelint?)                                                                                                                                                |
+| 132 | [What are the principles for vuex application structure?](#what-are-the-principles-for-vuex-application-structure)                                                                                                         |
+| 133 | [Is Vuex supports hot reloading?](#is-vuex-supports-hot-reloading)                                                                                                                                                         |
+| 134 | [What is the purpose of hotUpdate API of vuex store?](#what-is-the-purpose-of-hotupdate-api-of-vuex-store)                                                                                                                 |
+| 135 | [How do you test mutations?](#how-do-you-test-mutations)                                                                                                                                                                   |
+| 136 | [How do you test your getters?](#how-do-you-test-your-getters)                                                                                                                                                             |
+| 137 | [What is the procedure to run tests in node?](#what-is-the-procedure-to-run-tests-in-node)                                                                                                                                 |
+| 138 | [What is the procedure to run tests in browser?](#what-is-the-procedure-to-run-tests-in-browser)                                                                                                                           |
+| 139 | [What is the purpose of strict mode in vuex?](#what-is-the-purpose-of-strict-mode-in-vuex)                                                                                                                                 |
+| 140 | [Can I use strict mode in production environment?](#can-i-use-strict-mode-in-production-environment)                                                                                                                       |
+| 141 | [What is vuex plugin?](#what-is-vuex-plugin)                                                                                                                                                                               |
+| 142 | [How do you mutate state in plugins?](#how-do-you-mutate-state-in-plugins)                                                                                                                                                 |
+| 143 | [What is vuex store?](#what-is-vuex-store)                                                                                                                                                                                 |
+| 144 | [What are the differences of vuex store and plain global object?](#what-are-the-differences-of-vuex-store-and-plain-global-object)                                                                                         |
+| 145 | [What is the reason not to update the state directly?](#what-is-the-reason-not-to-update-the-state-directly)                                                                                                               |
+| 146 | [What is Single state tree?](#what-is-single-state-tree)                                                                                                                                                                   |
+| 147 | [How do you install vuex?](#how-do-you-install-vuex)                                                                                                                                                                       |
+| 148 | [Do I need promise for vuex?](#do-i-need-promise-for-vuex)                                                                                                                                                                 |
+| 149 | [How do you display store state in vue components?](#how-do-you-display-store-state-in-vue-components)                                                                                                                     |
+| 150 | [How do you inject store into child components?](#how-do-you-inject-store-into-child-components)                                                                                                                           |
+| 151 | [What is mapState helper?](#what-is-mapstate-helper)                                                                                                                                                                       |
+| 152 | [How do you combine local computed properties with mapState helper?](#how-do-you-combine-local-computed-properties-with-mapstate-helper)                                                                                   |
+| 153 | [Do you need to replace entire local state with vuex?](#do-you-need-to-replace-entire-local-state-with-vuex)                                                                                                               |
+| 154 | [What are vuex getters?](#what-are-vuex-getters?)                                                                                                                                                                          |
+| 155 | [What is a property style access?](#what-is-a-property-style-access)                                                                                                                                                       |
+| 156 | [What is a method style access?](#what-is-a-method-style-access)                                                                                                                                                           |
+| 157 | [What is mapGetter helper?](#what-is-mapgetter-helper)                                                                                                                                                                     |
+| 158 | [What are mutations?](#what-are-mutations)                                                                                                                                                                                 |
+| 159 | [How do you commit with payload?](#how-do-you-commit-with-payload)                                                                                                                                                         |
+| 160 | [What is object style commit?](#what-is-object-style-commit)                                                                                                                                                               |
+| 161 | [What are the caveats with vuex mutations?](#what-are-the-caveats-with-vuex-mutations)                                                                                                                                     |
+| 162 | [Why mutations should be synchronous?](#why-mutations-should-be-synchronous)                                                                                                                                               |
+| 163 | [How do you perform mutations in components?](#how-do-you-perform-mutations-in-components)                                                                                                                                 |
+| 164 | [Is it mandatory to use constants for mutation types?](#is-it-mandatory-to-use-constants-for-mutation-types)                                                                                                               |
+| 165 | [How do you perform asynchronous operations?](#how-do-you-perform-asynchronous-operations)                                                                                                                                 |
+| 166 | [What are differences between mutations and actions?](#what-are-differences-between-mutations-and-actions)                                                                                                                 |
+| 167 | [Give an example usage of actions?](#give-an-example-usage-of-actions?)                                                                                                                                                    |
+| 168 | [How do you dispatch actions?](#how-do-you-dispatch-actions)                                                                                                                                                               |
+| 169 | [Can you dispatch an action using payload or object?](#can-you-dispatch-an-action-using-payload-or-object)                                                                                                                 |
+| 170 | [Can I use styled components in vuejs?](#can-i-use-styled-components-in-vuejs)                                                                                                                                             |
+| 171 | [How do you dispatch actions in components?](#how-do-you-dispatch-actions-in-components)                                                                                                                                   |
+| 172 | [How do you compose actions?](#how-do-you-compose-actions)                                                                                                                                                                 |
+| 173 | [What are modules in vuex?](#what-are-modules-in-vuex)                                                                                                                                                                     |
+| 174 | [What is module local state?](#what-is-module-local-state)                                                                                                                                                                 |
+| 175 | [What is namespacing in vuex](#what-is-namespacing-in-vuex)                                                                                                                                                                |
+| 176 | [What is the default namespace behavior in vuex?](#what-is-the-default-namespace-behavior-in-vuex)                                                                                                                         |
+| 177 | [When do you reuse modules?](#when-do-you-reuse-modules)                                                                                                                                                                   |
+| 178 | [What are the principles enforced by vuex?](#what-are-the-principles-enforced-by-vuex)                                                                                                                                     |
+| 179 | [Can I perform mutations directly in strict mode?](#can-i-perform-mutations-directly-in-strict-mode)                                                                                                                       |
+| 180 | [How to use model directive with two way computed property?](#how-to-use-model-directive-with-two-way-computed-property)                                                                                                   |
+| 181 | [What is Vue CLI?](#what-is-vue-cli)                                                                                                                                                                                       |
+| 182 | [What are the features provided by Vue CLI?](#what-are-the-features-provided-by-vue-cli)                                                                                                                                   |
+| 183 | [What is instant prototyping?](#what-is-instant-prototyping)                                                                                                                                                               |
+| 184 | [How do you create project using Vue CLI?](#how-do-you-create-project-using-vue-cli)                                                                                                                                       |
+| 185 | [How do you create project using GUI?](#how-do-you-create-project-using-gui)                                                                                                                                               |
+| 186 | [What are plugins in vue CLI?](#what-are-plugins-in-vue-cli)                                                                                                                                                               |
+| 187 | [How do you install plugins in an existing Vue CLI project?](#how-do-you-install-plugins-in-an-existing-vue-cli-project)                                                                                                   |
+| 188 | [How to access local plugins in a project?](#how-to-access-local-plugins-in-a-project)                                                                                                                                     |
+| 189 | [How do you create UI plugins kind of behavior?](#how-do-you-create-ui-plugins-kind-of-behavior)                                                                                                                           |
+| 190 | [What are presets?](#what-are-presets)                                                                                                                                                                                     |
+| 191 | [What is the versioning behavior in preset plugins?](#what-is-the-versioning-behavior-in-preset-plugins)                                                                                                                   |
+| 192 | [How do you allow plugin prompts?](#how-do-you-allow-plugin-prompts)                                                                                                                                                       |
+| 193 | [What are remote presets?](#what-are-remote-presets)                                                                                                                                                                       |
+| 194 | [Can I use local presets?](#can-i-use-local-presets)                                                                                                                                                                       |
+| 195 | [What is the purpose of browserslist option?](#what-is-the-purpose-of-browserslist-option)                                                                                                                                 |
+| 196 | [How do you find VueJS version using API?](#how-do-you-find-vuejs-version-using-api)                                                                                                                                       |
+| 197 | [How do you create reactive objects](#how-do-you-create-reactive-objects)                                                                                                                                                  |
+| 198 | [What is the purpose new slot directive?](#what-is-the-purpose-new-slot-directive)                                                                                                                                         |
+| 199 | [What is the use of compile method?](#what-is-the-use-of-compile-method)                                                                                                                                                   |
+| 200 | [What does nextTick do in VueJS?](#what-does-nexttick-do-in-vuejs)                                                                                                                                                         |
+| 201 | [What is async error handling?](#what-is-async-error-handling)                                                                                                                                                             |
+| 202 | [What are Dynamic Directive Arguments?](#what-are-dynamic-directive-arguments)                                                                                                                                             |
+| 203 | [What are the drawbacks of dynamic directive arguments?](#what-are-the-drawbacks-of-dynamic-directive-arguments)                                                                                                           |
+| 204 | [What is the special handling for null values in dynamic directive arguments?](#what-is-the-special-handling-for-null-values-in-dynamic-directive-arguments)                                                               |
+| 205 | [Can I use dynamic directive null value for slots?](#can-i-use-dynamic-directive-null-value-for-slots)                                                                                                                     |
+| 206 | [What is Vue I18n plugin?](#what-is-vue-i-8n--plugin)                                                                                                                                                                      |
+| 207 | [#What are the types of formatting?](#what-are-the-types-of-formatting)                                                                                                                                                    |
+| 208 | [What is custom formatting?](#what-is-custom-formatting)                                                                                                                                                                   |
+| 209 | [How do you handle Pluralization?](#how-do-you-handle-pluralization)                                                                                                                                                       |
+| 210 | [How to implement DateTime localization?](#how-to-implement-date-time-localization)                                                                                                                                        |
+| 211 | [How do you implement Number localization?](#how-do-you-implement-number-localization)                                                                                                                                     |
+| 212 | [How do you perform locale changing](#how-do-you-perform-locale-changin)                                                                                                                                                   |
+| 213 | [What is Lazy loading translations?](#what-is-lazy-loading-translations)                                                                                                                                                   |
+| 214 | [What is the main difference between method and computed property?](#what-is-the-main-difference-between-method-and-computed-property)                                                                                     |
+| 215 | [What is vuetify?](#what-is-vuetify)                                                                                                                                                                                       |
+| 216 | [How do you watch for nested data changes?](#how-do-you-watch-for-nested-data-changes)                                                                                                                                     |
+| 217 | [How to trigger watchers on initialization?](#how-to-trigger-watchers-on-initialization)                                                                                                                                   |
+| 218 | [What is the purpose of comments option?](#what-is-the-purpose-of-comments-option)                                                                                                                                         |
+| 219 | [How to identify whether code is running on client or server?](#how-to-identify-whether-code-is-running-on-client-or-server)                                                                                               |
+| 220 | [How do you watch route object changes?](#how-do-you-watch-route-object-changes)                                                                                                                                           |
+| 221 | [How do you sync current route in vuex store?](#how-do-you-sync-current-route-in-vuex-store)                                                                                                                               |
+| 222 | [What are navigation guards in vue router?](#what-are-navigation-guards-in-vue-router)                                                                                                                                     |
+| 223 | [Can I use computed property in another computed property?](#can-i-use-computed-property-in-another-computed-property)                                                                                                     |
+| 224 | [How can I use imported constant in template section?](#How-can-i-use-imported-constant-in-template-section)                                                                                                               |
+| 225 | [Is recommended to use async for computed properties?](#is-recommended-to-use-async-for-computed-properties)                                                                                                               |
+| 226 | [What happens if you use duplicate field names?](#what-happens-if-you-use-duplicate-field-names)                                                                                                                           |
+| 227 | [Why the component data must be a function?](#why-the-component-data-must-be-a-function)                                                                                                                                   |
+| 228 | [What is the reason for recommendation for multi-word component names?](#what-is-the-reason-for-recommendation-for-multi-word-component-names)                                                                             |
+| 229 | [How to use composition API in Vue2.0?](#how-to-use-composition-api-in-vue2.0)                                                                                                                                             |
+| 230 | [What is composition API?](#what-is-composition-api)                                                                                                                                                                       |
 
 1.  ### Что такое VueJS?
     **Vue.js** это прогрессивный фреймворк для создания пользовательских интерфейсов. Vue создан пригодным для постепенного внедрения. Его ядро в первую очередь решает задачи уровня представления (view), что упрощает интеграцию с другими библиотеками и существующими проектами.
@@ -2487,18 +2487,18 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-101. ### What is vuex?
-     Vuex is a state management pattern + library (Flux-inspired Application Architecture) for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+101. ### Что такое vuex?
+     Vuex - это шаблон управления состоянием + библиотека (архитектура приложений на основе Flux) для приложений Vue.js. Он служит централизованным хранилищем для всех компонентов в приложении с правилами, гарантирующими, что состояние может изменяться только предсказуемым образом.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-102. ### What are the major components of State Management Pattern?
-     The state management has state, view and actions as major components. The pattern followed by these components in a application is known as State Management Pattern. Below are the components in a detail,
-     1. The **state**, which is the source of truth that drives our app
-     2. The **view**, which is just a declarative mapping of the state
-     3. The **actions**, which are the possible ways the state could change in reaction to user inputs from the view.
+102. ### Каковы основные компоненты модели управления состоянием?
+     Управление состоянием включает в себя состояние, вид и действия в качестве основных компонентов. Шаблон, которому следуют эти компоненты в приложении, известен как шаблон управления состоянием. Ниже приведены детали компонентов,
+     1. **state**, которое является источником истины, которым движет наше приложение
+     2. **view**, которое является просто декларативным отображением состояния
+     3. **actions**, которые представляют собой возможные способы изменения состояния в ответ на действия пользователя из представления.
 
-     Let us take a counter example which follows state management pattern with the above 3 components,
+     Давайте возьмем пример, который следует шаблону управления состоянием с указанными выше тремя компонентами:
         ```javascript
          new Vue({
            // state
@@ -2522,17 +2522,17 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-103. ### How do you represent one way data flow in vuex?
-     Vue.js has a one-way data flow model, through the props property. The same concept can be represented in vuex has below,
+103. ### Как вы представляете односторонний поток данных в vuex?
+     Vue.js имеет одностороннюю модель потока данных через свойство props. Та же концепция может быть представлена ​​в vuex,
 
      <img src="https://github.com/sudheerj/vuejs-interview-questions/blob/master/images/flow.png" width="400" height="500">
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-104. ### What is a vuejs loader?
-     Vue loader is a loader for webpack that allows you to author Vue components in a format called Single-File Components (SFCs).
+104. ### Что такое загрузчик vuejs?
+     Загрузчик Vue - это загрузчик для webpack, который позволяет вам создавать компоненты Vue в формате, называемом однофайловыми компонентами (SFC - Single-File Components).
 
-     For example, it authors HelloWorld component in a SFC,
+     Например, он создает однофайловый компонент HelloWorld,
      ```javascript
      <template>
        <div class="greeting">{{ message }}</div>
@@ -2557,10 +2557,10 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-105. ### How do you configure vue loader in webpack?
-     Vue Loader's configuration is a bit different from other loaders by adding Vue Loader's plugin to your webpack config. The vue loader plugin is required for cloning any other rules(js and css rules) defined and applying them to the corresponding language blocks(<script> and <style>) in .vue files.
+105. ### Как настроить загрузчик vue в webpack?
+     Конфигурация Vue Loader немного отличается от других загрузчиков, добавив плагин Vue Loader в конфигурацию вашего webpack. Плагин загрузчика vue необходим для клонирования любых других определенных правил (правил js и css) и применения их к соответствующим языковым блокам `(<script> и <style>)` в файлах .vue.
 
-     For example, the simple demonistration of webpack configuration for vue loader would be as below,
+     Например, простая демонстрация конфигурации веб-пакета для загрузчика vue будет выглядеть следующим образом:
      ```javascript
      // webpack.config.js
      const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -2573,12 +2573,12 @@
              test: /\.vue$/,
              loader: 'vue-loader'
            },
-           // this will apply to both plain `.js` files and `<script>` blocks in `.vue` files
+           // это будет применяться как к обычным файлам `.js`, так и к блокам `<script>`в файлах` .vue`
            {
              test: /\.js$/,
              loader: 'babel-loader'
            },
-           // this will apply to both plain `.css` files and `<style>` blocks in `.vue` files
+           // это будет применяться как к простым файлам `.css`, так и к блокам `<style>`в файлах` .vue`
            {
              test: /\.css$/,
              use: [
@@ -2589,7 +2589,7 @@
          ]
        },
        plugins: [
-         // make sure to include the plugin for cloning and mapping them to respective language blocks
+         // обязательно включите плагин для клонирования и сопоставления их с соответствующими языковыми блоками
          new VueLoaderPlugin()
        ]
      }
@@ -2597,24 +2597,24 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-106. ### What are asset url transform rules?
-     Below are the list of Asset URL transform rules
-     1. **Absolute path**: If the URL is an absolute path (for example, /images/loader.png)then it will be preserved as-is.
-     2. **Relative path**: If the URL starts with `.` (for example, ./images/loader.png) then it will be interpreted as a relative module request and resolved based on the folder structure on your file system.
-     3. **URLs starts with ~ symbol**: If the URL starts with `~` symbol(for example, ./some-node-package/loader.png) then it is interpreted as a module request. This way it can reference assets inside node modules too.
-     4. **URLs starts with @ symbol**: If the URL starts with `@` symbol then it is interpreted as a module request. This is useful if your webpack config has an alias for @, which by default points to `/src` path.
+106. ### Каковы правила преобразования URL-адреса ресурса?
+     Ниже приведен список правил преобразования URL-адреса ресурса,
+     1. **Абсолютный путь**: Если URL-адрес является абсолютным путем (например, /images/loader.png), он будет сохранен как есть.
+     2. **Относительный путь**: Если URL-адрес начинается с `.` (например, ./images/loader.png), то он будет интерпретирован как относительный запрос модуля и разрешен на основе структуры папок в вашей файловой системе.
+     3. **URL-адреса начинаются с символа ~**: Если URL-адрес начинается с символа `~` (например, ./some-node-package/loader.png), то он интерпретируется как запрос модуля. Таким образом, он также может ссылаться на ресурсы внутри узловых модулей.
+     4. **URL-адреса начинаются с символа @**: Если URL-адрес начинается с символа `@`, он интерпретируется как запрос модуля. Это полезно, если в вашей конфигурации webpack есть псевдоним для @, который по умолчанию указывает на путь `/ src`.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-107. ### How do you work with preprocessors using vue loader?
-     `Vue-loader` will automatically infer the proper loaders to use based on the `lang` attribute of a language block and the rules defined in webpack config. You can use pre-processors such as `SASS,LESS, Stylus and PostCSS` using vuejs loader.
+107. ### Как вы работаете с препроцессорами с помощью загрузчика vue?
+     Vue-loader автоматически подберет подходящие загрузчики для использования на основе атрибута lang языкового блока и правил, определенных в конфигурации webpack. Вы можете использовать препроцессоры, такие как SASS, LESS, Stylus и PostCSS, используя загрузчик vuejs.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-108. ### What is scoped CSS?
-     Scoped CSS is a mechanism in VueJS Single File Components(SFC) that prevents styles from leaking out of the current component and affecting other unintended components on your page. i.e, When a <style> tag has the scoped attribute, its CSS will apply to elements of the current component only. It uses PostCSS to transform scoped css to plain CSS.
+108. ### Что такое CSS с ограниченной областью видимости (scoped)?
+     CSS с ограниченной областью видимости - это механизм в однофайловых компонентах (SFC) VueJS, который предотвращает утечку стилей из текущего компонента и влияние на другие непредусмотренные компоненты на вашей странице. то есть, когда тег `<style>` имеет атрибут scoped, его CSS будет применяться только к элементам текущего компонента. Он использует PostCSS для преобразования CSS с ограниченной областью видимости в простой CSS.
 
-     Let's take an example usage of scoped css,
+     Давайте рассмотрим пример использования css с областью видимости,
      ```javascript
      <style scoped>
      .greeting {
@@ -2626,7 +2626,8 @@
        <div class="greeting">Let's start Scoped CSS</div>
      </template>
      ```
-     The above code will be converted to plain CSS,
+     Приведенный выше код будет преобразован в простой CSS,
+
      ```javascript
        <style scoped>
       .greeting[data-v-f3f3eg9] {
@@ -2641,41 +2642,41 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-109. ### Is it possible to mix both local and global styles?
-     Yes, you can include both scoped and non-scoped styles in the same component. If you don't mention scoped attribute then it will become global style.
+109. ### Можно ли смешивать как локальные, так и глобальные стили?
+     Да, вы можете включить в один и тот же компонент стили как с ограниченным, так и без него. Если вы не укажете атрибут scoped, он станет глобальным стилем.
      ```javascript
      <style>
-     /* global styles */
+     /* глобальные стили */
      </style>
 
      <style scoped>
-     /* local styles */
+     /* местные стили */
      </style>
      ```
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-110. ### How do you use deep selectors?
-     In scoped css, if you need to modify the styles of a child component using deep selectors(i,e from parent scoped css) then you need to use **>>>** combinator.
+110. ### Как вы используете глубокие селекторы?
+     В css с ограниченной областью видимости, если вам нужно изменить стили дочернего компонента с помощью глубоких селекторов (i, e из родительского css с областью видимости), вам необходимо использовать комбинатор **>>>**.
 
-     For example, the scoped deep selector on parent scoped css would be as below,
+     Например, глубокий селектор с ограниченной областью видимости в CSS с родительской областью видимости будет таким, как показано ниже:
      ```javascript
      <style scoped>
      .class1 >>> .class2 { /* ... */ }
      </style>
      ```
-     It will be converted as,
+     Он будет преобразован как,
      ```javascript
      .class1[data-v-f3f3eg9] .class2 { /* ... */ }
      ```
-     **Примечание:** If you preprocessors such as SASS then it may not be able to processs >>> properly. In such cases use the /deep/ or ::v-deep combinator instead >>> combinator.
+     **Примечание:** Если вы используете препроцессоры, такие как SASS, возможно, он не сможет правильно обработать >>>. В таких случаях используйте комбинатор / deep / или :: v-deep вместо комбинатора >>>.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-111. ### Is parent styles leaked into child components in scoped css?
-     The parent component's styles will not leak into child components. But a child component's root node will be affected by both the parent's scoped CSS and the child's scoped CSS. i.e, your child component's root element has a class that also exists in the parent component, the parent component's styles will leak to the child. Anyway this is by design so that the parent can style the child root element for layout purposes.
+111. ### Утекают-ли родительские стили в дочерние компоненты в CSS с ограничением области видимости?
+     Стили родительского компонента не попадут в дочерние компоненты. Но на корневой узел дочернего компонента будет влиять как родительский CSS с областью видимости, так и дочерний CSS с областью видимости. то есть корневой элемент вашего дочернего компонента имеет класс, который также существует в родительском компоненте, стили родительского компонента будут передаваться дочернему компоненту. В любом случае это сделано специально, чтобы родитель мог стилизовать дочерний корневой элемент для целей макета.
 
-     For example, the background color property of parent component leaked into child component as below,
+     Например, свойство цвета фона родительского компонента просочилось в дочерний компонент, как показано ниже,
 
      //parent.vue
      ```javascript
@@ -2722,34 +2723,34 @@
      }
      </style>
      ```
-     Now the background color of child wrapper is going to be blue instead red.
+     Теперь цвет фона дочерней оболочки будет синим, а не красным.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-112. ### How do you style dynamic generated content using scoped css?
-     The scoped css style doesn't impact v-html directive's dynamically generated content. In this case, you can use deep selectors to solve this styling issue.
+112. ### Как можно стилизовать динамический сгенерированный контент с помощью CSS с ограниченинымобластью видимости?
+     Стиль css с ограниченной областью видимости не влияет на динамически генерируемое содержимое директивы v-html. В этом случае вы можете использовать глубокие селекторы, чтобы решить эту проблему со стилем.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-113. ### Is CSS modules supported in Vuejs?
-     Yes, vue-loader provides first-class integration with CSS Modules as an alternative for simulated scoped CSS.
+113. ### Поддерживаются ли модули CSS в Vuejs?
+     Да, vue-loader обеспечивает первоклассную интеграцию с модулями CSS в качестве альтернативы моделированному CSS с ограниченным объемом.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-114. ### Can I use runtime builds for all templates?
-     No, templates (or any Vue-specific HTML) are ONLY allowed in .vue files and render functions are required in other cases.
+114. ### Могу ли я использовать сборки среды выполнения для всех шаблонов?
+     Нет, шаблоны (или любой специфичный для Vue HTML) разрешены ТОЛЬКО в файлах .vue, а в других случаях требуются функции рендеринга.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-115. ### How to use CSS modules in vuejs?
-     Below are the steps to use css modules in VueJS,
-     1. **Enable CSS modules:**  CSS Modules must be enabled by passing modules: true option to css-loader
+115. ### Как использовать модули CSS в vuejs?
+     Ниже приведены шаги по использованию модулей css в VueJS,
+     1. **Включить модули CSS:** Модули CSS должны быть включены путем передачи параметра modules: true в css-loader
          ```javascript
          // webpack.config.js
          {
            module: {
              rules: [
-               // ... other rules omitted
+               // ... другие правила опущены
                {
                  test: /\.css$/,
                  use: [
@@ -2757,9 +2758,9 @@
                    {
                      loader: 'css-loader',
                      options: {
-                       // enable CSS Modules
+                       // включить модули CSS
                        modules: true,
-                       // customize generated class names
+                       // настроить сгенерированные имена классов
                        localIdentName: '[local]_[hash:base64:8]'
                      }
                    }
@@ -2769,7 +2770,7 @@
            }
          }
          ```
-     2. **Add module attribute:** Add the module attribute to your `<style>`
+     2. **Добавить атрибут модуля:** Добавьте атрибут module к вашему `<style>`
          ```javascript
          <style module>
          .customStyle {
@@ -2777,7 +2778,7 @@
          }
          </style>
          ```
-     3. **Inject CSS modules:** You can inject CSS modules object with computed property $style
+     3. **Внедрить модули CSS:** Вы можете внедрить объект модулей CSS с вычисляемым свойством $style
          ```javascript
          <template>
            <div :class="$style.blue">
@@ -2786,14 +2787,14 @@
          </template>
          ```
 
-     It can work with object/array syntax of :class binding.
+     Он может работать с синтаксисом объекта/массива привязки класса.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-116. ### Can I use CSS modules for preprocessors?
-     Yes, you can use preprocessors with CSS Modules.
+116. ### Могу ли я использовать модули CSS для препроцессоров?
+     Да, вы можете использовать препроцессоры с модулями CSS.
 
-     For example, sass-loader can configured in webpack file for sass preprocessor.
+     Например, sass-loader можно настроить в файле webpack для препроцессора sass.
 
      ```javascript
      // webpack.config.js -> module.rules
@@ -2812,41 +2813,41 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-117. ### Is it possible to use custom inject name for CSS modules?
-     You can customize the name of the injected computed property by giving the module attribute a value. This will be helpful to avoid overwriting injected styled if you have more than one <style> tags in a single *.vue component.
+117. ### Можно ли использовать собственное имя инжекта для модулей CSS?
+     Вы можете настроить имя введенного вычисляемого свойства, присвоив атрибуту модуля значение. Это поможет избежать перезаписи введенного стиля, если у вас более одного тега `<style>` в одном компоненте *.vue.
 
-     For example, you can use module attribute as below,
+     Например, вы можете использовать атрибут module, как показано ниже,
 
      ```javascript
      <style module="a">
-       /* identifiers injected as a */
+       /* идентификаторы введены как a */
      </style>
 
      <style module="b">
-       /* identifiers injected as b */
+       /* идентификаторы введены как b */
      </style>
      ```
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-118. ### What is hot reloading in vue loader?
-     Hot reloading is not about reloading the page when you edit any .vue file. Instead, when you edit a *.vue file, all instances of that component will be swapped in without reloading the page. It improves the development experience when you are tweaking the templates or styling of your components.
+118. ### Что такое горячая перезагрузка в загрузчике vue?
+     Горячая перезагрузка - это не перезагрузка страницы при редактировании любого файла *.vue. Вместо этого, когда вы редактируете файл *.vue, все экземпляры этого компонента будут заменены без перезагрузки страницы. Это улучшает процесс разработки, когда вы настраиваете шаблоны или стили своих компонентов.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-119. ### What is the default behavior of hot reloading?
-     Hot Reload is always enabled except below situations:
+119. ### Каково поведение горячей перезагрузки по умолчанию?
+     Горячая перезагрузка всегда включена, за исключением следующих ситуаций:
 
-     1. webpack target is node (SSR)
-     2. webpack minifies the code
+     1. SSR
+     2. webpack минимизирует код
      3. process.env.NODE_ENV === 'production'
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-120. ### How do you disable hot reloading explicitly?
-     You can use `hotReload: false` option to disable the Hot Reload explicitly.
+120. ### Как явно отключить горячую перезагрузку?
+     Вы можете использовать опцию `hotReload: false`, чтобы явно отключить горячую перезагрузку.
 
-     It can be configured as below,
+     Его можно настроить, как показано ниже,
      ```javascript
      module: {
        rules: [
@@ -2854,7 +2855,7 @@
            test: /\.vue$/,
            loader: 'vue-loader',
            options: {
-             hotReload: false // disables Hot Reload
+             hotReload: false // отключает горячую перезагрузку
            }
          }
        ]
@@ -2863,22 +2864,22 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-121. ### How do you use hot reloading?
-     The vue loader plugin internally uses hot reloading. If you are scaffolding project with `vue-cli`, hot reloading comes out of the box but if you are manually setting up the project then hot reloading is enabled by default with `webpack-dev-server --hot` command.
+121. ### Как использовать горячую перезагрузку?
+     Плагин vue loader внутренне использует горячую перезагрузку. Если вы создаете проект с помощью `vue-cli`, горячая перезагрузка идет прямо из коробки, но если вы настраиваете проект вручную, горячая перезагрузка включается по умолчанию с помощью команды `webpack-dev-server --hot`.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-122. ### What are state preservation rules in hot reloading?
-     Below are the state preservation rules in hot reloading,
+122. ### Каковы правила сохранения состояния при горячей перезагрузке?
+     Ниже приведены правила сохранения состояния при горячей перезагрузке,
 
-     1. When editing the `<template>` of a component, instances of the edited component will re-render in place, preserving all current private state.
-     2. When editing the `<script>` part of a component, instances of the edited component will be destroyed and re-created in place.
-     3. When editing the `<style>` hot reload operates on its own via vue-style-loader without affecting application state.
+     1. При редактировании `<template>` компонента экземпляры редактируемого компонента будут повторно визуализироваться на месте, сохраняя все текущее частное состояние.
+     2. При редактировании части компонента `<script>` экземпляры редактируемого компонента будут уничтожены и воссозданы на месте.
+     3. При редактировании `<style>` горячая перезагрузка выполняется сама по себе через vue-style-loader, не влияя на состояние приложения.
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-123. ### How to create functional components using vue loader?
-     You can create functional components by adding functional attribute to template block,
+123. ### Как создать функциональные компоненты с помощью загрузчика vue?
+     Вы можете создавать функциональные компоненты, добавляя атрибут `functional` в блок шаблона,
 
      ```javascript
      <template functional>
@@ -2888,8 +2889,8 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-124. ### How do you access global properties of functional components?
-     If you need to access properties defined globally on `Vue.prototype` then you can access them on parent,
+124. ### Как получить доступ к глобальным свойствам функциональных компонентов?
+     Если вам нужно получить доступ к свойствам, определенным глобально в `Vue.prototype`, вы можете получить к ним доступ через родительский объект,
 
      ```javascript
      <template functional>
@@ -2899,11 +2900,10 @@
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
-125. ### How do you perform testing in vuejs?
-     You can perform testing in two ways,
-
-     1. **Using vue-cli:** It offers pre-configured unit testing and e2e testing setups
-     2. **Manual setup:** You can manually setting up unit tests for *.vue files using either mocha-webpack or jest
+125. ### Как вы проводите тестирование в vuejs?
+     Вы можете выполнить тестирование двумя способами:
+     1. **Используя vue-cli:** Он предлагает предварительно настроенное модульное тестирование и настройки тестирования e2e
+     2. **Ручная настройка:** Вы можете вручную настроить модульные тесты для файлов * .vue, используя mocha-webpack или jest
 
      **[⬆ Вернуться к началу](#table-of-contents)**
 
